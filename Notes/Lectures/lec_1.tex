@@ -1,83 +1,57 @@
-\chapter{RC 0}
+\chapter{RC 1}
 %\lecture{3}{22 Sep. 18:30}{Temp}
-\recitation{0}{22 Sep. 18:30}{}
-\section{Basic rules}
-\begin{itemize}
-    \item Recitation: Thursday 12:30 to 13:30, 18:30 to 19:30
-    \item My office hour is right after recitation.
-    \item Grade distribution: (quiz correction + attend rc): $1\times 4$; mid correction + attend rc:  $2$; Attend one rc: $4$ 
-\end{itemize}
-\section{Review of some high school comminatory and probability tricks}
-Early chapters are about high school counting things over again.
-We will swiftly go through the concept.  
-\subsection{Permutation and Combination}
-\begin{itemize}
-    \item Permutation\\
-		\#ways to form an ordering of \(m\) out of \(n\) different things. 
-	\[
-		P(n,m)
-	\]
-    \item Combination\\
-		\#ways to form a group of \(m\) with \(n\) different things.
-	\[
-		C(n,m),\quad \begin{pmatrix}
-			 n \\
-			 m \\
-		\end{pmatrix}
-	\]
-    \item Multinomial coefficents \cite*{Gravner2021}\\
-		\#ways to divide a set of n elements into \(r\) (distinguishable) subsets of \(n_1, n_2 , \dots, n_r \) elements.
-		\[
-			\frac{n!}{n_1! n_2! \dots n_r!}
-		\]
-\end{itemize}
-\subsection{Set Operation}
-\begin{itemize}
-    \item De Morgan's Law
-\end{itemize}
-\section{Axioms of Probability}
-\subsection{Probability Space}
-The \textbf{probability space} is a triple \(\Omega,\mathcal{\MakeUppercase{f}},P\) that contains  
+\recitation{1}{29 Sep. 18:30}{}
+
+\section{Review}
+\subsection{Axioms of Probability}
+A \textbf{probability space} is a triple \(\Omega,\mathcal{\MakeUppercase{f}},P\) that contains  
 \begin{itemize}
 	\item The \textbf{sample space} \(\Omega \) contains all possible outcome.  
 	\item The \(\sigma\)-algebra \(\mathcal{\MakeUppercase{f}} \) is the \textbf{event space}. It is a subset of the power set of \(\Omega \) we are interested in. 
-	\item The \textbf{probability measure} \(P\) is a function \(P:\mathcal{\MakeUppercase{f}} \to [0,1] \) that satisfies the three axioms. 
+	\item The \textbf{probability measure} \(P\)
+	
+\end{itemize}
+\subsection{Probability (measure)}
+\begin{itemize}
+    \item The \textbf{probability measure} \(P\) is a function \(P:\mathcal{\MakeUppercase{f}} \to [0,1] \) that satisfies the three axioms. 
 	\begin{enumerate}
 		\item \(P(\Omega ) = 1\) 
 		\item Non-negative
 		\item Countable additivity for disjoint sets in \(\mathcal{\MakeUppercase{f}} \).  
 	\end{enumerate}
 \end{itemize}
-\subsection{Standard process}
-A standard process of solving these problems (HW1,2) is to find the size of possible outcome first. 
-Then, finding the size of desired event, and the ratio of the two is the prob. 
-
-
+\subsection{\(\sigma\)-algebra }
+\(\mathcal{\MakeUppercase{f}} \) is call a \(\sigma\)-algebra on a set \(\Omega \) If    
+\begin{enumerate}
+    \item \(\emptyset \in \mathcal{\MakeUppercase{f}} \)
+    \item If \(A \in \mathcal{\MakeUppercase{f}} \implies A^c \in \mathcal{\MakeUppercase{f}} \) 
+    \item If \(A_1, A_2, \dots \in \mathcal{\MakeUppercase{f}} \), then \(\cup_{i = 1} A_i \in \mathcal{\MakeUppercase{f}}\) 
+\end{enumerate}
 \begin{eg}
-	\cite{Gravner2021} Example 3.11\\
-You have 10 pairs of socks in the closet. Pick 8 socks at random. For every i,
-compute the probability that you get i complete pairs of socks.\\
-\begin{itemize}
-	\item \# outcome:
-	\item \# desirable outcome:
-	\item the probability is : 
-\end{itemize}
+    Let \(\Omega  = \{1,2,3,4,5,6\}\), find a minimal* \(\sigma\)-algebra that contains the sets \(\{1,2,3\},\{1\}\)  
 \end{eg}
-\begin{eg}
-	\cite{Gravner2021} Problem 3.2 (HW2 problem 2)\\
-	Three married couples take seats around a table at random. Compute \(P(\text{no wife sits next to her husband} )\). 
-	Use Inclusion-Exclusion principle to compute the probability of its complement event. 
+    Answer: \footnote[1]{\(\mathcal{\MakeUppercase{F}} =  \{\emptyset,\Omega ,\{1\},\{1,2,3\},\{4,5,6\},\{2,3,4,5,6\},\{2,3\},\{1,4,5,6\}\}\) }
+
+\subsection{Conditional Probability}
+For the general definition, take events \(A, B,\quad\) and assume that \(P(B) > 0\). The \textit{conditional probability} of the event \(A\) given \(B\) equals 
+\[
+    P(A|B) = \frac{P(A\cap B)}{P(B)}
+\]
+TBD (an example)    
+\subsection{Independence}
+
+\begin{eg}[Pairwise Independence but not independent variables]
+    
 \end{eg}
-
-\subsection{Why do we need to set \(\sigma\)-algebra: Vitali set}
-Have you ever wonder: Why would I need \(\mathcal{\MakeUppercase{f}} \) if I have \(\Omega\) already? As the textbook said, you won't have any problem with this notion. 
-However, things get messy when we encounter set of infinity size. The idea of "length" will not be clear then. 
-We use \textbf{Vitali set} \(V\) as an example on \(\mathbb{R}\) to show that we can't have a measure on  \(V\).
-This problem is one of the reason that we only put probability measure on \(\mathcal{\MakeUppercase{f}} \).  
-	
-
-For more information:
-\href{https://youtu.be/hcRZadc5KpI}{How the Axiom of Choice Gives Sizeless Sets | Infinite Series}
-
-\section{Homework Help}
-TBD
+\section{Problem}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/rc1_f1.png}
+    \label{fig:rc1_1}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/rc1_f2.png}
+    \caption{A problem in Feller}
+    \label{fig:rc1_2}
+\end{figure}
