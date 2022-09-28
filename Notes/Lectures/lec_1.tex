@@ -37,18 +37,40 @@ For the general definition, take events \(A, B,\quad\) and assume that \(P(B) > 
 \[
     P(A|B) = \frac{P(A\cap B)}{P(B)}
 \]
-TBD (an example)    
+TBD (an example)
 \subsection{Independence}
 
 \begin{eg}[Pairwise Independence but not independent variables]
     
 \end{eg}
 \section{Problem}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{Figures/rc1_f1.png}
-    \label{fig:rc1_1}
-\end{figure}
+\textbf{Problem 1.} Put $r$ distinguishable balls into $n$ different boxes. What is the probability of all $n$ boxes are occupied?\\ \\
+\textit{Probabilistic approach.} $A_i=\{\text{Box $i$ is occupied}\}$ for all $i=1,\cdots, n$.
+\begin{equation}
+\mathbb{P}(\text{No empty boxes}) = \mathbb{P}\Big(\bigcup_{i=1}^n A_i\Big).
+\end{equation}
+(Inclusion-exclusion principle!)\\ \\
+\textit{Combinatorial approach.} Define $A(r,n)$ as the number of distributions such that all $n$ boxes are non-empty when you put $r$ balls into them. Then the probability is $A(r,n)/n^r$. Knowing $A(r,n+1)$ can lead us to $A(r,n)$:
+\begin{equation}
+A(r,n) = \sum_{k=1}^{r-1}A(r-k,n-1).
+\end{equation}
+Knowing this, we can prove that:
+\begin{equation}
+A(r,n) = \sum_{\nu = 0}^n(-1)^\nu\binom{n}{\nu}(n-\nu)^r.
+\end{equation}
+(Use Induction!)\\ \\
+\textit{(Think about it!)} What is the probability of exactly $m$ boxes are occupied?
+\begin{equation}
+\text{number of distributions }= \binom{n}{m}\times A(r,m).
+\end{equation}
+$A(r,m) = \mathbb{P}(\text{$r$ balls into $m$ boxes and all of the boxes are occupied})\times m^r$.
+
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[width=\textwidth]{Figures/rc1_f1_1.png}
+%    \includegraphics[width=\textwidth]{Figures/rc1_f1_2.png}
+%    \label{fig:rc1_1}
+%\end{figure}
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{Figures/rc1_f2.png}
