@@ -39,9 +39,13 @@ For the general definition, take events \(A, B,\quad\) and assume that \(P(B) > 
 \]
 TBD (an example)
 \subsection{Independence}
-
+Events \(A_1,\dots,A_n\) are independent if 
+\[
+    P(\cap_{i = 1}^n A_i) = \prod_{i=1}^nP(A_i)
+\]
+Please note that it means you can not just check \(P(A_i\cap A_j) = P(A_i)P(A_j), i \neq j\). One example is teh following 
 \begin{eg}[Pairwise Independence but not independent variables]
-(\cite{IntroPanchenko}) Consider a regular tetrahedron die painted
+(\cite{IntroPanchenko} Exercise 1.4.2) Consider a regular tetrahedron die painted
 blue, red and green on three sides and painted in all three
 colours on the fourth side. If the die is equally likely to land
 on any side, show that the appearances of these colours on
