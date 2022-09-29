@@ -62,7 +62,7 @@ the side it lands on are pairwise-independent but not independent.
 (Inclusion-exclusion principle!)\\ \\
 \textit{Combinatorial approach.} Define $A(r,n)$ as the number of distributions such that all $n$ boxes are non-empty when you put $r$ balls into them. Then the probability is $A(r,n)/n^r$. Knowing $A(r,n+1)$ can lead us to $A(r,n)$:
 \begin{equation}
-A(r,n) = \sum_{k=1}^{r-1}A(r-k,n-1).
+A(r,n) = \sum_{k=1}^{r-1}\binom{r}{k}A(r-k,n-1).
 \end{equation}
 Knowing this, we can prove that:
 \begin{equation}
