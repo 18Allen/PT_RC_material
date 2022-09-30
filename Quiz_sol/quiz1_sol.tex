@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%\usepackage[legalpaper, landscape, margin=1in]{geometry}
+\usepackage{geometry}
+\geometry{
+a4paper,
+left=20mm,
+right=20mm,
+top=15mm,
+}
+\usepackage{setspace}
+\setstretch{1.25}
+
+\begin{document}
+\section*{Quiz 1 Solution}
+\textbf{1.}\\
+\textbf{Solution.} By the axiom of probability, $\mathbb{P}(A_1\cup A_2)=\mathbb{P}(A_1\cup(A_2\setminus A_1))=\mathbb{P}(A_1)+\mathbb{P}(A_2\setminus A_1)$. And $\mathbb{P}(A_2)=\mathbb{P}((A_2\setminus A_1)\cup(A_2\cap A_1))=\mathbb{P}(A_2\setminus A_1)+\mathbb{P}(A_2\cap A_1)$. Therefore, $\mathbb{P}(A_1\cup A_2)=\mathbb{P}(A_1)+\mathbb{P}(A_2)-\mathbb{P}(A_2\cap A_1)$. With this formula,
+\begin{equation*}
+\begin{aligned}
+\mathbb{P}(A_1\cup A_2\cup A_3) &= \mathbb{P}(A_1\cup A_2)+\mathbb{P}(A_3)-\mathbb{P}((A_1\cup A_2)\cap A_3) \\&
+=\mathbb{P}(A_1)+\mathbb{P}(A_2)-\mathbb{P}(A_1\cap A_2)+\mathbb{P}(A_3)-\mathbb{P}((A_1\cap A_2)\cup(A_1\cap A_3)) \\&
+=\mathbb{P}(A_1)+\mathbb{P}(A_2)-\mathbb{P}(A_1\cap A_2)+\mathbb{P}(A_3)
+\\&
+\hspace{5mm}-\mathbb{P}(A_1\cap A_2)-\mathbb{P}(A_1\cap A_3)+\mathbb{P}(A_1\cap A_2\cap A_3).
+\end{aligned}
+\end{equation*}
+$\hspace{\fill}\square$
+\\ \\
+\textbf{2.} \\
+\textbf{Solution.} Let $A_i$ denotes the event that the $i$-th card is placed in the $i$-th box. Then the desired probability is
+\begin{equation*}
+\mathbb{P}(A_1^c\cap\cdots\cap A_n^c)=1-\mathbb{P}(A_1\cup\cdots\cup A_n).
+\end{equation*}
+Also, for any distinct indices $i_1,\cdots,i_k\in\{1,\cdots,n\}$, $1\leq k\leq n$,
+\begin{equation*}
+\mathbb{P}(A_{i_1}A_{i_2}\cdots A_{i_k})=\frac{(n-k)!}{n!}.
+\end{equation*}
+Then by the inclusion-exclusion formula, the desired probability is
+\begin{equation*}
+\mathbb{P}(A_1^c\cap\cdots\cap A_n^c)=1-\mathbb{P}(A_1\cup\cdots\cup A_n)=1-\sum_{k=1}^n\binom{n}{k}\frac{(n-k)!}{n!}=\sum_{k=0}^n(-1)^k\frac{1}{k!}.
+\end{equation*}
+And the limiting probability is
+\begin{equation*}
+\lim_{n\rightarrow\infty}\mathbb{P}(A_1^c\cap\cdots A_n^c)=\lim_{n\rightarrow\infty}\sum_{k=0}^n\frac{(-1)^k}{k!}=1-e^{-1}.
+\end{equation*}
+$\hspace{\fill}\square$
+
+
+
+
+
+\end{document}
