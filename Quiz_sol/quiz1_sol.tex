@@ -23,7 +23,7 @@ top=15mm,
 
 \begin{document}
 \section*{Quiz 1: Give yourself 50 minutes to solve 5 of the following 7 problems. Each problem weights 20 point scores}
-\textbf{1.} For any two events $A$ and $B$ in $\Omega$, verify that $\mathbb{P}(A\cup B)=\mathbb{P}(A)+ \mathbb{P}(B)- \mathbb{P}(A\cap B)$.
+\subsection*{Problem 1} For any two events $A$ and $B$ in $\Omega$, verify that $\mathbb{P}(A\cup B)=\mathbb{P}(A)+ \mathbb{P}(B)- \mathbb{P}(A\cap B)$.
 For three events $A$, $B$ and $C$, prove that
 \begin{equation*}
 \begin{aligned}
@@ -32,19 +32,32 @@ For three events $A$, $B$ and $C$, prove that
 +\mathbb{P}(A\cap B\cap C).
 \end{aligned}
 \end{equation*}
-\textbf{Solution.} By the axiom of probability, $\mathbb{P}(A_1\cup A_2)=\mathbb{P}(A_1\cup(A_2\setminus A_1))=\mathbb{P}(A_1)+\mathbb{P}(A_2\setminus A_1)$. And $\mathbb{P}(A_2)=\mathbb{P}((A_2\setminus A_1)\cup(A_2\cap A_1))=\mathbb{P}(A_2\setminus A_1)+\mathbb{P}(A_2\cap A_1)$. Therefore, $\mathbb{P}(A_1\cup A_2)=\mathbb{P}(A_1)+\mathbb{P}(A_2)-\mathbb{P}(A_2\cap A_1)$. With this formula,
-\begin{equation*}
-\begin{aligned}
-\mathbb{P}(A_1\cup A_2\cup A_3) &= \mathbb{P}(A_1\cup A_2)+\mathbb{P}(A_3)-\mathbb{P}((A_1\cup A_2)\cap A_3) \\&
-=\mathbb{P}(A_1)+\mathbb{P}(A_2)-\mathbb{P}(A_1\cap A_2)+\mathbb{P}(A_3)-\mathbb{P}((A_1\cap A_2)\cup(A_1\cap A_3)) \\&
-=\mathbb{P}(A_1)+\mathbb{P}(A_2)-\mathbb{P}(A_1\cap A_2)+\mathbb{P}(A_3)
-\\&
-\hspace{5mm}-\mathbb{P}(A_1\cap A_2)-\mathbb{P}(A_1\cap A_3)+\mathbb{P}(A_1\cap A_2\cap A_3).
-\end{aligned}
-\end{equation*}
-$\hspace{\fill}\square$
-\\ \\
-\textbf{2.} (Matching problem*) There are a deck of $n$ distinct cards and $n$ distinct boxes. Shuffle
+\textbf{Solution.}
+\begin{enumerate}
+   \item By the axiom of disjoint additivity for probability,
+   \begin{equation*}
+       \begin{aligned}
+        \mathbb{P}(A_1\cup A_2) &=\mathbb{P}(A_1\cup(A_2\setminus A_1))=\mathbb{P}(A_1)+\mathbb{P}(A_2\setminus A_1) , \qquad \text{and}\\
+        \mathbb{P}(A_2) &=\mathbb{P}((A_2\setminus A_1)\cup(A_2\cap A_1))=\mathbb{P}(A_2\setminus A_1)+\mathbb{P}(A_2\cap A_1).
+       \end{aligned}
+   \end{equation*}
+   Therefore, $\mathbb{P}(A_1\cup A_2)=\mathbb{P}(A_1)+\mathbb{P}(A_2)-\mathbb{P}(A_2\cap A_1)$. 
+    $\hspace{\fill}\square$
+
+   \item With the above identity,
+    \begin{equation*}
+    \begin{aligned}
+    \mathbb{P}(A_1\cup A_2\cup A_3) &= \mathbb{P}(A_1\cup A_2)+\mathbb{P}(A_3)-\mathbb{P}((A_1\cup A_2)\cap A_3) \\&
+    =\mathbb{P}(A_1)+\mathbb{P}(A_2)-\mathbb{P}(A_1\cap A_2)+\mathbb{P}(A_3)-\mathbb{P}((A_1\cap A_2)\cup(A_1\cap A_3)) \\&
+    =\mathbb{P}(A_1)+\mathbb{P}(A_2)-\mathbb{P}(A_1\cap A_2)+\mathbb{P}(A_3)
+    \\&
+    \hspace{5mm}-\mathbb{P}(A_1\cap A_2)-\mathbb{P}(A_1\cap A_3)+\mathbb{P}(A_1\cap A_2\cap A_3).
+    \end{aligned}
+    \end{equation*}
+    $\hspace{\fill}\square$
+\end{enumerate}
+
+\subsection*{Problem 2} (Matching problem*) There are a deck of $n$ distinct cards and $n$ distinct boxes. Shuffle
 the cards and placed them into the boxes (Only one card for each boxes), if the $i$-th card
 is placed at the $i$-th box, we say that there is a match. What is the probability of no
 match after a shuffling? Compute the limiting probability when $n\rightarrow\infty$.
@@ -67,9 +80,9 @@ And the limiting probability is
 \end{equation*}
 $\hspace{\fill}\square$
 \\ \\
-\textbf{3.} (Matching problem, continuation**) What is the probability of exactly $m$ matches, $1\leq m\leq n$?
+\subsection*{Problem 3} (Matching problem, continuation**) What is the probability of exactly $m$ matches, $1\leq m\leq n$?
 \\
-\textbf{Solution.} By $\textbf{2.}$, we can know that when we put $m$ cards into $m$ boxes, the number of distributions such that there is no match is $m!\times\mathbb{P}(\text{no match})=m!\sum_{k=0}^m(-1)^k\frac{1}{k!}$. So the total number of distributions such that there has exactly $m$ matches is
+\textbf{Solution.} By the answer of problem 2, we can know that when we put $m$ cards into $m$ boxes, the number of distributions such that there is no match is $m!\times\mathbb{P}(\text{no match})=m!\sum_{k=0}^m(-1)^k\frac{1}{k!}$. So the total number of distributions such that there has exactly $m$ matches is
 \begin{equation*}
 \#\{\text{ways to choose $m$ matches}\}\times \#\{\text{ways to place remaining $n-m$ cards with no match}\}.
 \end{equation*}
@@ -79,12 +92,13 @@ Divided by the total possible outcomes $n!$, we get
 \end{equation*}
 $\hspace{\fill}\square$
 \\ \\
-\textbf{4.} You have $n$ pairs of socks. If $2r$ socks was chosen randomly, what’s the probability of getting exactly $i$ pairs of socks?
+\subsection*{Problem 4} You have $n$ pairs of socks. If $2r$ socks was chosen randomly, what’s the probability of getting exactly $i$ pairs of socks?
 \\
 \textbf{Solution.} The total number of choose $2r$ socks from $n$ pairs is $\binom{2n}{2r}$. The number of the desired choices can be count as follows: First choose the $i$ pairs from $n$ pairs, hence $\binom{n}{i}$ choices. For the remaining $2r-2i$ choices, we can't choose any pair from the remaining $n-i$ pairs, so we can at most pick one sock from each remaining pairs, therefore $\binom{n-i}{2r-2i}\times 2^{2r-2i}$. Hence the probability of choose exactly $i$ pairs is $\frac{\binom{n}{i}\binom{n-i}{2r-2i} 2^{2r-2i}}{\binom{2n}{2r}}$.
 $\hspace{\fill}\square$
 \\ \\
-\textbf{5.} Roll a fair die $10$ times. Compute the probability that at least one number occurs
+\subsection*{Problem 5}
+Roll a fair die $10$ times. Compute the probability that at least one number occurs
 exactly $6$ times.
 \\
 \textbf{Solution.} Define $A_i$ as the event that the number $i$ occurs exactly $6$ times in ten rolls, $1\leq i\leq 6$. Then the desired probability is $\mathbb{P}(A_1\cup A_2\cup\cdots\cup A_6)$. Also, for each $1\leq i\leq 6$, $\mathbb{P}(A_i)=\binom{10}{6}(6-1)^{10-6}/6^{10}$, hence by the inclusion-exclusion formula,
@@ -95,8 +109,7 @@ exactly $6$ times.
 \end{aligned}
 \end{equation*}
 $\hspace{\fill}\square$
-\\ \\
-\textbf{6.} Given two integers $N$ and $K$. The task is to find the number of good permutations of the first $N$ natural numbers. A permutation is called good if there exist at least $N-K$ indices $i,\,1\leq i\leq N$, such that $i$ is at the $i$th position. What is the probability of getting good permutations if $N= 6,\, K=3$?
+\subsection*{Problem 6} Given two integers $N$ and $K$. The task is to find the number of good permutations of the first $N$ natural numbers. A permutation is called good if there exist at least $N-K$ indices $i,\,1\leq i\leq N$, such that $i$ is at the $i$th position. What is the probability of getting good permutations if $N= 6,\, K=3$?
 \\
 \textbf{Solution.} This is an application of the previous matching problem. That $A_i$ denotes the event that we get a permutation with exactly $i$ correct positions. Then the desired probability is
 \begin{equation*}
@@ -108,19 +121,33 @@ since the events are disjoint. Also, by $\textbf{4.}$,
 \end{equation*}
 Thus $\mathbb{P}(A_3)=\frac{1}{18}$, $\mathbb{P}(A_4)=\frac{1}{48}$, $\mathbb{P}(A_5)=0$, $\mathbb{P}(A_6)=\frac{1}{720}$. So the answer is $56/720$.
 $\hspace{\fill}\square$
+\hspace{1 \textwidth}
+\\ \textbf{Another solution.} 
+A cheap way of calculating the answer is to enumerate the number of cases for $A_3, A_4, A_5, A_6$, and then divide the total number of cases by $|\Omega| = 6! $ to get the answer. 
+\[
+    |A_l| = \underbrace{\begin{pmatrix}
+         6 \\
+         l \\
+    \end{pmatrix} }_{\# \text{l number at good position} }\times (\# \text{derangement for }  (1,2,\dots, n-l))
+\]
+The length of derangement in this problem can be counted directly.
 \\ \\
-\textbf{7. } In a school, three-quarters of students are involved in sports, half are involved in cultural activities, and one-eighth are involved in neither. Calculate the probability that a student is involved in\\
+\subsection*{Problem 7} In a school, three-quarters of students are involved in sports, half are involved in cultural activities, and one-eighth are involved in neither. Calculate the probability that a student is involved in\\
 (a) both sports and cultural activities\\
 (b) cultural activities but not sports.\\
 \\
-\textbf{Solution.} (a) By inclusion-exclusion principle, we have
+\textbf{Solution.} 
+\begin{itemize}
+   \item[(a)] By inclusion-exclusion principle, we have
 \begin{equation*}
 \mathbb{P}(\text{both sports and cultural activities})=\frac{3}{4}+\frac{1}{2}-\Big(1-\frac{1}{8}\Big)=\frac{3}{8}.
 \end{equation*}
-(b)
-\begin{equation*}
+    \item[(b)] \begin{equation*}
 \mathbb{P}(\text{cultural activities but no sport})=\frac{1}{2}-\frac{3}{8}=\frac{1}{8}.
 \end{equation*}
+\end{itemize}
+ 
+
 $\hspace{\fill}\square$
 
 
