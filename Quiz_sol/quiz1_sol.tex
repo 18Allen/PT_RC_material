@@ -111,11 +111,11 @@ exactly $6$ times.
 $\hspace{\fill}\square$
 \subsection*{Problem 6} Given two integers $N$ and $K$. The task is to find the number of good permutations of the first $N$ natural numbers. A permutation is called good if there exist at least $N-K$ indices $i,\,1\leq i\leq N$, such that $i$ is at the $i$th position. What is the probability of getting good permutations if $N= 6,\, K=3$?
 \\
-\textbf{Solution.} This is an application of the previous matching problem. That $A_i$ denotes the event that we get a permutation with exactly $i$ correct positions. Then the desired probability is
+\textbf{Solution.} This is an application of the previous matching problem. Let $A_i$ be the event of getting a permutation with exactly $i$ correct positions. Then the desired probability is
 \begin{equation*}
 \mathbb{P}(\text{at least $N-K$ correct positions})=\mathbb{P}\Big(\bigcup_{l=N-K}^NA_{l}\Big)=\sum_{l=N-K}^N\mathbb{P}(A_l),
 \end{equation*}
-since the events are disjoint. Also, by $\textbf{4.}$, 
+since the events are disjoint. Also, by Problem 4, 
 \begin{equation*}
 \mathbb{P}(A_{l})=\frac{1}{l!}\sum_{k=0}^{N-l}(-1)^k\frac{1}{k!},
 \end{equation*}
