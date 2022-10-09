@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.5)  29 SEP 2022 17:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.5)  10 OCT 2022 02:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1492,7 +1492,7 @@ l.27 \end{abstract}
 Package marginnote Info: Using workaround for absolute page number on input line 27.
  (d:/2022 fall/Prob Ta/RC_material/Notes/master.toc
 
-LaTeX Warning: Reference `thm' on page 1 undefined on input line 21.
+LaTeX Warning: Reference `thm' on page 1 undefined on input line 28.
 
 )
 \tf@toc=\write6
@@ -1547,69 +1547,55 @@ Package mdframed Info: mdframed detected package amsthm
 ]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 47.
+(mdframed)              on input line 46.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 56.
-Package hyperref Info: bookmark level for unknown exercise defaults to 0 on input line 56.
+(mdframed)              on input line 55.
+Package hyperref Info: bookmark level for unknown exercise defaults to 0 on input line 55.
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--64
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 70--73
-
- []
-
-[5])
-Underfull \hbox (badness 10000) in paragraph at lines 78--35
+Underfull \hbox (badness 10000) in paragraph at lines 60--63
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--35
+Underfull \hbox (badness 10000) in paragraph at lines 69--72
 
  []
 
+) (d:/2022 fall/Prob Ta/RC_material/Notes/Lectures/lec_2.tex [5]
+Chapter 2.
+Package marginnote Info: Margin note 10.1 is on absolute page 10 on input line 3.
+Package marginnote Info: right page because not two side mode on input line 3.
+Package marginnote Info: xpos seems to be 72.2698pt on input line 3.
+[6
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--35
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--35
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--35
-
- []
-
-[6] [7
+]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 46.
+) [7] [8
 
 ] (d:/2022 fall/Prob Ta/RC_material/Notes/appendix.tex
 Appendix A.
 
-LaTeX Warning: Reference `thm' on page 8 undefined on input line 2.
+LaTeX Warning: Reference `thm' on page 9 undefined on input line 2.
 
 
-LaTeX Warning: Reference `thm' on page 8 undefined on input line 3.
+LaTeX Warning: Reference `thm' on page 9 undefined on input line 3.
 
 
-LaTeX Warning: Reference `thm' on page 8 undefined on input line 4.
+LaTeX Warning: Reference `thm' on page 9 undefined on input line 4.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 4.
-) [8
+) [9
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 45.
  (c:/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [9
+) [10
 
 ] (d:/2022 fall/Prob Ta/RC_material/Notes/master.aux)
 
@@ -1619,24 +1605,24 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 8E96E5EDA130608572CB8BECA4D747CF;587.
+(rerunfilecheck)             Checksum: 5000CA3ACD63498BC0AB879C1E789F1E;762.
 Package logreq Info: Writing requests to 'master.run.xml'.
 \openout1 = `master.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47604 strings out of 479303
- 1066099 string characters out of 5871220
- 1904279 words of memory out of 5000000
- 63825 multiletter control sequences out of 15000+600000
+ 47631 strings out of 479303
+ 1066681 string characters out of 5871220
+ 1904446 words of memory out of 5000000
+ 63838 multiletter control sequences out of 15000+600000
  436945 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 111i,11n,108p,1280b,1593s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 111i,11n,108p,1280b,1594s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on "d:/2022 fall/Prob Ta/RC_material/Notes/master.pdf" (11 pages, 365345 bytes).
+Output written on "d:/2022 fall/Prob Ta/RC_material/Notes/master.pdf" (12 pages, 381589 bytes).
 PDF statistics:
- 311 PDF objects out of 1000 (max. 8388607)
- 250 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
- 189 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 346 PDF objects out of 1000 (max. 8388607)
+ 284 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 213 words of extra memory for PDF output out of 10000 (max. 10000000)
 

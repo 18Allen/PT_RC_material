@@ -1,0 +1,65 @@
+\chapter{RC 2}
+\recitation{1}{13 Oct. 18:30}{}
+
+\section{Review: Random Variables}
+(\cite{Und_Chatterjee} chapter 2) 
+It is a 'function' mapping $\Omega$ to some number, i.e
+\[
+    X : \Omega \to \mathbb{R}
+\]
+\textbf{Notation}  
+\begin{itemize}
+    \item \(X \in A,\quad A \subseteq \mathbb{R}\): The set containing  \(\omega \in \Omega \) such that \(X(\omega ) \in B\). \(X \in B  = \{\omega  \in \Omega | X(\omega ) \in B \}\) 
+\end{itemize}
+\subsection{Discrete Random Variables}
+The \textbf{range} of \(X\) is finite or countable. 
+\begin{itemize}
+    \item \textbf{probability mass function}: A measure on \(x_i\) given by the measure in \(\Omega \)
+    \[
+        f(x_i) = P(X = x_i)
+    \] 
+    \item Because \(X \in x_i\) for \(i = 1,2,\dots\) from a disjoint partition (Why?) of \(\Omega \), we have 
+    \[
+        \sum_{i=1}^{\infty} f(x_i) = P(\Omega ) = 1
+    \]
+    TBD(Panchenko assume that \(\Omega \) is countable )    
+    \item Independence of random variables: 
+    (We won't go through the detail in class, \textbf{strongly recommend} you to check out \cite{Und_Chatterjee} Proposition 3.) 
+    It comes from the Independence of events(\ref{rc1_indep}). This is a theorem showing you the equivalent way of defining independence. 
+    One using subcollection, one using collection of all. 
+    
+    Additional note: An infinite sequence of r.v \(X_1, X_2 , \dots\) is called Independence if \textbf{for any n}, \(X_1, X_2, \dots, X_n\) are independent.   
+\end{itemize}
+\section{Some Discrete r.v}
+\begin{itemize}
+    \item \textbf{Bernoulli r.v} \(\text{Bernoulli}(p) \)  
+    \item \textbf{Binomial r.v} \(\text{binomial}(n,p) \)   
+    TBD calculate the expectation of bin
+    \item \textbf{Poisson r.v} \(\text{Poisson}(\lambda )\)    
+    \item \textbf{Geometric r.v} \(\text{Geometric}(p) \)  
+\end{itemize}
+The most important thing to remember about a r.v (before a test) are 1. PMF; 2. expectation; 3. Varaiance. Examples about the r.v or the relation with other r.v's are helpful, too. You can those info in \cite{Gravner2021} Chapter 5.
+
+% From Bernoulli to Binomial 
+\subsection{From Bernoulli to Binomial}
+% From Binomial to Poisson
+\begin{exercise}[Peak of Binomial distribution]
+    (Feller p.59 q.5) The probability \(p_{k}\) that a given  cell contains exactly k balls (with a total \(r\) balls and \(n\) boxes) is given by the binomial distribution. 
+    Show that the most probable number \(v\) satisfies 
+    \[
+        \frac{r+n-1}{n} \leq  v \leq \frac{r+1}{n}
+    \]
+    (In other words, it is asserted that \(p_0 < p_1 < \dots < p_{v-1} \leq p_{v} >  p_{v+1} \dots > p_r \) )
+\end{exercise}
+(Hint: Don't use derivative to find local extremum).
+
+\subsection{From Binomial to Poisson}
+
+
+\subsection{Estimate the error bound}
+
+
+% The error bound Theorem 1.1
+% Example of Poisson
+% Panchenko Lemma 1.2 as practice of adv. cal. (Why do we need to have integrable)
+% Or stability of Poisson
