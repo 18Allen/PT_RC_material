@@ -1,7 +1,8 @@
 \chapter{RC 2}
 \recitation{1}{13 Oct. 18:30}{}
 
-\section{Review: Random Variables}
+\section{Review}
+\subsection{Random Variables}
 (\cite{Und_Chatterjee} chapter 2) 
 It is a 'function' mapping $\Omega$ to some number, i.e
 \[
@@ -30,24 +31,90 @@ The \textbf{range} of \(X\) is finite or countable.
     
     Additional note: An infinite sequence of r.v \(X_1, X_2 , \dots\) is called Independence if \textbf{for any n}, \(X_1, X_2, \dots, X_n\) are independent.   
 \end{itemize}
-\section{Some Discrete r.v}
+\subsection{Some Discrete r.v}
+The most important thing to remember about a r.v (before a test) are 1. PMF; 2. expectation; 3. Varaiance. Examples about the r.v or the relation with other r.v's are helpful, too. You can those info in \cite{Gravner2021} Chapter 5.\\
 \begin{itemize}
     \item \textbf{Bernoulli r.v} \(\text{Bernoulli}(p) \)  
     \item \textbf{Binomial r.v} \(\text{binomial}(n,p) \)   
-    TBD calculate the expectation of bin
+
     \item \textbf{Poisson r.v} \(\text{Poisson}(\lambda )\) 
        
     \item \textbf{Geometric r.v} \(\text{Geometric}(p) \)  
 \end{itemize}
-The most important thing to remember about a r.v (before a test) are 1. PMF; 2. expectation; 3. Varaiance. Examples about the r.v or the relation with other r.v's are helpful, too. You can those info in \cite{Gravner2021} Chapter 5.\\
 
-\begin{exercise}[Poisson random variables]
+\subsection{Joint Probability Mass Function}
+Let \(X_1, \dots , X_n\) be discrete random variables defined on the same sample space. The function
+\[
+    f(x_1, \dots, x_n) = P(X_1= x_1,\dots, X_n = x_n )
+\]
+is called the joint probability mass function (joint p.m.f) of the r.v \(X_1, \dots, X_n\).
+
+\textbf{marginal p.m.f}: 
+sum out the rest variables then the one(s) you are interested in, i.e
+\[
+    f_i(x) = \sum_{x_1,\dots, x_{i-1},x_{i+1},\dots,x_n} f(x_1,\dots, x_{i-1},x_{i+1},\dots,x_n) 
+\]
+
+\begin{theorem*}
+    Let \(X_1,\dots, X_n\) be discrete random variables with joint p.m.f \(f\). Suppose that 
+    \[
+        f(x_1, \dots, x_n) = h_1(x_1)\cdots h_n(x_n)
+    \] 
+    for some p.m.f \(h_1,\dots, h_n\). Then \(X_1,\dots, X_n\) are independent. and \(f_i = h_i\), for \(i = 1,\dots, n.\)    
+\end{theorem*}
+
+\begin{eg}[Joint p.m.f]
+    .\\
+    \begin{itemize}
+        \item (In the lecture note) Compute the p.m.f of Geometric r.v from Bernoulli's
+        \item Compute the p.m.f of Binomial r.v from Bernoulli 
+        \item (Joint p.m.f when not independent) Consider two independent r.v X, Y follows the p.m.f
+        \[
+            f(-1) = f(0) = f(1) = \frac{1}{3}
+        \]
+        Then, we consider \(U = XY, V = Y\). Compute the respective p.m.f of \(U\) and \(V\). Also, compute the joint p.m.f \(f_{U,V}(u,v)\). What do you observe?    
+    \end{itemize}
+\end{eg}
+
+
+\begin{exercise}[stability of Poisson random variables]
     Suppose $X_n\sim\text{Pois}(\lambda)$ are i.i.d. Then\\
-    1. Define $S_n=X_1+\cdots+X_n$. Show that $S_n\sim\text{Pois}(n\lambda)$.\\
-    2. 
+    Define $S_n=X_1+\cdots+X_n$. Show that $S_n\sim\text{Pois}(n\lambda)$.\\
 \end{exercise}
 
+
+
+
+
+\section{Preview: Expectation}
+Let \(X\) be be a discrete random variable. The expected value or expectation or mean of \(X\) is defined as
+\[
+    E(X) = \sum_{x} x P(X=x)
+\]
+Some simple example is like 'The expected number of head of fair coin toss', or 'average outcome of rolling a six-sided dice' etc. 
+
+\textbf{How do we extend the idea to multiple random variables?}
+
+\begin{theorem*}
+   (Proposition 6. in \cite{Und_Chatterjee}). Let \(X_1,\dots , X_n\) be discrete random variables and 
+   \(Y =f(X_1,\dots, X_n) \) for some function \(f\). Then,
+   \[
+    E(Y) = \sum_{x_1,\dots,x_n}f(x_1,\dots,x_n) P(X_1 = x_1, \dots, X_n = x_n).
+   \] 
+\end{theorem*}
+With this notion we can use the linearity of expectation.
+
+\begin{exercise}[Linearity of expectation]
+    .\\
+    \begin{itemize}
+        \item Acquire the expectation of Binomial r.v by direct computation and linearity
+        \item Define two independent r.v \(X_1\)~Poisson(\(\lambda_1  \) ) and \(X_2\)~Poisson(\(\lambda_2 \) )  Calculate the expectation of \(Y = X_1 + X_2\) by the linearity of expectation and by the stability of Poisson random variables.
+    \end{itemize}
+\end{exercise}
+\textbf{Note} The Linearity of expectation does not require the sequence of r.v being independent. (Next time we will show that this is not true for \textbf{variance} )
+
 % From Bernoulli to Binomial 
+\section{Extra note}
 \subsection{From Bernoulli to Binomial}
 % From Binomial to Poisson
 \begin{exercise}[Peak of Binomial distribution]
@@ -63,7 +130,7 @@ The most important thing to remember about a r.v (before a test) are 1. PMF; 2. 
 \subsection{From Binomial to Poisson}
 
 
-\subsection{Estimate the error bound}
+%\subsection{Estimate the error bound}
 
 
 % The error bound Theorem 1.1
