@@ -80,6 +80,13 @@ Using Poisson approximation to $L$, one can get
 \end{equation*}
 if $\lambda = 1000q$ and $X\sim Pois(\lambda)$.
 
+\begin{eg}
+    (\cite{IntroPanchenko} Exercise 1.3.5.) The Kicker for the Dallas Cowboys scores
+an average of 2 Field goals per game. Over this players 150
+game career, what is the probability that in at least one game
+he scored exactly 6 Field goals?
+    
+\end{eg}
 
 \section{Variance}
 Variance of a random variable \(X\) is the second moment of the demeaned \(X-E[X]\), i.e
@@ -90,16 +97,15 @@ Variance of a random variable \(X\) is the second moment of the demeaned \(X-E[X
     Calculate the variance of Poisson random variable
 \end{eg}
 \textbf{Note}: Second moments for some random variable may not exists (\(L^2\) will be save ), and in those cases, the variance will not be defined. See Cauchy distribution.
-\section{Covariance}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.3\textwidth]{./Figures/Covariance_trends.png}
-    \caption{From wiki}
-\end{figure}
-
 
 \section{Extra note}
 %\subsection{Estimate the error bound}
+\begin{exercise}
+    Let \(X\) and \(Y\) be independent geometric random variables with respective parameters \(\alpha\) and \(\beta \). Show that  
+    \[
+        P(X+Y = z) = \frac{\alpha \beta }{\alpha -\beta} \{(1-\beta)^{z-1} - (1 - \alpha ) \}
+    \]
+\end{exercise}
 
 
 % The error bound Theorem 1.1
