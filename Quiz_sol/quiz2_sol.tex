@@ -21,6 +21,20 @@ top=15mm,
 \usepackage{setspace}
 \setstretch{1.25}
 
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+    axis x line=middle,    % put the x axis in the middle
+    axis y line=middle,    % put the y axis in the middle
+    axis line style={<->}, % arrows on the axis
+    xlabel={$x$},          % default put x on x-axis
+    ylabel={$y$},          % default put y on y-axis
+    },
+    cmhplot/.style={color=red,mark=none,line width=1pt,<->},
+    soldot/.style={color=red,only marks,mark=*},
+    holdot/.style={color=red,fill=white,only marks,mark=*},
+}
+
+\tikzset{>=stealth}
 \begin{document}
 
 \noindent
@@ -51,8 +65,22 @@ Let X be a discrete random variable with the following p.m.f
         \end{cases}, x \in \mathbb{N}
     \] 
     Other equivalent form is permitted, too.
-    \item Plot the function \(F_X(x)\).
-        TBD(Tikz)
+    \item Plot the function \(F_X(x)\).\\
+        \begin{tikzpicture}
+            \begin{axis}[
+                    xmin=0,xmax=11,
+                    ymin=0,ymax=1.5,
+                ]
+                \addplot[cmhplot,-,domain=0:3]{0};
+                \addplot[cmhplot,-,domain=3:5]{0.3};
+                \addplot[cmhplot,-,domain=5:8]{0.5};
+                \addplot[cmhplot,-,domain=8:10]{0.8};
+                \addplot[cmhplot,->,domain=10:11]{1};
+                \addplot[holdot]coordinates{(3,0)(5,0.3)(8,0.5)(10,0.8)};
+                \addplot[soldot]coordinates{(3,0.3)(5,0.5)(8,0.8)(10,1)};
+                \addplot[mark=none,black,dotted] coordinates {(0,1) (10,1)};
+            \end{axis}
+        \end{tikzpicture}
 \end{enumerate}
 
 
