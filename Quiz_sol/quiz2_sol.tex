@@ -245,7 +245,14 @@ To confirm the guess, take any \(x\in S_X\)
 The same goes for \(y\in S_Y\), the guess is correct that \(g(x), h(y)\) is the p.m.f of \(X, Y\), respectively. \(\square\)  
 
 \item In a sequence of tosses of a p-coin, let $X$ be the number of tosses required to get the first head and $Y$ be the number of tosses to get the second head after getting the first head. Show that $X$ and $Y$ are independent Geo(p) random variables.\\
-\textbf{Solution.}  
+\textbf{Solution.}  \\
+\(\{X = n\}\) refer to an event that you fail \(n-1\) times and success in the nth try. Hence, it should be obvious that \(X\) follows Geo(p). 
+On the other hand, \(\{Y = k\}\) implies that you get another head at kth try after you get the first head. Alternative way to see this is by applying the result of  4.(b). Anyway, \( Y\) also follows Geo(p).   
+To show the two random variable are independent, we may consider every \(n,k \in \mathbb{N}\) 
+\[
+    P(X = n, Y = k) = P(\{\text{first head at n-th try, and the second head at (n+k)-th try} \}) 
+\]
+The latter is \((1-p)^{n-1}p(1-p)^{k-1}p\), which is the same as \(P(X=x)P(Y =k)\). Therefore, \(X,Y\) are independent. \(\square\)   
 \end{enumerate}
 
 \item
@@ -258,7 +265,7 @@ for any collection \(n_1, n_2, \dots, n_t\) of non-negative integers with sum \(
 Calculate the marginal probability of \(N_1\), i.e calculate \(P(N_1 = n_1), n_1 = 0,1,\dots,n\).
 
 \textbf{Solution.} The question seems to be a bit complicated, but the marginal is actually a binomial. 
-TBD
+
 
 \begin{equation*}
    \begin{aligned}
