@@ -228,8 +228,24 @@ If \(X\) follows Geo(\(p\)),
 \begin{enumerate}
 \item
 Let $X$ and $Y$ be discrete random variables with the joint probability mass function $f(x,y)$. Assume that $f(x,y)=g(x)k(y)$ for some
-probability mass functions $g(x)$ and $k(y)$. Prove that $X$ and $Y$ are independent.
-\item In a sequence of tosses of a p-coin, let $X$ be the number of tosses required to get the first head and $Y$ be the number of tosses to get the second head after getting the first head. Show that $X$ and $Y$ are independent Geo(p) random variables.
+probability mass functions $g(x)$ and $k(y)$. Prove that $X$ and $Y$ are independent.\\
+\textbf{Solution.}\\ 
+By the definition in the handout, a collection of random variables \(X,Y \) is called independent if for any \(x\) in the range of \(X\) (call it \(S_X\) ), and \(y\) in the range of \(Y\) (call it \(S_Y\) ) we have
+\[
+    P(X =x, Y = y) = P(X = x)P(Y = y)
+\]
+It will be great to have \(g(x)\) as p.m.f of \(X\), and \(h(y)\) as p.m.f of \(Y\). Because if this is true, we have 
+\[
+    P(X = x, Y = y) = f(x,y) = g(x)h(y) = P(X= x)P(Y = y),
+\] 
+To confirm the guess, take any \(x\in S_X\)
+\[
+    P(X = x) =  \sum_{y\in S_Y}P(X =x, Y = y) = g(x) \underbrace{\sum_{y\in S_Y}h(y) }_{=1} = g(x)
+\]  
+The same goes for \(y\in S_Y\), the guess is correct that \(g(x), h(y)\) is the p.m.f of \(X, Y\), respectively. \(\square\)  
+
+\item In a sequence of tosses of a p-coin, let $X$ be the number of tosses required to get the first head and $Y$ be the number of tosses to get the second head after getting the first head. Show that $X$ and $Y$ are independent Geo(p) random variables.\\
+\textbf{Solution.}  
 \end{enumerate}
 
 \item
@@ -241,7 +257,24 @@ Let the number of occurrences of the ith occurances of the ith outcome in n inde
 for any collection \(n_1, n_2, \dots, n_t\) of non-negative integers with sum \(n\). The vector \(N\) is said to have the multinomial distribution.
 Calculate the marginal probability of \(N_1\), i.e calculate \(P(N_1 = n_1), n_1 = 0,1,\dots,n\).
 
+\textbf{Solution.} The question seems to be a bit complicated, but the marginal is actually a binomial. 
+TBD
 
+\begin{equation*}
+   \begin{aligned}
+    P(N_1 = n_1) &= \sum_{\substack{n_2,n_3,\dots, n_t\\ n_1 + n_2 + \cdots + n_t = n}} \frac{n!}{n_1!n_2!\cdots n_t!}p_1^{n_1} p_2^{n_2}\cdots p_t^{n_t} 
+            \\ &= \frac{n!}{n_1!(n-n_1)!}p_1^{n_1}\sum_{\substack{n_2,n_3,\dots, n_t\\ n_1 + n_2 + \cdots + n_t = n}} \frac{(n-n_1)!}{n_2!\cdots n_t!}p_2^{n_2}\cdots p_t^{n_t}
+            \\ &= \frac{n!}{n_1!(n-n_1)!}p_1^{n_1}
+            \\ & \cdot \sum_{n_2 = 0 }^{n-n_1} \frac{(n-n_1)!}{n_2!(n-n_{1}-n_2)!}p_2^{n_2}\sum_{n_3=0}^{n-n_{1}-n_2 } \cdots \underbrace{\sum_{n_{t-1}=0}^{n- n_1 -\cdots-n_{t-2}} \frac{(n-n_{1}-\cdots-n_{t-2}  )!}{n_{t-1}!n_t!} p_{t-1}^{n_{t-1}}p_t^{n_t}}_{(p_{t-1}+p_t)^{n-n_1-\cdots-n_{t-2} }}
+            \\ &= \frac{n!}{n_1!(n-n_1)!}p_1^{n_1}
+            \\ & \cdot \sum_{n_2 = 0 }^{n-n_1} \frac{(n-n_1)!}{n_2!(\color{red}n-n_{1}-n_2\color{black})!}p_2^{n_2} (p_3 + p_4 + \cdots + p_t )^{\color{red}n-n_{1}-n_2\color{black}} 
+            \\ &= \frac{n!}{n_1!(n-n_1)!}p_1^{n_1}\underbrace{(p_2 +\cdots+p_t)^{n-n_1}}_{(1-p_1)^{n-n_1}} = \begin{pmatrix}
+                 n \\
+                 n_1 \\
+            \end{pmatrix} p_1^{n_1}(1-p_1)^{n-n_1}
+    \end{aligned} 
+\end{equation*}
+Hence, the marginal of \(N_1\) follows binomial distribution \(\square\)  
 
 \end{enumerate}
 
