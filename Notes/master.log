@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.5)  20 OCT 2022 12:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.5)  27 OCT 2022 12:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1300,7 +1300,9 @@ Package: appendix 2020/02/08 v1.2c extra appendix facilities
 \c@@pps=\count504
 \c@@ppsavesec=\count505
 \c@@ppsaveapp=\count506
-)) (c:/texlive/2020/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+)) (c:/texlive/2020/texmf-dist/tex/latex/psnfss/avant.sty
+Package: avant 2020/03/25 PSNFSS-v9.3 (SPQR) 
+) (c:/texlive/2020/texmf-dist/tex/latex/adjustbox/adjustbox.sty
 Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
  (c:/texlive/2020/texmf-dist/tex/latex/adjustbox/adjcalc.sty
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
@@ -1337,25 +1339,28 @@ Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
 )
 \@quotelevel=\count508
 \@quotereset=\count509
- (d:/2022 fall/Prob Ta/RC_material/Notes/master.aux)
+LaTeX Font Info:    Trying to load font information for T1+pag on input line 19.
+ (c:/texlive/2020/texmf-dist/tex/latex/psnfss/t1pag.fd
+File: t1pag.fd 2001/06/04 font definitions for T1/pag.
+) (d:/2022 fall/Prob Ta/RC_material/Notes/master.aux)
 \openout1 = `master.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (c:/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/english.lbx
@@ -1377,9 +1382,9 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'master.bbl' found.
  (d:/2022 fall/Prob Ta/RC_material/Notes/master.bbl)
-Package biblatex Info: Reference section=0 on input line 17.
-Package biblatex Info: Reference segment=0 on input line 17.
-Package hyperref Info: Link coloring ON on input line 17.
+Package biblatex Info: Reference section=0 on input line 19.
+Package biblatex Info: Reference segment=0 on input line 19.
+Package hyperref Info: Link coloring ON on input line 19.
  (c:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (c:/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1389,9 +1394,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count510
 )
-LaTeX Info: Redefining \ref on input line 17.
-LaTeX Info: Redefining \pageref on input line 17.
-LaTeX Info: Redefining \nameref on input line 17.
+LaTeX Info: Redefining \ref on input line 19.
+LaTeX Info: Redefining \pageref on input line 19.
+LaTeX Info: Redefining \nameref on input line 19.
  (d:/2022 fall/Prob Ta/RC_material/Notes/master.out) (d:/2022 fall/Prob Ta/RC_material/Notes/master.out)
 \@outlinefile=\write5
 \openout5 = `master.out'.
@@ -1465,31 +1470,36 @@ Dictionary: translator-basic-dictionary, Language: English
 )
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.17} (current compat level: 1.13).
 
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 17.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 19.
 (c:/texlive/2020/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
-(Font)              using `U/stmry/m/n' instead on input line 17.
+(Font)              using `U/stmry/m/n' instead on input line 19.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 17.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
 (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 17.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 19.
  (c:/texlive/2020/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `T1/pag/b/n' in size <10> not available
+(Font)              Font shape `T1/pag/db/n' tried instead on input line 23.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.27 \end{abstract}
+l.29 \end{abstract}
                     [1]
-Package marginnote Info: Using workaround for absolute page number on input line 27.
+Package marginnote Info: Using workaround for absolute page number on input line 29.
+LaTeX Font Info:    Font shape `T1/pag/b/n' in size <24.88> not available
+(Font)              Font shape `T1/pag/db/n' tried instead on input line 33.
  (d:/2022 fall/Prob Ta/RC_material/Notes/master.toc)
 \tf@toc=\write6
 \openout6 = `master.toc'.
@@ -1504,13 +1514,20 @@ l.1 \chapter
 Package marginnote Info: Using workaround for absolute page number on input line 1.
 
 Chapter 0.
+LaTeX Font Info:    Font shape `T1/pag/b/n' in size <20.74> not available
+(Font)              Font shape `T1/pag/db/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `T1/pag/b/n' in size <14.4> not available
+(Font)              Font shape `T1/pag/db/n' tried instead on input line 3.
 Package marginnote Info: Margin note 6.1 is on absolute page 6 on input line 4.
 Package marginnote Info: right page because not two side mode on input line 4.
 Package marginnote Info: xpos seems to be 72.2698pt on input line 4.
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 4.
-(c:/texlive/2020/texmf-dist/tex/latex/base/t1cmss.fd
-File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [2
+LaTeX Font Info:    Trying to load font information for TS1+pag on input line 6.
+(c:/texlive/2020/texmf-dist/tex/latex/psnfss/ts1pag.fd
+File: ts1pag.fd 2001/06/04 font definitions for TS1/pag.
+)
+LaTeX Font Info:    Font shape `T1/pag/b/n' in size <12> not available
+(Font)              Font shape `T1/pag/db/n' tried instead on input line 13.
+ [2
 
 ]
 Package mdframed Info: mdframed detected package amsthm 
@@ -1526,8 +1543,8 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 67.
 
-Overfull \hbox (27.69557pt too wide) in paragraph at lines 67--70
-\T1/cmr/m/n/10 Three mar-ried cou-ples take seats around a ta-ble at ran-dom. Com-pute $\OML/cmm/m/it/10 P\OT1/cmr/m/n/10 ([])$\T1/cmr/m/n/10 .
+Overfull \hbox (77.29263pt too wide) in paragraph at lines 67--70
+\T1/pag/m/n/10 Three mar-ried cou-ples take seats around a ta-ble at ran-dom. Com-pute $\OML/cmm/m/it/10 P\OT1/cmr/m/n/10 ([])$\T1/pag/m/n/10 .
  []
 
 ) (d:/2022 fall/Prob Ta/RC_material/Notes/Lectures/lec_1.tex [3]
@@ -1538,12 +1555,25 @@ Package marginnote Info: xpos seems to be 72.2698pt on input line 4.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 31.
+
+Overfull \hbox (0.39464pt too wide) in paragraph at lines 31--32
+[][]\T1/pag/db/n/10 Example. [][]\T1/pag/m/n/10 Let $\OT1/cmr/m/n/10 
+ = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 6\OMS/cmsy/m/n/10 g$\T1/pag/m/n/10 , find a min-i-mal* $\OML/cmm/m/it/10 ^^[$\T1/pag/m/n/10 -algebra that con-tains the sets $\OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 3\OMS/cmsy/m/n/10 g\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 1\OMS/cmsy/m/n/10 g$ 
+ []
+
+LaTeX Font Info:    Font shape `T1/pag/m/it' in size <10> not available
+(Font)              Font shape `T1/pag/m/sl' tried instead on input line 36.
 [4
 
 ]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 46.
+
+Overfull \hbox (2.90024pt too wide) in paragraph at lines 47--52
+\T1/pag/m/n/10 Con-sider a reg-u-lar tetra-he-dron die painted blue, red and green on three sides and painted
+ []
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 55.
@@ -1594,6 +1624,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--83
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 99.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 104.
+[7]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 107.
@@ -1602,10 +1636,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--110
 
  []
 
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 113.
-[7]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 120.
@@ -1629,6 +1659,11 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 31.
+
+Overfull \hbox (9.98933pt too wide) in paragraph at lines 32--35
+[][]\T1/pag/db/n/10 Example \T1/pag/m/n/10 (HW5,Q4)\T1/pag/db/n/10 . [][]\T1/pag/m/n/10 ([[][]Pan19[][]] Ex-er-cise 1.3.6) When you bet on black in Roulette, your chances
+ []
+
 [9
 
 ]
@@ -1641,35 +1676,66 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 104.
-) [10]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 45.
+) (d:/2022 fall/Prob Ta/RC_material/Notes/Lectures/lec_4.tex [10]
+Chapter 4.
+Package marginnote Info: Margin note 15.1 is on absolute page 15 on input line 4.
+Package marginnote Info: right page because not two side mode on input line 4.
+Package marginnote Info: xpos seems to be 72.2698pt on input line 4.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 13.
+
+Overfull \hbox (11.87315pt too wide) in paragraph at lines 13--14
+[][]\T1/pag/db/n/10 Exercise. [][]\T1/pag/m/n/10 Find a coun-terex-am-ple of two dis-crete ran-dom vari-able $\OML/cmm/m/it/10 X; Y$ \T1/pag/m/n/10 such that $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X; Y\OT1/cmr/m/n/10 ) =
+ []
+
+
+Overfull \hbox (7.67729pt too wide) in paragraph at lines 17--18
+\T1/pag/m/n/10 ([[][]Cha[][]] p.33) The method of in-di-ca-tors is a tech-nique for eval-u-at-ing the ex-pected value/variance
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 20.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 33.
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--36
+
+ []
+
+[11
+
+]) [12]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 47.
  (c:/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [11
+) [13
 
 ] (d:/2022 fall/Prob Ta/RC_material/Notes/master.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: C4930633587E458C13E796479B168819;954.
+(rerunfilecheck)             Checksum: 21DAE56000C6F296E37D52B41F96FDD5;1118.
 Package logreq Info: Writing requests to 'master.run.xml'.
 \openout1 = `master.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47693 strings out of 479303
- 1067963 string characters out of 5871220
- 1914026 words of memory out of 5000000
- 63875 multiletter control sequences out of 15000+600000
- 436945 words of font info for 118 fonts, out of 8000000 for 9000
+ 47778 strings out of 479303
+ 1069033 string characters out of 5871220
+ 1912513 words of memory out of 5000000
+ 63939 multiletter control sequences out of 15000+600000
+ 472447 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,12n,108p,1280b,1594s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on "d:/2022 fall/Prob Ta/RC_material/Notes/master.pdf" (13 pages, 418221 bytes).
+{c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/avantgar/uagd8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/avantgar/uagk8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/avantgar/uagko8a.pfb>
+Output written on "d:/2022 fall/Prob Ta/RC_material/Notes/master.pdf" (15 pages, 250505 bytes).
 PDF statistics:
- 408 PDF objects out of 1000 (max. 8388607)
- 342 compressed objects within 4 object streams
- 90 named destinations out of 1000 (max. 500000)
- 245 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 404 PDF objects out of 1000 (max. 8388607)
+ 346 compressed objects within 4 object streams
+ 104 named destinations out of 1000 (max. 500000)
+ 269 words of extra memory for PDF output out of 10000 (max. 10000000)
 
