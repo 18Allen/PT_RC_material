@@ -14,16 +14,27 @@ Variance of a random variable \(X\) is the second moment of the demeaned \(X-E[X
 \end{exercise}
 Answer: \footnote[1]{\(Y\) with \(f_y(1) = f_y(-1) = f(0) = \frac{1}{3}\) (uniform), and \(X = |Y|\) } 
 \section{The method of indication}
-(\cite{Und_Chatterjee} p.33) The method of indicators is a technique for evaluating the expected value/variance of a random variable by finding a way to write it as a sum of indicator function
+(\cite{Und_Chatterjee} p.33)" The method of indicators is a technique for evaluating the expected value/variance of a random variable by finding a way to write it as a sum of indicator function."
+
+The \textbf{indicator} of \(A\) is a random variable, denoted by \(1_A\), (you can understand it as taking \(A\) or not), defined as follows  
+\[
+    1_A(\omega) = \begin{cases} 1, \quad \text{if } \omega \in A \\ 0,\quad \text{if } \omega \notin A \end{cases}
+\]
+
+If \(X\) can be represented as \(X = \sum_{i=1}^{n} 1_{A_i}\), we can use \textbf{linearity of expectation} to write 
+\[
+    E[X] = \sum_{i=1}^{n} E[1_{A_i}]
+\]  
+(Remember here we don't have to worry about independence of \(1_{A_i}\) .)
 \subsection{For expectation}
-\begin{eg}
+\begin{eg}[Coin Run ].\\
    \begin{itemize}
        \item A biased coin is tossed \(n\)  times, and heads shows with probability p on each toss. A run is a
 sequence of throws which result in the same outcome, so that, for example, the sequence 
 \[
-HHTHTIH
+HHTHTTH
 \]    
-contains five runs. Show that the expected number of runs is 1 + 2(n - l)p(l - p). Find the variance
+contains five runs. Show that the expected number of runs is \(1 + 2(n - l)p(1 - p) \). Find the variance
 of the number of runs. 
         \item As a review, what is the expected length of a run. 
         \item A head run is simply a continuous sequence of heads. Consider the first problem but with head run.
@@ -35,4 +46,4 @@ been picked at random, find the mean number of surviving couples. This problem w
 Daniel Bernoulli in 1768.\\
 \end{exercise}
 Hint: Find indicator on the survival for each couple.
-\subsection{For variance}
+%\subsection{For variance}
