@@ -42,8 +42,10 @@ Show that the events \(A_{12}, A_{23}, A_{13}\) are pairwise independent but not
     \item \textbf{1. (Poisson $+$ Conditioning)} In your pocket there is a random number $N$ of coins, where $N$ has the Poisson distribution with parameter $\lambda$. You toss each coin once, with heads showing with probability $p$ each time.\\
     (a) Compute $\mathbb{P}(H=h\mid N=n)$, where $H$ is the total number of heads. \\
     (b) Show that the total number of heads has the Poisson distribution with parameter $\lambda p$.
-    \item \textbf{2. (Modified by Homework 4.4.)} You and your opponent both roll a fair die. If one get a greater number than the other one, and that number $>3$, then the game ends and whoever rolls the larger number wins. Otherwise, we repeat the game.\\
+    \item \textbf{2. (Refer to Homework 4.4.)} You and your opponent both roll a fair die. If one get a greater number than the other one, and that number $>3$, then the game ends and whoever rolls the larger number wins. Otherwise, we repeat the game.\\
     (a) Let $N$ be the number of rounds in this game. Write down the p.m.f. of $N$. \\
+    \textbf{Solution (a).} $\mathbb{P}(N=n)=(1-p)^{n-1}p$ where $p=\frac{2}{3}$.
+    $\hspace{\fill}\square$\\
     (b) What is $P(\text{you win})$? 
     \item \textbf{3. (Normalize constant)}\\
 Consider a function \(f\) defined on \(\textbf{2},3,4,\dots\) such that \(f(x) = C \frac{1}{x(x+1)}\), where \(C\) is a constant. Please find \(C\) such that \(f\) is a pmf. 
@@ -57,60 +59,100 @@ Consider a function \(f\) defined on \(\textbf{2},3,4,\dots\) such that \(f(x) =
     Suppose there are \(n\) students in a class, and each has birthday equally likely to be 1 of 365 days (no leap year). 
     What is the expectation of number of distinct birthday?
     \item \textbf{2. (Expectation and variance of matchings)} Let $S_n$ denotes the number of matchings of a random permutation of $n$ cards. Compute $\mathbb{E}(S_n)$ and $Var(S_n)$.
-    \item \textbf{3. (Random sum)} Let $(X_i)_{1\leq i\leq n}$ be a sequence $n$ $i.i.d.$ random variables with
+    \item \textbf{3. (Refer to Homework 6.11.)} Let $(X_i)_{1\leq i\leq n}$ be a sequence $n$ $i.i.d.$ random variables with
 \begin{equation*}
 \mathbb{P}(X_i=1)=\mathbb{P}(X_i=-1)=\frac{1}{2}.
 \end{equation*}
-Let $N$ be a random variable taking value from $\{1,\cdots,n\}$ with equal probability, independent to $(X_i)_{1\leq i\leq n}$. Define $S_k=X_1+X_2+\cdots+X_k$ for $1\leq k\leq n$.\\
-(a) What is the variance of the random sum, $Var(S_N)$? \\
-(b) Let $M$ be a random variable that has the same distribution as $N$, but independent to $N$ and $(X_i)_{1\leq i\leq n}$. What is $Cov(S_N,S_M)$? (You may encounter the calculation of $1^2+2^2+\cdots+(k-1)^2=\frac{k(k-1)(2k-1)}{6}$)
-
-
+Define $S_k=X_1+X_2+\cdots+X_k$ for $1\leq k\leq n$ as the $k$-th partial sum.\\
+(a) Let $N$ be a random variable taking values from $\{1,\cdots,n\}$ with equal probability, independent to $(X_i)_{1\leq i\leq n}$. What is the variance of the random sum, $Var(S_N)$? \\
+(b) Let $M$ be a random variable that has the same distribution as $N$ in (a), but independent to $N$ and $(X_i)_{1\leq i\leq n}$. What is $Cov(S_N,S_M)$? (You may encounter the calculation of $1^2+2^2+\cdots+(k-1)^2=\frac{k(k-1)(2k-1)}{6}$)\\
+\textbf{Solution (a).} Write $S_N=S_N\mathds{1}_{\{N=1\}}+\cdots+S_N\mathds{1}_{\{N=n\}}$, then by linearity of expectation,
+\begin{equation*}
+\begin{aligned}
+\mathbb{E}\big(S_N^2\big) &= \sum_{k=1}^n\mathbb{E}\big(S_N^2\mathds{1}_{\{N=k\}}\big)=\sum_{k=1}^n\mathbb{E}\big(S_k^2\mathds{1}_{\{N=k\}}\big)
+\end{aligned}
+\end{equation*}
+Since $(X_i)_{1\leq i\leq n}$ and $N$ are independent, by RHS we have
+\begin{equation*}
+\mathbb{E}\big(S_N^2\big)=\sum_{k=1}^n\mathbb{E}\big(S_k^2\big)\mathbb{E}(\mathds{1}_{\{N=k\}})=\sum_{k=1}^nk\mathbb{P}(N=k)=\sum_{k=1}^n\frac{k}{n}=\frac{n+1}{2}.
+\end{equation*}
+It's easy to see $\mathbb{E}(S_N)=0$ by  this method. Hence $Var(S_N)=\mathbb{E}\big(S_N^2\big)=\frac{n+1}{2}$.
+$\hspace{\fill}\square$\\
+\textbf{Solution (b).} Similarly, write $S_NS_M=S_NS_M\mathds{1}_{\{N=M\}}+S_NS_M\mathds{1}_{\{N\neq M\}}$ and compute the expectation respectively. Since $N$ and $M$ are $i.i.d.$,
+\begin{equation*}
+\mathbb{E}(S_NS_M\mathds{1}_{\{N\neq M\}})=\mathbb{E}(S_NS_M\mathds{1}_{\{N < M\}})+\mathbb{E}(S_NS_M\mathds{1}_{\{N > M\}})=2\mathbb{E}(S_NS_M\mathds{1}_{\{N<M\}}),
+\end{equation*}
+and it easy to see that $\mathds{1}_{\{N<M\}}=\sum_{i=1}^{n-1}\sum_{j=i+1}^n\mathds{1}_{\{N=i,\,M=j\}}$, thus
+\begin{equation*}
+\begin{aligned}
+\mathbb{E}(S_NS_M\mathds{1}_{\{N<M\}}) &= \sum_{i=1}^{n-1}\sum_{j=i+1}^n\mathbb{E}(S_NS_M\mathds{1}_{\{N=i,\,M=j\}}) \\&
+=\sum_{i=1}^{n-1}\sum_{j=i+1}^n\mathbb{E}(S_iS_j\mathds{1}_{\{N=i,\,M=j\}}) \\&
+=\sum_{i=1}^{n-1}\sum_{j=i+1}^n\mathbb{E}(S_iS_j)\mathbb{E}(\mathds{1}_{\{N=i,\,M=j\}}) \\&
+=\sum_{i=1}^{n-1}\sum_{j=i+1}^n\mathbb{E}(S_iS_j)\mathbb{P}(N=i,M=j).
+\end{aligned}
+\end{equation*}
+Notice that since $(X_i)_{1\leq i\leq n}$ is an $i.i.d.$ sequence,
+\begin{equation*}
+\mathbb{E}(S_iS_j)=\mathbb{E}(S_i^2)+\mathbb{E}(S_i(X_{i+1}+\cdots +X_j))=\mathbb{E}(S_i^2)+\mathbb{E}(S_i)\mathbb{E}(X_{i+1}+\cdots +X_j),
+\end{equation*}
+which is $\mathbb{E}(S_i^2)+0=i$. So the summation above becomes
+\begin{equation*}
+\mathbb{E}(S_NS_M\mathds{1}_{\{N<M\}})=\sum_{i=1}^{n-1}\frac{(n-i)i}{n^2}=\frac{n-1}{2}-\frac{n(n-1)(2n-1)}{6n^2}=\frac{n^2-1}{6n}.
+\end{equation*}
+So $\mathbb{E}(S_NS_M\mathds{1}_{\{N\neq M\}})=\frac{n^2-1}{3n}$. Together with
+\begin{equation*}
+\mathbb{E}(S_NS_M\mathds{1}_{\{N=M\}})=\sum_{i=1}^n\mathbb{E}(S_i^2)\mathbb{P}(N=i,M=i)=\frac{n(n+1)}{2n^2},
+\end{equation*}
+we have
+\begin{equation*}
+\mathbb{E}(S_NS_M)=\frac{n}{3} + \frac{1}{2}+\frac{1}{6n}=Cov(S_N,S_M).
+\end{equation*}
+$\hspace{\fill}\square$
 \end{itemize}
 
 
-\newpage
-\section*{Homework 6.}
-$\textbf{6.11.}$ Use the method of indicators, for $i\neq j$, we can write 
-\begin{equation*}
-\begin{aligned}
-\mathbb{E}(X_{e(i)}X_{e(j)}) &= \mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)\neq e(j)\}}+X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)= e(j)\}}) \\&
-=\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)\neq e(j)\}})+\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)= e(j)\}}).
-\end{aligned}
-\end{equation*}
-Adapt the indicator method again, you can calculate
-\begin{equation*}
-\begin{aligned}
-\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)\neq e(j)\}}) &= \sum_{k\neq i;\;l\neq j;\; k\neq l}\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)=k,\,e(j)=l\}}) \\&
-=\sum_{k\neq i;\;l\neq j;\; k\neq l}\mathbb{E}(X_k X_l\mathds{1}_{\{e(i)=k,\,e(j)=l\}}) \\&
-=\sum_{k\neq i;\;l\neq j;\; k\neq l}\mathbb{E}(X_k)\mathbb{E}(X_l)\mathbb{E}(\mathds{1}_{\{e(i)=k\}})\mathbb{E}(\mathds{1}_{\{e(j)=l\}}) \\&
-=0,
-\end{aligned}
-\end{equation*}
-and
-\begin{equation*}
-\begin{aligned}
-\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)=e(j)\}}) &= \sum_{k\neq i;\;k\neq j}\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)=k,\,e(j)=k\}}) \\&
-=\sum_{k\neq i;\;k\neq j}\mathbb{E}(X_k^2\mathds{1}_{\{e(i)=k,\,e(j)=k\}}) \\&
-=\sum_{k\neq i;\;k\neq j}\mathbb{E}(X_k^2)\mathbb{E}(\mathds{1}_{\{e(i)=k\}})\mathbb{E}(\mathds{1}_{\{e(j)=k\}}) \\&
-=\sum_{k\neq i;\;k\neq j}1\cdot\mathbb{P}(e(i)=k)\mathbb{P}(e(j)=k) \\&
-=\sum_{k\neq i;\;k\neq j}\frac{1}{(n-1)^2} = \frac{n-2}{(n-1)^2}.
-\end{aligned}
-\end{equation*}
-Hence $\mathbb{E}(X_{e(i)}X_{e(j)})=\frac{n-2}{(n-1)^2}$ for $i\neq j$.
-
-When $i=j$, $\mathbb{E}\big(X_{e(i)}^2\big)=\sum_{k\neq i}\mathbb{E}(X_{e(i)}^2\mathds{1}_{\{e(i)=k\}})=\sum_{k\neq i}\mathbb{E}(X_k^2\mathds{1}_{\{e(i)=k\}})$. Use the independence calculation again, you can see that $\mathbb{E}\big(X_{e(i)}^2\big)=(n-1)\cdot1\cdot\frac{1}{(n-1)}=1$.
-
-Then the variance can be computed as
-\begin{equation*}
-\begin{aligned}
-Var(X_{e(1)}+\cdots+X_{e(n)}) &= \sum_{i,j}Cov(X_{e(i)}, X_{e(j)})=\sum_{i,j}\mathbb{E}(X_{e(i)}X_{e(j)})-\mathbb{E}(X_{e(i)})\mathbb{E}(X_{e(j)}) \\&
-=\sum_{i,j}\mathbb{E}(X_{e(i)}X_{e(j)})
-=\sum_{i=j}1+\sum_{i\neq j}\frac{n-2}{(n-1)^2}=n+\frac{n(n-2)}{n-1}.
-\end{aligned}
-\end{equation*}
-You can check that $\mathbb{E}(X_{e(i)})=0$ with the similar method.
-$\hspace{\fill}\square$
+%\newpage
+%\section*{Homework 6.}
+%$\textbf{6.11.}$ Use the method of indicators, for $i\neq j$, we can write 
+%\begin{equation*}
+%\begin{aligned}
+%\mathbb{E}(X_{e(i)}X_{e(j)}) &= \mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)\neq e(j)\}}+X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)= e(j)\}}) \\&
+%=\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)\neq e(j)\}})+\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)= e(j)\}}).
+%\end{aligned}
+%\end{equation*}
+%Adapt the indicator method again, you can calculate
+%\begin{equation*}
+%\begin{aligned}
+%\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)\neq e(j)\}}) &= \sum_{k\neq i;\;l\neq j;\; k\neq l}\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)=k,\,e(j)=l\}}) \\&
+%=\sum_{k\neq i;\;l\neq j;\; k\neq l}\mathbb{E}(X_k X_l\mathds{1}_{\{e(i)=k,\,e(j)=l\}}) \\&
+%=\sum_{k\neq i;\;l\neq j;\; k\neq l}\mathbb{E}(X_k)\mathbb{E}(X_l)\mathbb{E}(\mathds{1}_{\{e(i)=k\}})\mathbb{E}(\mathds{1}_{\{e(j)=l\}}) \\&
+%=0,
+%\end{aligned}
+%\end{equation*}
+%and
+%\begin{equation*}
+%\begin{aligned}
+%\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)=e(j)\}}) &= \sum_{k\neq i;\;k\neq j}\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)=k,\,e(j)=k\}}) \\&
+%=\sum_{k\neq i;\;k\neq j}\mathbb{E}(X_k^2\mathds{1}_{\{e(i)=k,\,e(j)=k\}}) \\&
+%=\sum_{k\neq i;\;k\neq j}\mathbb{E}(X_k^2)\mathbb{E}(\mathds{1}_{\{e(i)=k\}})\mathbb{E}(\mathds{1}_{\{e(j)=k\}}) \\&
+%=\sum_{k\neq i;\;k\neq j}1\cdot\mathbb{P}(e(i)=k)\mathbb{P}(e(j)=k) \\&
+%=\sum_{k\neq i;\;k\neq j}\frac{1}{(n-1)^2} = \frac{n-2}{(n-1)^2}.
+%\end{aligned}
+%\end{equation*}
+%Hence $\mathbb{E}(X_{e(i)}X_{e(j)})=\frac{n-2}{(n-1)^2}$ for $i\neq j$.
+%
+%When $i=j$, $\mathbb{E}\big(X_{e(i)}^2\big)=\sum_{k\neq i}\mathbb{E}(X_{e(i)}^2\mathds{1}_{\{e(i)=k\}})=\sum_{k\neq i}\mathbb{E}(X_k^2\mathds{1}_{\{e(i)=k\}})$. Use the independence calculation again, you can see that $\mathbb{E}\big(X_{e(i)}^2\big)=(n-1)\cdot1\cdot\frac{1}{(n-1)}=1$.
+%
+%Then the variance can be computed as
+%\begin{equation*}
+%\begin{aligned}
+%Var(X_{e(1)}+\cdots+X_{e(n)}) &= \sum_{i,j}Cov(X_{e(i)}, X_{e(j)})=\sum_{i,j}\mathbb{E}(X_{e(i)}X_{e(j)})-\mathbb{E}(X_{e(i)})\mathbb{E}(X_{e(j)}) \\&
+%=\sum_{i,j}\mathbb{E}(X_{e(i)}X_{e(j)})
+%=\sum_{i=j}1+\sum_{i\neq j}\frac{n-2}{(n-1)^2}=n+\frac{n(n-2)}{n-1}.
+%\end{aligned}
+%\end{equation*}
+%You can check that $\mathbb{E}(X_{e(i)})=0$ with the similar method.
+%$\hspace{\fill}\square$
 
 
 \end{document}
