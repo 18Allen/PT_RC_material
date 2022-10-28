@@ -24,28 +24,36 @@ top=15mm,
 \begin{document}
 \section*{Problems for midterm}
 \subsection*{Chapter 1.}
-\textbf{1. (Birthday Paradox)}\\
-Suppose   Write down the expression of probability that there exists at least a pair of student that share the same birthday
-\textbf{2. (Probability axiom)}\\
-(Modified from Panchenko Exercise 1.2.15)
+\begin{itemize}
+    \item \textbf{1. (Birthday problem)}\\
+    Suppose there are \(n\) students in a class, and each has birthday equally likely to be 1 of 365 days (no leap year). 
+    Write down the expression of probability that there exists at least a pair of student that share the same birthday\    
+    \item \textbf{2. (Probability axiom)}\\
+    (Modified from Panchenko Exercise 1.2.15)
 Let \(\Omega  = \{a,b,c,d\}\) and the probability function \(P: \Omega \to [0,1]\). 
 Suppose \(P(\{a,b\}) = 0.6, P(\{b,c\}) = 0.3, P(\{c,d\}) = 0.4\), Calculate \(P(\{a\}), P(\{b\}), P(\{c\}), P(\{d\})\)
-\\
-\textbf{3. ()} 
- 
-\subsection*{Chapter 2.}
-\textbf{1. (Poisson $+$ Conditioning)} In your pocket there is a random number $N$ of coins, where $N$ has the Poisson distribution with parameter $\lambda$. You toss each coin once, with heads showing with probability $p$ each time. Show that the total number of heads has the Poisson distribution with parameter $\lambda p$. \\ \\
+    \item \textbf{3. (independence)}\\
+We roll a die three times. Let \(A_{ij}\) be the event that the ith and jth rolls produce the same number. 
+Show that the events \(A_{12}, A_{23}, A_{13}\) are pairwise independent but not independent events.
+\end{itemize}
 
-\textbf{2. (Modified by Homework 4.4.)} You and your opponent both roll a fair die. If one get a greater number than the other one, and that number $>3$, then the game ends and whoever rolls the larger number wins. Otherwise, we repeat the game. What is $P(\text{you win})$?
-\textbf{3. (Normalize constant)}
+\subsection*{Chapter 2.}
+\begin{itemize}
+    \item \textbf{1. (Poisson $+$ Conditioning)} In your pocket there is a random number $N$ of coins, where $N$ has the Poisson distribution with parameter $\lambda$. You toss each coin once, with heads showing with probability $p$ each time. Show that the total number of heads has the Poisson distribution with parameter $\lambda p$. \\ \\
+    \item \textbf{2. (Modified by Homework 4.4.)} You and your opponent both roll a fair die. If one get a greater number than the other one, and that number $>3$, then the game ends and whoever rolls the larger number wins. Otherwise, we repeat the game. What is $P(\text{you win})$? 
+    \item \textbf{3. (Normalize constant)}\\
 Consider a function \(f\) defined on \(\textbf{2},3,4,\dots\) such that \(f(x) = C \frac{1}{x(x+1)}\), where \(C\) is a constant. Please find \(C\) such that \(f\) is a pmf. 
 
+
+\end{itemize}
+
 \subsection*{Chapter 3.}
-\textbf{1. (Birthday)}
-\\ \\
-\textbf{2. (Expectation and variance of matchings)} Let $S_n$ denotes the number of matchings of a random permutation of $n$ cards. Compute $\mathbb{E}(S_n)$ and $Var(S_n)$.
-\\ \\
-\textbf{3. (Random sum)} Let $(X_i)_{1\leq i\leq n}$ be a sequence $n$ $i.i.d.$ random variables with
+\begin{itemize}
+    \item \textbf{1. (Birthday problem II.)}
+    Suppose there are \(n\) students in a class, and each has birthday equally likely to be 1 of 365 days (no leap year). 
+    What is the expectation of number of distinct birthday?
+    \item \textbf{2. (Expectation and variance of matchings)} Let $S_n$ denotes the number of matchings of a random permutation of $n$ cards. Compute $\mathbb{E}(S_n)$ and $Var(S_n)$.
+    \item \textbf{3. (Random sum)} Let $(X_i)_{1\leq i\leq n}$ be a sequence $n$ $i.i.d.$ random variables with
 \begin{equation*}
 \mathbb{P}(X_i=1)=\mathbb{P}(X_i=-1)=\frac{1}{2}.
 \end{equation*}
@@ -53,6 +61,8 @@ Let $N$ be a random variable taking value from $\{1,\cdots,n\}$ with equal proba
 (a) What is the variance of the random sum, $Var(S_N)$? \\
 (b) Let $M$ be a random variable that has the same distribution as $N$, but independent to $N$ and $(X_i)_{1\leq i\leq n}$. What is $Cov(S_N,S_M)$? (You may encounter the calculation of $1^2+2^2+\cdots+(k-1)^2=\frac{k(k-1)(2k-1)}{6}$)
 
+
+\end{itemize}
 
 
 \newpage
