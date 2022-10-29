@@ -2,13 +2,33 @@
 %\lecture{3}{22 Sep. 18:30}{Temp}
 \recitation{4}{27 Oct. 18:30}{}
 
-\section{Review}
-\subsection{Variation}
+
+\subsection{Variance}
 Variance of a random variable \(X\) is the second moment of the demeaned \(X-E[X]\), i.e
 \[
     \text{Var} (X) = E[(X-E[X])^2] = E[X^2] - E[X]^2
 \]
 \subsection{Covariance}
+The definition of covariance is like that for variance, but for two random variable. 
+\[
+    \text{Cov} (X,Y) = E[(X-E[X])(Y-E[Y])]
+\]
+Take \(Y\) and \(X\) the same then you get the definition for variance. 
+Below are two properties for the use of covariance
+\begin{itemize}
+    \item (Proposition 8)Bilinear:\\
+    Let \(X_1,\dots, X_m\), \(Y_1, \dots, Y_n\) be random variables and \(a_1,\dots,a_m,  b_1,\dots,b_n\) be real numbers. Let \(\mathcal{U} = a_1 X_1 + \dots, a_m X_m \) and \(V = b_1 Y_1, \dots, b_n Y_n\). Then
+    \[
+        \text{Cov} (\mathcal{\MakeUppercase{U}} ,V) = \sum_{i=1}^{m} \sum_{j=1}^{n} a_i b_j \text{Cov}(X_{i}, Y_{j}). 
+    \]    
+    
+    The immediate use of this proposition is Corollary 4 and 6. This is useful when you consider the variance of something like \(S_n = \sum_{i=1}^{n} X_i\), where \(X_i\)'s are i.i.d random variable. Then, \(\text{Var} (S_n) = n \cdot \text{Var}(X_1) \). You can verify this by thinking the variance of Bernoulli(p) and Bin(n,p), one is \(p(1-p)\) and the other is \(np(1-p)\).     
+   
+        
+    \item (Corrollary 5)Independent implies covariance zero\\
+    If two random variables are independent, then there covariance is zero (\textbf{NOT the other way around!})
+    The exercise below show that the converse is false.  
+\end{itemize}
 \begin{exercise}
     Find a counterexample of two discrete random variable \(X,Y\) such that \(\text{Cov}(X,Y) = 0  \), but they are not independent. 
 \end{exercise}
@@ -47,3 +67,8 @@ Daniel Bernoulli in 1768.\\
 \end{exercise}
 Hint: Find indicator on the survival for each couple.
 %\subsection{For variance}
+\begin{figure*}[hbt]
+    \centering
+    \includegraphics[width=0.25\textwidth]{./Figures/Keep_Calm_and_Carry_On.png}
+    \caption*{\href{https://commons.wikimedia.org/wiki/File:Keep_Calm_and_Carry_On_Poster.svg}{Wiki} Best of luck with your exams.}
+\end{figure*}
