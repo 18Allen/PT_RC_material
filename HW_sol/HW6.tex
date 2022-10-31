@@ -73,11 +73,8 @@ Consequently, by linearity of expectation,\\
 \(E[N] = \sum_{i=1}^{n}E[1_{A_i}] = nP(A_1) = \frac{(2n-m)(2n-m-1)}{2(2n-1)}\) pairs.    
 
 \hspace{\textwidth}\(\square\) 
-\subsection*{Q4}
-Again, this is a problem using the indicator method. 
-The probability that geese i (\(i =1, \dots,6\) ) will be dead is 
-TBD
-\subsection*{Q5}
+\subsection*{Q4, Q5} 
+these two will need some inclusion-exclusion.
 \subsection*{Q6}
 \begin{itemize}
     \item[(a)] Calculate \(E[X^2] = p\), and use \(\text{Var}(X) = E[X^2] - E[X]^2\).   
@@ -99,16 +96,40 @@ Check out Chapter 3 handout page 14 by prof. Sheu.
 \subsection*{Q9}
 This is a problem using the fact that \textbf{\(E[XY] = E[X]E[Y]\) } if \(X,Y\) are independent. 
 \begin{itemize}
-    \item  \textbf{\(E[XY] = E[X]E[Y]\) } if \(X,Y\) are independent.
+    \item Show that \textbf{\(E[XY] = E[X]E[Y]\) } if \(X,Y\) are independent.
+    
+    This is true for both discrete and continuous random variable, but due to our coverage, we show the discrete version of it. 
+    \begin{equation*}
+        \begin{aligned}
+        E[XY] &= \sum_{x,y} xyP(X=x, Y = y) \underbrace{=}_{\text{independent}} \sum_{x, y}xy P(X = x)P(Y = y)
+         \\ &= \sum_{x}x P(X= x) \sum_{y} y P(Y = y)  = E[X]E[Y]
+        \end{aligned}
+    \end{equation*}
 \end{itemize}
+Hence we have \(E[XY]= E[X]E[Y]\).  
+To further simplify our computation, we should note that \(X_1^2, X_2^2\) are also independent (checkout recitation 3 review exercise, and take \(g(x), h(x)\) both be \(x^2\)  ) 
+With these two results we may proceed to calculate \(\text{Var} (X_{1}X_2 )\)
+\[
+    \text{Var} (X_1 X_2) = E[(X_1 X_2)^2] - E[X_1 X_2] = E[X_1^2]E[X_2^2] - E[X_1]E[X_2]
+\]
+which is \((\sigma_1^2 + \mu_1^2 )(\sigma_2^2 +\mu_2^2 )  -\mu_1^2 \mu _2^{2} \). 
+  
 
-
+If you want to go through the calculation, here it is.
 \begin{equation*}
     \begin{aligned}
         \text{Var} (X_1 X_2) &= E[(X_1 X_2 - E[X_1 X_2])^2] = E[(X_{1} X_2 - E[X_1]E[X_2] )^2]
-        \\ &
+        \\ & = \sum_{x_1, x_2}(x_1 x_2 -E[X_1]E[X_2])^2 P(X_1 = x_1, X_2 = x_2)  
+        \\ &= \sum_{x_1,x_2} (x_1 x_2 -E[X_1]E[X_2])^2 P(X_1 = x_1) P(X_2 = x_2)  
+        \\ & \qquad  \qquad \text{(independent)} 
+        \\ &= \sum_{x_2}P(X_2 = x_2) \sum_{x_1}   (x_1^2 x_2^2 -2x_{1}x_2E[X_1]E[X_2]+E[X_1]^2E[X_2]^2) P(X_1 = x_1) 
+        \\ &  \qquad \qquad\text{(Expand the terms and separate the summation)} 
+        \\ &= \sum_{x_2}P(X_2 = x_2)  (E[X_1^2] x_2^2 -2E[X_{1}]^2x_2E[X_2]+E[X_1]^2E[X_2]^2) 
+        \\ &= E[X_1^2] E[X_2^2] -2E[X_{1}]^2E[X_2]^2+E[X_1]^2E[X_2]^2
+        \\ & = E[X_1^2] E[X_2^2] - E[X_{1}]^2E[X_2]^2 = (\sigma_1^2 + \mu_1^2 )(\sigma_2^2 +\mu_2^2 )  -\mu_1^2 \mu _2^{2}  
     \end{aligned}
 \end{equation*}
+The same as we had earlier. 
 \subsection*{Q10}
 \subsection*{Q11}
 Use the method of indicators, for $i\neq j$, we can write 
