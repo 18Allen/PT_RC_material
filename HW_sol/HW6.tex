@@ -22,11 +22,59 @@ top=15mm,
 \setstretch{1.25}
 
 \begin{document}
-\section*{Partial solution to HW 6}
+
+\section*{Erreta}
 \subsection*{Q1}
+(c) ... size of the randomly chosen group. Let E[\color{red}Y\color{black}] = \(\mu\) and ... 
+
+
+\section*{Partial solution to HW 6}
+
+\subsection*{Q1}
+Checkout out chapter 5 Q5 solution in Janko Graver's book. 
 \subsection*{Q2}
+(Panchenko Exercise 1.5.2)
+There could be many, my solution use shifted normalized Poisson 
+Set discrete random variable \(X\). We define the pmf \(f_X\) to be \\
+\[ 
+    f_{X}(x) 
+    \begin{cases}
+      1-e^{-10}  , &\text{ if } x = 0 ;\\
+      e^{-10}e^\lambda \frac{\lambda^{(x-1)}}{(x-1)!}  , &\text{ if } x \in \mathbb{N} .
+    \end{cases}
+\]
+Then, \(P(X > 0) = e^{-10}\) is easy to check. Now we have to set the correct \(\lambda \). 
+By some calculation you can see that 
+\begin{equation*}
+    \begin{aligned}
+    E[X] &= \sum_{x=1}^{\infty}((x-1) + 1) e^{-10}e^\lambda \frac{\lambda^{(x-1)}}{(x-1)!} 
+        \\ &= e^{-10}\underbrace{\sum_{x=0}^{\infty}x e^\lambda \frac{\lambda^{x}}{(x)!}}_{\text{expectation of Poisson}(\lambda ) } + e^{-10}
+        \\ &= e^{-10}(\lambda +1)
+    \end{aligned}
+\end{equation*}
+Hence, set \(\lambda  = e^{20} -1\) we will have \(E[X] = e^{10} \).   
+
+\hspace{\textwidth}\(\square\) 
 \subsection*{Q3}
+This is the same as the exercise in RC4 exercise for the indicator method. 
+The number of pairs of animals alive, \(N\), is not an easy random variable to compute. Therefore, we may consider "when will \(N\) increase?". 
+This is easier, \(N\) increase 1 if a pair of animals is alive.
+Hence, the indicator we consider is \(1_{A_i}, i = 1,\dots, n\), where \(A_i\) means the event that the ith pair of animal is alive. 
+
+Then, we have  \(E[1_{A_i}] = P(A_i) = \begin{pmatrix}
+     2(n-1) \\
+     m \\
+\end{pmatrix} / \begin{pmatrix}
+     2n \\
+     m \\
+\end{pmatrix}\)
+
+Consequently, by linearity of expectation,\\
+\(E[N] = \sum_{i=1}^{n}E[1_{A_i}] = nP(A_1) = \frac{(2n-m)(2n-m-1)}{2(2n-1)}\) pairs.    
+
+\hspace{\textwidth}\(\square\) 
 \subsection*{Q4}
+
 \subsection*{Q5}
 \subsection*{Q6}
 \subsection*{Q7}
