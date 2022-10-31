@@ -88,4 +88,46 @@ Again, this is a problem using the indicator method.
 \subsection*{Q9}
 \subsection*{Q10}
 \subsection*{Q11}
+Use the method of indicators, for $i\neq j$, we can write 
+\begin{equation*}
+\begin{aligned}
+\mathbb{E}(X_{e(i)}X_{e(j)}) &= \mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)\neq e(j)\}}+X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)= e(j)\}}) \\&
+=\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)\neq e(j)\}})+\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)= e(j)\}}).
+\end{aligned}
+\end{equation*}
+Adapt the indicator method again, you can calculate
+\begin{equation*}
+\begin{aligned}
+\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)\neq e(j)\}}) &= \sum_{k\neq i;\;l\neq j;\; k\neq l}\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)=k,\,e(j)=l\}}) \\&
+=\sum_{k\neq i;\;l\neq j;\; k\neq l}\mathbb{E}(X_k X_l\mathds{1}_{\{e(i)=k,\,e(j)=l\}}) \\&
+=\sum_{k\neq i;\;l\neq j;\; k\neq l}\mathbb{E}(X_k)\mathbb{E}(X_l)\mathbb{E}(\mathds{1}_{\{e(i)=k\}})\mathbb{E}(\mathds{1}_{\{e(j)=l\}}) \\&
+=0,
+\end{aligned}
+\end{equation*}
+and
+\begin{equation*}
+\begin{aligned}
+\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)=e(j)\}}) &= \sum_{k\neq i;\;k\neq j}\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)=k,\,e(j)=k\}}) \\&
+=\sum_{k\neq i;\;k\neq j}\mathbb{E}(X_k^2\mathds{1}_{\{e(i)=k,\,e(j)=k\}}) \\&
+=\sum_{k\neq i;\;k\neq j}\mathbb{E}(X_k^2)\mathbb{E}(\mathds{1}_{\{e(i)=k\}})\mathbb{E}(\mathds{1}_{\{e(j)=k\}}) \\&
+=\sum_{k\neq i;\;k\neq j}1\cdot\mathbb{P}(e(i)=k)\mathbb{P}(e(j)=k) \\&
+=\sum_{k\neq i;\;k\neq j}\frac{1}{(n-1)^2} = \frac{n-2}{(n-1)^2}.
+\end{aligned}
+\end{equation*}
+Hence $\mathbb{E}(X_{e(i)}X_{e(j)})=\frac{n-2}{(n-1)^2}$ for $i\neq j$.
+
+When $i=j$, $\mathbb{E}\big(X_{e(i)}^2\big)=\sum_{k\neq i}\mathbb{E}(X_{e(i)}^2\mathds{1}_{\{e(i)=k\}})=\sum_{k\neq i}\mathbb{E}(X_k^2\mathds{1}_{\{e(i)=k\}})$. Use the independence calculation again, you can see that $\mathbb{E}\big(X_{e(i)}^2\big)=(n-1)\cdot1\cdot\frac{1}{(n-1)}=1$.
+
+Then the variance can be computed as
+\begin{equation*}
+\begin{aligned}
+Var(X_{e(1)}+\cdots+X_{e(n)}) &= \sum_{i,j}Cov(X_{e(i)}, X_{e(j)})=\sum_{i,j}\mathbb{E}(X_{e(i)}X_{e(j)})-\mathbb{E}(X_{e(i)})\mathbb{E}(X_{e(j)}) \\&
+=\sum_{i,j}\mathbb{E}(X_{e(i)}X_{e(j)})
+=\sum_{i=j}1+\sum_{i\neq j}\frac{n-2}{(n-1)^2}=n+\frac{n(n-2)}{n-1}.
+\end{aligned}
+\end{equation*}
+You can check that $\mathbb{E}(X_{e(i)})=0$ with the similar method.
+$\hspace{\fill}\square$
+
+
 \end{document}
