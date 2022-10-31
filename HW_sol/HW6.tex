@@ -75,7 +75,8 @@ Consequently, by linearity of expectation,\\
 \hspace{\textwidth}\(\square\) 
 \subsection*{Q4}
 Again, this is a problem using the indicator method. 
-
+The probability that geese i (\(i =1, \dots,6\) ) will be dead is 
+TBD
 \subsection*{Q5}
 \subsection*{Q6}
 \begin{itemize}
@@ -84,8 +85,30 @@ Again, this is a problem using the indicator method.
     \item[(c)] Recall that \(E[aX +b] = aE[X] + b\) due to the linearity of expectation. We have \(Var(aX+b) = E[(aX+b - (aE[X]+b))^2] = E[a^2(X-E[X])^2] = a^2 Var(X) \) 
 \end{itemize}
 \subsection*{Q7}
+First, we can eyeball \(E[Y] = 0\) because \((X_i)_{i=1}^n\) are i.i.d and we have \(E[X_i] = 0\).  
+Hence, what is left is to calculate \(E[Y^2]\). Before we dive in to calculation, again we have to observe which terms will not be zero? 
+Those with first order \(X_i\) will be zero, e.g. \(E[X_{1}^2 X_2 X_3 ], E[X_1 X_2 X_3 X_4 ]\) are zero. 
+Hence, we only have to consider terms like \(E[X_1^2 X_2^2]\) that have only second order moment. Also \(E[X_i^2 X_j^2] = 1, \text{ for any } 1 \leq i < j \leq n\).   
+\[
+    E[Y^2] = \sum_{k < l}\sum_{i < j} E[X_i X_j X_k X_l ] =  \sum_{i<j} E[X_i^2 X_j^2] = \frac{n(n-1)}{2} \cdot  E[X_1^2 X_2^2] = \frac{n(n-1)}{2}
+\]
+
+\hspace{\textwidth}\(\square\) 
 \subsection*{Q8}
+Check out Chapter 3 handout page 14 by prof. Sheu. 
 \subsection*{Q9}
+This is a problem using the fact that \textbf{\(E[XY] = E[X]E[Y]\) } if \(X,Y\) are independent. 
+\begin{itemize}
+    \item  \textbf{\(E[XY] = E[X]E[Y]\) } if \(X,Y\) are independent.
+\end{itemize}
+
+
+\begin{equation*}
+    \begin{aligned}
+        \text{Var} (X_1 X_2) &= E[(X_1 X_2 - E[X_1 X_2])^2] = E[(X_{1} X_2 - E[X_1]E[X_2] )^2]
+        \\ &
+    \end{aligned}
+\end{equation*}
 \subsection*{Q10}
 \subsection*{Q11}
 \end{document}
