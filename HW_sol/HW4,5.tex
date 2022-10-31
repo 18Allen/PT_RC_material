@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%\usepackage[legalpaper, landscape, margin=1in]{geometry}
+\usepackage{geometry}
+\geometry{
+a4paper,
+left=25mm,
+right=25mm,
+top=15mm,
+}
+\usepackage{setspace}
+\setstretch{1.25}
+
+\begin{document}
+\section*{Partial solution to HW 4 and HW 5}
+\section*{HW4}
+\subsection*{Q6}
+The idea of disjoint union will be helpful to us.
+Given an set \(A\in \mathbb{R}\), we may assume that \(P(X \in A) \geq  P(Y \in A)\). (Otherwise, replace X with Y in the following proof).  
+The RHS can be written as
+\begin{equation*}
+\begin{aligned}
+    \text{RHS} &=  1 - P(X = Y ) \\
+             &= [ P(X \in A) + P(X \in A^c) ] - [P(X = Y, Y \in A) + P(X = Y, Y \in A^c)]\\
+             &= [ P(X \in A) + P(X \in A^c) ] - [P(X = Y, Y \in A) + P(X = Y, X \in A^c)]\\
+             & \geq P(X\in A) - P(Y \in A) + P(X\in A^c) - P(X\in A^c, X = Y) \\
+             & = LHS + P(X\in A^c, X \neq Y) \\ 
+             & \geq LHS 
+\end{aligned}
+\end{equation*}
+\hspace{\textwidth}$\square$   
+
+Another way of doing it, is to consider the LHS
+\begin{equation}
+    \begin{aligned}
+        \text{LHS} &= P(X \in A) - P(Y \in A) \\
+                & = P(X \neq Y, X\in A) - P(X \neq Y, Y\in A)\\
+                & \leq P(X \neq Y) 
+    \end{aligned}
+\end{equation}
+
+\section*{HW5}
+\subsection*{Q3}
+\(\lambda \) is the average 2. 
+Therefore, the probability of scoring exactly 6 in one game is 
+\[
+   p =   e^{-\lambda} \frac{\lambda^6}{6!}
+\] 
+The problem ask for the probability that 'at least' one game scoring exactly 6 Field goals, which has the probability
+\(1- (1-p)^{150}\) 
+\subsection*{Q4}
+Check the note for recitation on Google drive. 
+\end{document}
