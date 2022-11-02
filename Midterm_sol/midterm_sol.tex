@@ -36,7 +36,7 @@ top=15mm,
 \begin{equation*}    
 \mathbb{E}(\mathds{1}_{A_i})=P(A_i)=1-P(\text{day $i$ is no one's birthday})=1-\frac{364^n}{365^n}.
 \end{equation*}
-So the average number of the distinct birthday is $n\big(1-\big(\frac{364}{365}\big)^n\big)$.
+So the average number of the distinct birthday is $365\times\big(1-\big(\frac{364}{365}\big)^n\big)$.
 
     \item \textbf{(10 points)} We roll a die three times. Let \(A_{ij}\) be the event that the ith and jth rolls produce the same number.
     Show that the events \(A_{12}, A_{23}, A_{13}\) are pairwise independent but not independent events.
@@ -85,6 +85,8 @@ So the average number of the distinct birthday is $n\big(1-\big(\frac{364}{365}\
 \end{equation*}
 Define $S_k=X_1+X_2+\cdots+X_k$ for $1\leq k\leq n$ as the $k$-th partial sum.\\
 (a) Compute $E(S_{k}^{2})$ for any integer $k\ge 1$. (5 points )\\
+\textbf{Sol.} For $i.i.d.$ sum, $Var(X_1+\cdots+X_k)=kVar(X_1)=k$.
+\\
 (b) Let $N$ be a random variable taking values from $\{1,\cdots,n\}$ with equal probability, independent to $(X_i)_{1\leq i\leq n}$. What is the mean  and variance of the random sum $S_{N}$?  (10 points) \\
 \textbf{Hint:} Note that $S_N=S_N\mathds{1}_{\{N=1\}}+\cdots+S_N\mathds{1}_{\{N=n\}}$, then by linearity of expectation,
 \begin{equation*}
