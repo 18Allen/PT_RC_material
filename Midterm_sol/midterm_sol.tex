@@ -1,0 +1,181 @@
+%\documentclass[12pt]{article}
+%
+%\usepackage[english]{babel}
+%
+%\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+%
+%% Useful packages
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{dsfont}
+%\usepackage{graphicx}
+%\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%%\usepackage[legalpaper, landscape, margin=1in]{geometry}
+%\usepackage{geometry}
+%\geometry{
+%a4paper,
+%left=25mm,
+%right=25mm,
+%top=15mm,
+%}
+%\usepackage{setspace}
+%\setstretch{1.25}
+%
+%\begin{document}
+\documentclass[14pt]{extarticle}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%\usepackage[legalpaper, landscape, margin=1in]{geometry}
+\usepackage{geometry}
+\geometry{
+a4paper,
+left=17mm,
+right=17mm,
+top=15mm,
+}
+\usepackage{setspace}
+\setstretch{1.25}
+
+\usepackage[T1]{fontenc}
+\usepackage{tgtermes}
+
+\begin{document}
+
+\section*{Midterm Exam}
+\begin{enumerate}
+    \item \textbf{(15 points)} Suppose there are \(n\) students in a class, and each has birthday equally likely to be 1 of 365 days (no leap year).\\
+    (a) Write down the expression of probability that there exists at least a pair of student that share the same birthday. (5 points)\\
+    \textbf{Sol.} When $2\leq n\leq 365$,
+\begin{equation*}    
+    p=1-P(\text{all birthday are distinct})=1-\frac{\binom{365}{n}\times n!}{365^n}.
+    \end{equation*}
+    And $p=1$ when $n\geq 365$, $p=0$ when $n=1$.
+    \\
+    (b) What is the expectation of number of distinct birthday ? (10 points)\\
+    \textbf{Sol.} Let $A_i$ be the event that day $i$ is someone's birthday. Then $\sum_{i=1}^n\mathds{1}_{A_i}$ is the number of distinct birthday. Also,
+\begin{equation*}    
+\mathbb{E}(\mathds{1}_{A_i})=P(A_i)=1-P(\text{day $i$ is no one's birthday})=1-\frac{364^n}{365^n}.
+\end{equation*}
+So the average number of the distinct birthday is $365\times\big(1-\big(\frac{364}{365}\big)^n\big)$.
+
+    \item \textbf{(10 points)} We roll a die three times. Let \(A_{ij}\) be the event that the ith and jth rolls produce the same number.
+    Show that the events \(A_{12}, A_{23}, A_{13}\) are pairwise independent but not independent events.
+
+    \item \textbf{(15 points)} In your pocket there is a random number $N$ of coins, where $N$ has the Poisson distribution with parameter $\lambda$. You toss each coin once, with heads showing with probability $p$ each time.\\
+    (a) Compute $\mathbb{P}(H=h\mid N=n)$, where $H$ is the total number of heads. (5 points) \\
+    \textbf{Sol.}
+    \begin{equation*}
+    P(H=h \text{ given } N=n)=\binom{n}{h}p^h(1-p)^{n-h}.
+    \end{equation*}
+    (b) Show that the total number of heads has the Poisson distribution with parameter $\lambda p$. (10 points) \\
+    \textbf{Sol.}
+    \begin{equation*}
+    \begin{aligned}
+    P(H=h)&=\sum_{n=h}^\infty P(H=h\mid N=n)P(N=n) \\&
+    =\sum_{n=h}^\infty 
+    \binom{n}{h}p^h(1-p)^{n-h}e^{-\lambda}\frac{\lambda^n}{n!} \\&
+    =e^{-\lambda}(\lambda p)^h\sum_{k=0}^\infty\binom{k+h}{h}(1-p)^{k}\frac{\lambda^k}{(k+h)!} \\&
+    =e^{-\lambda}\frac{(\lambda p)^h}{h!}\sum_{k=0}^\infty(1-p)^{k}\frac{\lambda^k}{k!} \\&
+    =e^{-\lambda}\frac{(\lambda p)^h}{h!}e^{\lambda(1-p)}=e^{-\lambda p}\frac{(\lambda p)^h}{h!}.
+    \end{aligned}
+    \end{equation*}
+    So $H$ has $Pois(\lambda p)$ distribution.
+    \item \textbf{(15 points.)} You and your opponent both roll a fair die. If one get a greater number than the other one, and that number $>3$, then the game ends and whoever rolls the larger number wins. Otherwise, we repeat the game.\\
+    (a) Let $N$ be the number of rounds in this game. Write down the p.m.f. of $N$. (5 points) \\
+    \textbf{Sol.} Let $p$ be the probability of a round ends. Then $1-p$ is the probability of getting the same number (this probability is $6/36=1/6$) or getting different ones but the larger one $\leq 3$ (i.e. getting one of $\{1,3\},\,\{2,3\},\,\{1,2\}$ as outcome. So the probability of this consequence is $6/36=1/6$). Hence $1-p=2\times 1/6=1/3$, i.e. $p=2/3$. So the p.m.f. of $N$ is
+    \begin{equation*}
+    P(N=n)=(1-p)^{n-1}p=\frac{2}{3^n}.
+    \end{equation*}
+    (b) What is $P(\text{you win})$ ? (10 points)\\
+    \textbf{Sol.} Knowing $P(\text{you win in a round})=\frac{1}{3}$, we have $P(\text{win})=\sum_{n= 0}^\infty\frac{1}{3^n}\times\frac{1}{3}=\frac{1}{2}$. In fact, as long as the probability of winning and losing are the same, $P(\text{win})=P(\text{lose})=1/2$.
+
+    \item \textbf{(10 points.)}
+    Consider a sequence of tosses of a $p$-coin.
+    Let $Y$ be the number of toss required to get the first head and $Z$ be the number of tosses required to get the second head after getting the first head.
+    Prove that $Y$ and $Z$ are independent and have the same probability mass functions.\\
+    \textbf{Sol.} See the solution of Quiz 2.
+
+    \item \textbf{(20 points.)}
+    (a) Let $X$ and $Y$ be two independent discrete random variables. Prove that $E(XY)=E(X)E(Y)$ and $Var(X+Y)=Var(X)+Var(Y)$. (10 points)\\
+    (b) Let $X=1_{A_{1}}+\cdots + 1_{A_{n}}$. Compute $Cov(1_{A_{i}},1_{A_{j}})$ and then $Var(X)$. (10 points)
+
+    \item \textbf{(15 points)}
+    Let $(X_i)_{1\leq i\leq n}$ be a sequence $n$ $i.i.d.$ random variables with
+\begin{equation*}
+\mathbb{P}(X_i=1)=\mathbb{P}(X_i=-1)=\frac{1}{2}.
+\end{equation*}
+Define $S_k=X_1+X_2+\cdots+X_k$ for $1\leq k\leq n$ as the $k$-th partial sum.\\
+(a) Compute $E(S_{k}^{2})$ for any integer $k\ge 1$. (5 points)\\
+\textbf{Sol.} For $i.i.d.$ sum, $Var(X_1+\cdots+X_k)=kVar(X_1)=k$.
+\\
+(b) Let $N$ be a random variable taking values from $\{1,\cdots,n\}$ with equal probability, independent to $(X_i)_{1\leq i\leq n}$. What is the mean  and variance of the random sum $S_{N}$?  (10 points) \\
+\textbf{Hint:} Note that $S_N=S_N\mathds{1}_{\{N=1\}}+\cdots+S_N\mathds{1}_{\{N=n\}}$, then by linearity of expectation,
+\begin{equation*}
+\begin{aligned}
+\mathbb{E}\big(S_N\big) &= \sum_{k=1}^n\mathbb{E}\big(S_N \mathds{1}_{\{N=k\}}\big)=\sum_{k=1}^n\mathbb{E}\big(S_k \mathds{1}_{\{N=k\}}\big)
+\end{aligned}
+\end{equation*}
+and
+\begin{equation*}
+\begin{aligned}
+\mathbb{E}\big(S_N^2\big) &= \sum_{k=1}^n\mathbb{E}\big(S_N^2\mathds{1}_{\{N=k\}}\big)=\sum_{k=1}^n\mathbb{E}\big(S_k^2\mathds{1}_{\{N=k\}}\big)
+\end{aligned}
+\end{equation*}
+
+\end{enumerate}
+
+
+%\newpage
+%\section*{Homework 6.}
+%$\textbf{6.11.}$ Use the method of indicators, for $i\neq j$, we can write
+%\begin{equation*}
+%\begin{aligned}
+%\mathbb{E}(X_{e(i)}X_{e(j)}) &= \mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)\neq e(j)\}}+X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)= e(j)\}}) \\&
+%=\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)\neq e(j)\}})+\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)= e(j)\}}).
+%\end{aligned}
+%\end{equation*}
+%Adapt the indicator method again, you can calculate
+%\begin{equation*}
+%\begin{aligned}
+%\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)\neq e(j)\}}) &= \sum_{k\neq i;\;l\neq j;\; k\neq l}\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)=k,\,e(j)=l\}}) \\&
+%=\sum_{k\neq i;\;l\neq j;\; k\neq l}\mathbb{E}(X_k X_l\mathds{1}_{\{e(i)=k,\,e(j)=l\}}) \\&
+%=\sum_{k\neq i;\;l\neq j;\; k\neq l}\mathbb{E}(X_k)\mathbb{E}(X_l)\mathbb{E}(\mathds{1}_{\{e(i)=k\}})\mathbb{E}(\mathds{1}_{\{e(j)=l\}}) \\&
+%=0,
+%\end{aligned}
+%\end{equation*}
+%and
+%\begin{equation*}
+%\begin{aligned}
+%\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)=e(j)\}}) &= \sum_{k\neq i;\;k\neq j}\mathbb{E}(X_{e(i)}X_{e(j)}\mathds{1}_{\{e(i)=k,\,e(j)=k\}}) \\&
+%=\sum_{k\neq i;\;k\neq j}\mathbb{E}(X_k^2\mathds{1}_{\{e(i)=k,\,e(j)=k\}}) \\&
+%=\sum_{k\neq i;\;k\neq j}\mathbb{E}(X_k^2)\mathbb{E}(\mathds{1}_{\{e(i)=k\}})\mathbb{E}(\mathds{1}_{\{e(j)=k\}}) \\&
+%=\sum_{k\neq i;\;k\neq j}1\cdot\mathbb{P}(e(i)=k)\mathbb{P}(e(j)=k) \\&
+%=\sum_{k\neq i;\;k\neq j}\frac{1}{(n-1)^2} = \frac{n-2}{(n-1)^2}.
+%\end{aligned}
+%\end{equation*}
+%Hence $\mathbb{E}(X_{e(i)}X_{e(j)})=\frac{n-2}{(n-1)^2}$ for $i\neq j$.
+%
+%When $i=j$, $\mathbb{E}\big(X_{e(i)}^2\big)=\sum_{k\neq i}\mathbb{E}(X_{e(i)}^2\mathds{1}_{\{e(i)=k\}})=\sum_{k\neq i}\mathbb{E}(X_k^2\mathds{1}_{\{e(i)=k\}})$. Use the independence calculation again, you can see that $\mathbb{E}\big(X_{e(i)}^2\big)=(n-1)\cdot1\cdot\frac{1}{(n-1)}=1$.
+%
+%Then the variance can be computed as
+%\begin{equation*}
+%\begin{aligned}
+%Var(X_{e(1)}+\cdots+X_{e(n)}) &= \sum_{i,j}Cov(X_{e(i)}, X_{e(j)})=\sum_{i,j}\mathbb{E}(X_{e(i)}X_{e(j)})-\mathbb{E}(X_{e(i)})\mathbb{E}(X_{e(j)}) \\&
+%=\sum_{i,j}\mathbb{E}(X_{e(i)}X_{e(j)})
+%=\sum_{i=j}1+\sum_{i\neq j}\frac{n-2}{(n-1)^2}=n+\frac{n(n-2)}{n-1}.
+%\end{aligned}
+%\end{equation*}
+%You can check that $\mathbb{E}(X_{e(i)})=0$ with the similar method.
+%$\hspace{\fill}\square$
+
+
+\end{document} 
