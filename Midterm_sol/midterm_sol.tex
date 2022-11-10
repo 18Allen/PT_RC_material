@@ -69,7 +69,23 @@ So the average number of the distinct birthday is $365\times\big(1-\big(\frac{36
 
     \item \textbf{(10 points)} We roll a die three times. Let \(A_{ij}\) be the event that the ith and jth rolls produce the same number.
     Show that the events \(A_{12}, A_{23}, A_{13}\) are pairwise independent but not independent events.
-
+    \\
+    \textbf{Sol.} First, we show that they are pairwise Independent. 
+    The number of event that satisfies \(A_{ij} \) are those with ith and jth being the same, which has \(6\), and the rest one roll with any result, so times another \(6\). Hence, the probability is   
+    \[
+        P(A_{ij}) = \frac{6 \cdot 6}{6^3} = \frac{1}{6}
+    \] 
+    On the other hand, we take \(A_{12} \cap A_{23}\) as example. It means we roll the same outcome each times, which is six in total. The probability of \(A_{12} \cap A_{23} \) is  
+    \[
+        P(A_{12} \cap A_{23} ) = \frac{6}{6^3} = \frac{1}{36} = P(A_{12}) P(A_{23} )
+    \]
+    The same goes with the other two combination \(A_{12}\cap A_{13}  \) and \(A_{23} \cap A_{13} \).  
+    Therefore, we conclude that \(A_{12}, A_{23} ,A_{13}  \) are pairwise independent. \\
+    Yet, when we consider \(A_{12}\cap A_{23} \cap A_{13}  \), it is also considering the event where all three rolls have the same outcome. The corresponding probability is 
+    \[
+        P(A_{12} \cap A_{23} \cap A_{13} ) = \frac{6}{6^3} = \frac{1}{36} \neq P(A_{12} )P(A_{23} )P(A_{13} )
+    \]
+    Hence, they are not Independent. 
     \item \textbf{(15 points)} In your pocket there is a random number $N$ of coins, where $N$ has the Poisson distribution with parameter $\lambda$. You toss each coin once, with heads showing with probability $p$ each time.\\
     (a) Compute $\mathbb{P}(H=h\mid N=n)$, where $H$ is the total number of heads. (5 points) \\
     \textbf{Sol.}
@@ -105,8 +121,41 @@ So the average number of the distinct birthday is $365\times\big(1-\big(\frac{36
     \textbf{Sol.} See the solution of Quiz 2.
 
     \item \textbf{(20 points.)}
-    (a) Let $X$ and $Y$ be two independent discrete random variables. Prove that $E(XY)=E(X)E(Y)$ and $Var(X+Y)=Var(X)+Var(Y)$. (10 points)\\
-    (b) Let $X=1_{A_{1}}+\cdots + 1_{A_{n}}$. Compute $Cov(1_{A_{i}},1_{A_{j}})$ and then $Var(X)$. (10 points)
+    \begin{itemize}
+        \item[(a)] Let $X$ and $Y$ be two independent discrete random variables. Prove that $E(XY)=E(X)E(Y)$ and $Var(X+Y)=Var(X)+Var(Y)$. (10 points)\\
+        \begin{equation*}
+          \begin{aligned}
+              E[XY] &= \sum_{x \in S_x, y \in S_y}xy P(X = x, Y = y) 
+                 \\ &= \sum_{x \in S_x, y \in S_y}xy P(X = x)P (Y = y) && \text{(Independent)} 
+                 \\ & = \sum_{x \in S_x}xP(X = x) \sum_{y\in S_y}y P(Y = y) 
+                 \\ & = E[X] E[Y]  
+          \end{aligned}  
+        \end{equation*} 
+        \begin{equation*}
+            \begin{aligned}
+                \text{Var}(X+Y) &= E[(X+Y)^2] - E[(X+Y)]^2 
+                            \\  & \qquad \text{(Def. of Variance)}
+                            \\  &= E[X^2 +2XY  +Y^2] - (E[X] + E[Y])^2 
+                            \\ & \qquad \text{(Expand the terms and linearity of expectation)}  
+                            \\ &= \underbrace{(E[X^2] - E[X]^2)}_{\text{Var}(X) } + \underbrace{(E[Y^2] -E[Y]^2)}_{\text{Var}(Y) } + 2\underbrace{(E[XY] - E[X]E[Y])}_{0\text{. By (a)} }
+                            \\ & = \text{Var} (X) + \text{Var}(Y) 
+            \end{aligned}
+        \end{equation*}
+        \item[(b)] Let $X=1_{A_{1}}+\cdots + 1_{A_{n}}$. Compute $Cov(1_{A_{i}},1_{A_{j}})$ and then $Var(X)$. (10 points)
+        \begin{equation*}
+            \begin{aligned}
+                \text{Cov}(1_{A_{i} } , 1_{A_{j} } ) &= E[(1_{A_{i} } - E[1_{A_{i}}] ) (1_{A_{j} } -E[1_{A_{j} } ]) ]
+                    \\ &= E[ 1_{A_{i} } \cap 1_{A_{j} } ] - E[1_{A_{i} }]E[ 1_{A_{j} } ]
+                    \\ &= P(A_i \cap A_{j} ) - P(A_{i} )P(A_{j} ) 
+            \end{aligned}
+        \end{equation*}
+        \begin{equation*}
+            \begin{aligned}
+                \text{Var}(X) &= \sum_{i,j \in \{1,2, \dots ,n\}} \text{Cov}(1_{A_{i} } , 1_{A_{j} } ) 
+                    \\ &= \sum_{i,j \in \{1,2, \dots ,n\}}P(A_i \cap A_{j} ) - P(A_{i} )P(A_{j} ) 
+            \end{aligned}
+        \end{equation*}
+    \end{itemize}
 
     \item \textbf{(15 points)}
     Let $(X_i)_{1\leq i\leq n}$ be a sequence $n$ $i.i.d.$ random variables with
@@ -116,6 +165,7 @@ So the average number of the distinct birthday is $365\times\big(1-\big(\frac{36
 Define $S_k=X_1+X_2+\cdots+X_k$ for $1\leq k\leq n$ as the $k$-th partial sum.\\
 (a) Compute $E(S_{k}^{2})$ for any integer $k\ge 1$. (5 points)\\
 \textbf{Sol.} For $i.i.d.$ sum, $Var(X_1+\cdots+X_k)=kVar(X_1)=k$.
+\\
 \\
 (b) Let $N$ be a random variable taking values from $\{1,\cdots,n\}$ with equal probability, independent to $(X_i)_{1\leq i\leq n}$. What is the mean  and variance of the random sum $S_{N}$?  (10 points) \\
 \textbf{Hint:} Note that $S_N=S_N\mathds{1}_{\{N=1\}}+\cdots+S_N\mathds{1}_{\{N=n\}}$, then by linearity of expectation,
@@ -131,11 +181,43 @@ and
 \end{aligned}
 \end{equation*}
 
+\textbf{Sol.} First, we calculate \(E[S_N]\). 
+The feeling of uncomfortable may arise because the index \(N\) now is not a fix number, but a random variable. That is why we use indicator to partition \(S_N\) to a series of \(S_k\), where \(k^\prime s\) are fixed numnber.     
+Using the hint we have
+\[
+E\big(S_N\big) = \sum_{k=1}^n\mathbb{E}\big(S_N\mathds{1}_{\{N=k\}}\big)=\sum_{k=1}^n\mathbb{E}\big(S_k\mathds{1}_{\{N=k\}}\big)
+\]   
+Then, the problem state that \(N\) is independent to \((X_i)\), so using 6.(b) we have \(E[S_k 1_{N=k}] = E[S_k]E[1_{N = k} ] \), for each \(k = 1,\dots, n\). 
+Consequently, 
+\begin{equation*}
+    \begin{aligned}
+E\big(S_N\big) &=\sum_{k=1}^n E \big(S_k 1_{\{N=k\}}\big)
+        \\ &= \sum_{k=1}^{n}(\underbrace{E[S_k]}_{0}\cdot \underbrace{E[1_{N= k} ]}_{P(N=k) = \frac{1}{n}} )
+        \\ &= 0
+    \end{aligned}
+\end{equation*}
+Here, using linearity of expectation we get \(E[S_k] =  E[\sum_{l=1}^{k} X_l ]  = \sum_{l=1}^{k} E[X_l] = 0\). 
+\\ 
+\\
+Next, we deal with \(\text{Var}(S_N) \). Since \(E[S_N] =0\), Variance of \(S_N\) is just \(E[S_N^2]\). Again, we use the hint to express \(E[S_N^2]\) as 
+\[
+\mathbb{E}\big(S_N^2\big) = \sum_{k=1}^n E\big(S_N^21_{\{N=k\}}\big)=\sum_{k=1}^n E\big(S_k^2 1_{\{N=k\}}\big)
+\]
+Still, \(S_k^2\) is independent to \(N\), so by 6.(b) we have \(E[S_k 1_{N=k} ] = E[S_k]E[1_{N= k} ]\) for each \(k = 1, ... , n\). Finally, 
+  
+\begin{equation*}
+    \begin{aligned}
+E\big(S_N^2\big) &=\sum_{k=1}^n E\big(S_k^2 1_{\{N=k\}}\big)
+        \\ &= \sum_{k=1}^{n}(\underbrace{E[S_k^2]}_{k. \text{ By} 7.(a)}\cdot \underbrace{E[1_{N= k} ]}_{P(N=k) = \frac{1}{n}} )
+        \\ &= \sum_{k=1}^{n} k \frac{1}{n}
+        \\ &= \frac{n+1}{2} 
+    \end{aligned}
+\end{equation*}  
 \end{enumerate}
 
 
 %\newpage
-%\section*{Homework 6.}
+%\section*{Homework 6.
 %$\textbf{6.11.}$ Use the method of indicators, for $i\neq j$, we can write
 %\begin{equation*}
 %\begin{aligned}
