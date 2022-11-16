@@ -75,6 +75,20 @@ exponential random variable.
     (\cite{IntroPanchenko} Exercise 4.1.4.) Compute the expectation of \(E |X|\), where \(X\) follows \(N(0,\sigma^2)\).  
 \end{exercise}
 \subsection{Probability Density Function}
+We may ignore some intricate definition of "niceness" of p.d.f. for now. Just remember that if a \textbf{non-negative} function \(f\) is given as p.d.f of random variable \(X\), 
+The probability of \(X\) taking value in \(A\) is 
+\[
+    P(X \in A) = P(A) = \int_A f(x)dx
+\] 
+
+This means that we care about the value "after" integration, not density per se. .
+\begin{itemize}
+    \item \textbf{p.d.f. can take on value larger than 1} \\ 
+            For example: \(f(x) = 2 1_{|X| \leq  \frac{1}{2}} \). \(f(0) = 2\) but \(\int_{-1 /2 }^{1 /2} f(x)dx  = 1\).   
+    \item \textbf{P(\(\mathbb{R} \) )}\\ 
+            By the definition above, \(P(\mathbb{R} ) = \int_{-\infty }^{\infty} f(x)dx = 1 \)   
+\end{itemize}
+
 \subsection{Expectation and Variance}. 
 
 \subsection{Cumulative Distribution Function}
