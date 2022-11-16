@@ -1,0 +1,95 @@
+\chapter{RC 6}
+\recitation{6}{17 Nov. 18:30}{}
+
+\begin{remark}
+    Errata: page 5 of the "Continuous random variables" handout:\\
+            \begin{itemize}
+                \item \(\cancelto{\mu \in \mathbf{R} }{\mu \mathbf{R}} \) 
+                \item \(X \sim \text{Normal}(\mu, \cancelto{\sigma^2 }{\sigma}) \) 
+                \item \(N(\mu , \cancelto{\mu^2 }{\mu})\)
+                \item \(\cancelto{\frac{1}{\sqrt{2 \pi \sigma^2 } }}{\frac{1}{\sqrt{2 \pi \sigma } }}\)  
+            \end{itemize} 
+\end{remark}
+
+\section{Review: Laws of large number}
+\[
+    \text{Markov inequality} \implies \text{Chebyshev inequality} \implies \text{WLLN}  
+\]
+
+
+\subsection{Converge in probability}
+If we say \textbf{ \(X_n \to c\) in probability}, we means the sequence of random varaibles \((X_i)_{i=1}^\infty\) will eventually be really close to \(c\) in a way that
+those \(\omega \) that does not map close to \(c\) will eventually has measure zero. 
+\[
+    \lim\limits_{n \to \infty} P(|X_n -c| \geq \epsilon  ) = 0
+\]    
+for every \(\epsilon >0\). 
+\subsection{The weak law of large number (WLLN)}
+To give an intuition of WLLN, you may understand it as an justification of "Taking average of many sample will be really close to expectation value". 
+\begin{theorem}[Weak Law of Large Numbers] 
+    (Thm. 4 in \cite{Und_Chatterjee})\\
+    Let \(X_1,X_2, \dots\) be an \textbf{i.i.d.} sequence of random variables with expected value \(\mu \) and finite variance. For each n, let 
+    \[
+        \bar{X_n} \coloneqq \frac{1}{n} \sum_{i=1}^{n} X_{i} 
+    \]   
+    be the average of the first \(n\) of these variables. Then as \(n \to \infty \), \(\bar{X_n} \to  \mu \) \textbf{in probability}.    
+\end{theorem}
+Direct application of Chebyshev inequality. 
+
+In many cases, you can't expect condition like i.i.d., but as we can see in the following example, you actually don't need it. WLLN only requires \textbf{second moment information}, such as covariance and variance.  
+\begin{eg}[You Don't need i.i.d. for WLLN]
+    (\cite{IntroPanchenko} Exercise 2.2.1) \\ 
+    Suppose that random variables \(X_1, \dots, X_n\) are uncorrelated, \(\mu  = E[\bar{X_n}]\) and Var(\(X_{i} \)) \(\leq \sigma^2\) for all \(i \leq n\). 
+    Then show that WLLN still holds.     
+\end{eg}
+Notice that the key is to show that Var(\(X_n\)) grows with the rate \(\theta(n^2)\) as \(n \to \infty \). 
+\\
+\\
+Combine with the use of indicator function, we can study random graph. 
+\begin{eg}[Expected number of triangles on Erdős-Rényi random graph]
+    (Adapted from Prof. Chatterjee's STAT310 note Exercise 8.4.5)
+    Define an undirected random graph on n vertices by putting an edge between any two vertices with probability \(p\)  and excluding the edge with probability \(1-p\) , all edges independent.
+    This is known as the Erdős-Rényi \(G(n,p)\) random graph. 
+    \begin{itemize}
+        \item If \(T_{n,p}\) is the number of triangles in this random graph, use the method of indicator to represent \(T_{n,p}\) . 
+        \item Before we made calculation, can you guess why \(T_{n,p} / n^3 \to p^3 /6\) ? \\
+            Hint: Make reasons out of the number of indicator function, probability of one triangles being connected. 
+        \item Show that \(T_{n,p} / n^3 \to p^3 / 6 \) in probability with WLLN. 
+            Hint: Break down the \(\sum \text{Cov} \) to cases depend on the relation of two triangles (share one edges, no share edges, same triangles)
+    \end{itemize} 
+\end{eg}
+
+\section{Continuous Random Variables}
+\subsection{Some Continuous Random Variables}
+These are some continuous r.v. that you should keep in mind. 
+\begin{itemize}
+    \item \textbf{Uniform r.v.}:\\
+    \item \textbf{Exponential r.v.}: \\
+    \item \textbf{Normal(Gaussian) r.v.}: \\   
+\end{itemize}
+\begin{eg}
+    (\cite{IntroPanchenko} Exercise 4.1.2.) Compute the expectation of a uniform and
+exponential random variable.
+\end{eg}
+\begin{exercise}
+    (\cite{IntroPanchenko} Exercise 4.1.4.) Compute the expectation of \(E |X|\), where \(X\) follows \(N(0,\sigma^2)\).  
+\end{exercise}
+\subsection{Probability Density Function}
+\subsection{Expectation and Variance}. 
+
+\subsection{Cumulative Distribution Function}
+\subsection{Change of Variable Formula}
+
+\begin{eg}
+    (\cite{IntroPanchenko} Exercise 4.1.3.) What is the density of the random variable \(X = g^3\), where \(g\) follows \(N(0,1)\).
+\end{eg}
+\section{Extra}
+\subsection*{"Derive" Gaussian distribution}
+Have you ever wonder why Gaussian distribution look like that? \\
+\href{https://youtu.be/ebewBjZmZTw}{Normal distribution's probability density function derived in 5min}
+
+\subsection*{"Real" issues}
+\begin{itemize}
+    \item Not every set in \(\mathbb{R}\) has probability defined. 
+    \item If we change value of a p.d.f on a measure-zero set, the result will still be a p.d.f.    
+\end{itemize}

@@ -73,8 +73,19 @@ those \(\omega \) that does not map close to \(c\) will eventually has measure z
 \]    
 for every \(\epsilon >0\). 
 \subsection{The weak law of large number (WLLN)}
+To give an intuition of WLLN, you may understand it as an justification of "Taking average of many sample will be really close to expectation value". 
+\begin{theorem}[Weak Law of Large Numbers] 
+    (Thm. 4 in \cite{Und_Chatterjee})\\
+    Let \(X_1,X_2, \dots\) be an \textbf{i.i.d.} sequence of random variables with expected value \(\mu \) and finite variance. For each n, let 
+    \[
+        \bar{X_n} \coloneqq \frac{1}{n} \sum_{i=1}^{n} X_{i} 
+    \]   
+    be the average of the first \(n\) of these variables. Then as \(n \to \infty \), \(\bar{X_n} \to  \mu \) \textbf{in probability}.    
+\end{theorem}
 Direct application of Chebyshev inequality. If we consider \textbf{i.i.d} \((X_i)_{i=1}^{\infty} \), then the mean \(\bar{X}_n\) will be really close to the expectation of \(X_1\), \(E[X_1]\). 
 In formal expression we write \(\bar{X}_n \to E[X_1]\) in probability. 
+
+
 
 \textbf{Tips when using WLLN:}\\
 The key to this type of problem is to show that the variance will have \textbf{limit 0} as n grows.  
