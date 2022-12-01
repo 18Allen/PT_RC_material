@@ -1,6 +1,9 @@
 \chapter{RC 8}
 \recitation{8}{1 Dec. 18:30}{}
 
+\subsection*{Application of }
+
+
 \section*{Things that you can migrate from discrete to cont.}
 For 1D cont. r.v., apart from the definition of expectation, variance, and covariance, any other things depend on them still work, including
 \begin{itemize}
@@ -9,6 +12,7 @@ For 1D cont. r.v., apart from the definition of expectation, variance, and covar
     \item Inequalities(Markov's and Chebyshev... )
     \item Weak law of large numbers.
 \end{itemize}
+ 
 
 \section*{Mean vector and covariance matrix}
 (\cite*{Und_Chatterjee})
@@ -65,9 +69,7 @@ One useful fact to remember is
     \]     
     where \(\Sigma  = A A^T\) is \(\Sigma_{AX} \). 
 \end{theorem}
-\begin{exercise}
-    HW9-5 
-\end{exercise}
+To give a simplified idea on page 74,75 of \cite*{Und_Chatterjee} and proposition 13. 
 \begin{eg}[diagonalization]
     Although it is impractical to compute diagonalization of a matrix by hand, but it give you some idea. 
     \\If you are given a mulivariate normal distribution \(Z \sim N(0, \Sigma )\), where 
@@ -128,4 +130,32 @@ We have
 \begin{exercise}
     HW9-6
 \end{exercise}
-    
+
+
+\subsection*{Gaussian Stability}
+Remember in RC2 we introduced the stability of Poission random variables.  Here we will show that
+\begin{theorem}[Gaussian stability]
+
+If \(a = (a_1, \dots, a_n) \in \mathbb{R}^n\), and \(g\) is a n-dim standard normal vector, then the random variable 
+\[
+    X = \sum_{i=1}^{n} a_i g_i
+\]
+has the Gaussian distribution N(0, \(\sum_{i=1}^{n}a_i^2 \) )
+\end{theorem} 
+\begin{proof}
+    This can be shown by considering the sum of two and then using induction. (\cite{Und_Chatterjee} page 63, proposition 11).\\ 
+    Here we give a proof with more of linear algebra fasion. (\cite*{IntroPanchenko} Theorem 4.1)
+    \\ Main idea:
+    \begin{itemize}
+        \item Find the complement space to \(q_1 = \frac{a}{\mid a\mid }\), and thus the transformation matrix \(Q\) is unitary.  
+        \item For \(Y = QX\), calculate the marginal p.d.f. of \(y_1\). It will be easy because \(y_i\) are independent.   
+    \end{itemize}
+\end{proof}
+Since \(a_{i}g_i \sim N(0,a_i^2) \), this means that the sum of independent
+Gaussian random variables is also Gaussian with the
+variance equal to the sum of variances.
+
+\begin{exercise}
+    HW9-5
+\end{exercise}
+Hint: HW9-4
