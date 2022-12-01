@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.5)  17 NOV 2022 17:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.5)  1 DEC 2022 09:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1713,7 +1713,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--67
 
  []
 
-<./Figures/Keep_Calm_and_Carry_On.png, id=316, 803.0pt x 1203.49625pt>
+<./Figures/Keep_Calm_and_Carry_On.png, id=331, 803.0pt x 1203.49625pt>
 File: ./Figures/Keep_Calm_and_Carry_On.png Graphic file (type png)
 <use ./Figures/Keep_Calm_and_Carry_On.png>
 Package pdftex.def Info: ./Figures/Keep_Calm_and_Carry_On.png  used on input line 72.
@@ -1730,12 +1730,12 @@ Package hyperref Info: bookmark level for unknown note defaults to 0 on input li
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 21.
-<./Figures/Constellation.png, id=329, 506.49225pt x 479.99326pt>
+<./Figures/Constellation.png, id=344, 506.49225pt x 479.99326pt>
 File: ./Figures/Constellation.png Graphic file (type png)
 <use ./Figures/Constellation.png>
 Package pdftex.def Info: ./Figures/Constellation.png  used on input line 33.
 (pdftex.def)             Requested size: 113.24207pt x 107.31267pt.
-<./Figures/BPSK.png, id=330, 1807.75375pt x 1003.75pt>
+<./Figures/BPSK.png, id=345, 1807.75375pt x 1003.75pt>
 File: ./Figures/BPSK.png Graphic file (type png)
 <use ./Figures/BPSK.png>
 Package pdftex.def Info: ./Figures/BPSK.png  used on input line 41.
@@ -1814,7 +1814,7 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 147.
  [18]
 Package mdframed Info: Not enough space on this page on input line 152.
-<./Figures/Jacobian.png, id=397, 448.67625pt x 479.391pt>
+<./Figures/Jacobian.png, id=412, 448.67625pt x 479.391pt>
 File: ./Figures/Jacobian.png Graphic file (type png)
 <use ./Figures/Jacobian.png>
 Package pdftex.def Info: ./Figures/Jacobian.png  used on input line 157.
@@ -1822,35 +1822,90 @@ Package pdftex.def Info: ./Figures/Jacobian.png  used on input line 157.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 162.
-) [19 <d:/2022 fall/Prob Ta/RC_material/Notes/./Figures/Jacobian.png>]
+) (d:/2022 fall/Prob Ta/RC_material/Notes/Lectures/lec_7.tex [19 <d:/2022 fall/Prob Ta/RC_material/Notes/./Figures/Jacobian.png>]
+Chapter 7.
+Package marginnote Info: Margin note 24.1 is on absolute page 24 on input line 3.
+Package marginnote Info: right page because not two side mode on input line 3.
+Package marginnote Info: xpos seems to be 72.2698pt on input line 3.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 19.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 44.
+Package mdframed Info: Not enough space on this page on input line 48.
+[20
+
+]
+Package mdframed Info: Not enough space on this page on input line 48.
+<./Figures/CoV.png, id=436, 459.9pt x 170.163pt>
+File: ./Figures/CoV.png Graphic file (type png)
+<use ./Figures/CoV.png>
+Package pdftex.def Info: ./Figures/CoV.png  used on input line 56.
+(pdftex.def)             Requested size: 362.37598pt x 134.08455pt.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 67.
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
+
+ []
+
+) (d:/2022 fall/Prob Ta/RC_material/Notes/Lectures/lec_8.tex [21 <d:/2022 fall/Prob Ta/RC_material/Notes/./Figures/CoV.png>]
+Chapter 8.
+Package marginnote Info: Margin note 26.1 is on absolute page 26 on input line 3.
+Package marginnote Info: right page because not two side mode on input line 3.
+Package marginnote Info: xpos seems to be 72.2698pt on input line 3.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 25.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 29.
+[22
+
+]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 61.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 69.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 71.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 129.
+) [23]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 47.
  (c:/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [20
+) [24
 
 ] (d:/2022 fall/Prob Ta/RC_material/Notes/master.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: CC725DA670889D501D97CEC8D585FD12;1413.
+(rerunfilecheck)             Checksum: 51A8F41E07EBB4114F03BECC4C4EF090;1567.
 Package logreq Info: Writing requests to 'master.run.xml'.
 \openout1 = `master.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47912 strings out of 479303
- 1071779 string characters out of 5871220
- 1913161 words of memory out of 5000000
- 64015 multiletter control sequences out of 15000+600000
+ 47978 strings out of 479303
+ 1073073 string characters out of 5871220
+ 1915614 words of memory out of 5000000
+ 64048 multiletter control sequences out of 15000+600000
  476007 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 111i,13n,108p,1280b,1597s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 111i,14n,108p,1280b,1597s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/avantgar/uagd8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/avantgar/uagk8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/avantgar/uagko8a.pfb>
-Output written on "d:/2022 fall/Prob Ta/RC_material/Notes/master.pdf" (22 pages, 867073 bytes).
+Output written on "d:/2022 fall/Prob Ta/RC_material/Notes/master.pdf" (26 pages, 899601 bytes).
 PDF statistics:
- 539 PDF objects out of 1000 (max. 8388607)
- 459 compressed objects within 5 object streams
- 150 named destinations out of 1000 (max. 500000)
- 329 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 603 PDF objects out of 1000 (max. 8388607)
+ 515 compressed objects within 6 object streams
+ 176 named destinations out of 1000 (max. 500000)
+ 358 words of extra memory for PDF output out of 10000 (max. 10000000)
 

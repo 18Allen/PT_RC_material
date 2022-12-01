@@ -1,0 +1,116 @@
+\documentclass[12pt]{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%\usepackage[legalpaper, landscape, margin=1in]{geometry}
+\usepackage{geometry}
+\geometry{
+a4paper,
+left=25mm,
+right=25mm,
+top=15mm,
+}
+\usepackage{setspace}
+\setstretch{1.25}
+
+\begin{document}
+
+
+\section*{Partial solution to HW 7}
+\subsection*{Q1}
+Explain in RC6 class. The key insight is that when you look at the proof of WLLN that use Chebyshev inequality. 
+The only reason we need independent r.v. is that we want \(\text{Cov}(X_i,X_j) = 0 \) for \(i \neq j\).  
+Hence, \(X_1, \dots, X_n\) being \textbf{uncorrelated} is enough.    
+
+\subsection*{Q2}
+Take \(\epsilon  = \frac{\sigma}{\sqrt{n} } \sqrt{\frac{1}{\delta }} \) and apply the result of Q1. 
+
+\subsection*{Q3}
+\textbf{Why is this problem important?}\\
+Because \(\text{Var}(X_k) \) increases as \(k\) increases. In this case it is natural to think that maybe the average will be more 'spread out' and we will not have probability concentrated around \(E[\bar{X_n}]\). 
+Yet, the intuition is wrong and we actually can do so. 
+\\
+The question want you to show that the given independent r.v. sequence with same expectation has the average \textbf{converge in probability}.\\ 
+\textbf{Sol.}\\ 
+Hereon, we use \(\bar{X_n}\) to represent \(\frac{1}{n}\sum_{i=1}^{n}X_i \).\\ 
+Chebyshev inequality give you 
+\[
+    P(|\bar{X_n} - E[\bar{X_n}]| \geq \epsilon ) \leq \frac{\text{Var}(\bar{X_n}) }{\epsilon^2}
+\]
+(Notice that in this question \(E[X_i] =0, \forall i \leq n  \) ) 
+In order to let the bound on RHS work, \(\text{Var}(\bar{X_n}) \) has to converge to \(0\) as \(n \to \infty  \). 
+\\
+From previous courses we know that for independent r.v. sequence \(X_1, \dots,X_n\), the \textbf{variance of their sum is the sum of variances}, i.e 
+\[
+    \text{Var}(\bar{X_n}) = \frac{1}{n^2} \sum_{i=1}^{n}\text{Var}(X_i)   
+\]
+(Do it your self) We know that \(\text{Var}(X_k) = \frac{k}{\log{(2k)}} \)
+Also, it is true that \(f^\prime (x) > 0, \forall x \geq  1\) given  \(f(x) = \frac{x}{\log{2x}}\)\\
+Then, 
+\[
+    \frac{1}{n^2} \sum_{i=1}^{n} \text{Var}(X_i) = \frac{1}{n^2} \sum_{k=1}^{n} \frac{k}{\log{(2k)}} \leq \frac{1}{n^2} n(\frac{n}{\log{2n}}) \leq \frac{1}{\log{2n}} \to 0
+\]
+\\
+By Chebyshev inequality, \(\bar{X_n}\) converge to 0 in probability.\\
+\hspace{\textwidth}\(\square\) 
+\subsection*{Q4}
+Direct application of Chebyshev inequality on Poission r.v. 
+Note that \(E[X] = E[X^2] = \lambda \) for Poission inequality. 
+
+\subsection*{Q5}
+\textbf{Why may it be important?}\\ 
+This is a problem that generalize Markov inequality, 
+Remember that Markov inequality requires r.v. \(X\) to be positive. This is true for all \(\Phi(X)\). 
+
+\textbf{Sol.} \\
+Since \(\Phi(x)\) is strictly increasing, we have \(\{X \geq  x\} = \{\Phi(X) \geq  \Phi(x)\}\) (strictly increasing function is 1-1). 
+Therefore, using Markov inequality we have 
+\[
+    P(X \geq  x) = P(\Phi(X) \geq  \Phi(x)) \leq \frac{E[\Phi(X)]}{\Phi(x)}
+\]
+\hspace{\textwidth}\(\square\) 
+\textbf{Note}: In case you're wondering, The condition '\(\Phi(X)\) is integrable' is to ensure \(E[\Phi(X)]\) exists. 
+Sometime for continuous r.v. the first moment will not exists. Check out the textbook. 
+
+\subsection*{Q6}
+We went through this problem in RC5 class, so let me just give you some hint. \\
+As we said, the ultimate WLLN is the version with \(\bar{X_n}\) and showing the covariance sum converge to zero, in our case 
+you have to make sure that 
+\[
+    \begin{pmatrix}
+         n \\
+         2 \\
+    \end{pmatrix}^{-2} \sum_{i<j,k<l}\text{Cov}(X_i X_j, X_k X_l )   \to  0 
+\] 
+as \(n \to \infty \).  
+You can break the sum to three case:\\ 
+1. none out of four in \(i,j,k,l\) being the same. e.g. \(\text{Cov} (X_{1}X_2, X_{3}X_4)  = 0\) \\ 
+2. One out of four in \(i,j,k,l\) being the same. e.g. \(\text{Cov}(X_1X_2, X_1X_3) = \mu^2(\sigma^{2} - \mu^2) \) \\
+3. Two out of four in \(i,j,k,l\) being the same. e.g. \(\text{Cov}(X_{1}X_2, X_1 X_2 ) =  \sigma ^2 (\sigma ^2 + 2\mu^2)\) \\
+(Actually the exact number does not matter, we just need them to be some constant.)\\
+The first has \(2!\frac{4!}{2! 2!}\begin{pmatrix}
+     n \\
+     4 \\
+\end{pmatrix}\) many, the second has \(6\begin{pmatrix}
+     n \\
+     3 \\
+\end{pmatrix}\) many, and the third has \(\begin{pmatrix}
+     n \\
+     2 \\
+\end{pmatrix}\) many.     
+Then show that the sum of all covariance will converge to zero as \(n\to \infty \).  
+\\
+\textbf{Why may it be important?}\\
+What make this different from the previous problems is that the cross-term may have non-zero contribution. 
+
+
+
+\end{document}
