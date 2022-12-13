@@ -1,0 +1,365 @@
+\documentclass[12pt]{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%\usepackage[legalpaper, landscape, margin=1in]{geometry}
+\usepackage{geometry}
+\geometry{
+a4paper,
+left=25mm,
+right=25mm,
+top=15mm,
+}
+\usepackage{setspace}
+\setstretch{1.25}
+\usepackage{soul}
+
+\begin{document}
+
+
+\section*{Solution to HW 8}
+\subsection*{Erreta}
+Q5: \dots Are \st{X} and Y independent? \(\to \) \dots Are Z and Y independent?  
+\subsection*{Heads up}
+This homework is more or less about the change of variable for single/multi variate p.d.f.\\
+Before you start, think about what tools you have at hand. You may use any that fit the problem. 
+\begin{itemize}
+   \item Change of Variable formula (CoV) \\
+   (p.55~56 for single variable, p.60~61 for multi-variable) 
+   This method is mention also in RC7 as well. Just remember that you need to put a measure-correction term $\left\vert \frac{\partial x}{\partial y} \right\vert $ (for single variable case) or \(\left\vert J_T \right\vert \) (for multivariable case) \\
+   For single variable case, changing from $x$ to $y$ with transformation $T(y)$  
+   \[
+    g(y) = f(T(y)) \left\vert \frac{\partial x}{\partial y} \right\vert 
+   \]  
+    
+   For 2 variable case (multi-variable is similar), changing a coordinate $(x,y)$ to \((u,v)\) with transformation $(x,y) = T(u,v)$, we can get the new p.d.f. $g(u,v)$ by the original p.d.f $f(x,y)$  by 
+   \[
+    g(u,v) = f(T(u,v)) \left| J_T \right|
+   \]
+   \item Cumulative distribution function (c.d.f.) 
+   (p.54~55, \textbf{only for single variable case})
+   As we know that for cont. r.v., the way to 'measure' the probability of an event is to integrate the p.d.f of that event. 
+   Hence, you can think of this method as a version that you \textbf{integrate first, then derivate} to get new p.d.f. 
+   We use (TBD) as examples.  
+\end{itemize}
+\subsection*{Q1}
+\textbf{Sol.}\\ 
+First, we have to determine the range of \(Y\). You can check that \(Y \in [1,\infty )\). \\  
+Using the c.d.f. method, we have (note that there should be two cases, \(x \in [0,0.5]\) and \(x \in [0.5,1]\)  )
+\[
+   P(Y \leq  y) = P(\frac{1}{1+y} \leq X \leq 0.5)+P(0.5\leq X \leq \frac{y}{1+y})  = \frac{y-1}{1+y},\quad  y\in [1,\infty)
+\]
+Then, do derivative on both side we have
+\[
+   f_{Y} (y) = \frac{d}{dy}P(Y \leq y) = \begin{cases}
+      \frac{2}{(1+y)^{2}}  , &\text{ if } y\in [1,\infty ) ;\\
+     0 , &\text{ ow }  .
+   \end{cases}
+\]
+\hspace{\textwidth}\(\square\) 
+\subsection*{Q2}
+\textbf{Sol.}\\ 
+\begin{itemize}
+    \item \textbf{\(V = \frac{X}{1-X}\)}\\
+    Same methods as in Q1.  
+    \item \textbf{\(W = X(1-X)\)}\\
+    First, we have to determine the range of \(W\). Since \(X(1-X) = -(X-\frac{1}{2})^{2} +\frac{1}{4}\), we have \(W \in [0,\frac{1}{4}]\). 
+    
+    Using c.d.f. method, we can write
+
+    \[
+       P(W \leq w) = P(X(1-X) \leq w) = P(X \leq \frac{1-\sqrt{1-4w} }{2}) + P(X \leq \frac{1+\sqrt{1-4w} }{2}), w \in [0,1/4]
+    \]  
+    which equals to 
+    \[
+      P(W \leq w) = 1 - \sqrt{1-4w}, w\in [0,\frac{1}{4}]
+    \] 
+    Do derivate on both sides, we have 
+    \[
+      f_{W} (w) = \frac{d}{dw}P(W \leq w) = \begin{cases}
+         \frac{2}{\sqrt{1-4w} }, &\text{ if }  w \in [0,\frac{1}{4}] \\ 
+         0, &\text{ ow }.\\
+      \end{cases}
+    \]
+    \hspace{\textwidth}\(\square \) 
+\end{itemize}
+
+\subsection*{Q3}
+\textbf{Sol.}\\ 
+This is an obvious example that use CoV method.\\
+Since \(X\sim N(\mu ,\sigma ^{2})\), the p.d.f. of \(X\) is \(f_{X} (x) = \frac{1}{\sqrt{2\pi \sigma ^{2} } } \exp (-(x-\mu )^2 /(2\sigma ^{2} )\)\\
+If we let \(U = \frac{X-\mu }{\sigma }\), the transformation \(x = T(u)\) we need is \(T(u) = \sigma (u) + \mu \). 
+Before we proceed, it is important you remember \textbf{multiplying with scalar and linear shift will keep a Gaussian variable Gaussian, just with different parameter}. \\  
+By using the description for single variable case we have 
+\[
+   f_{U} (u) = f_{X} (T(u)) \left\vert \frac{dT}{du} \right\vert = \frac{1}{\sqrt{2\pi } } \exp{\frac{-u^2}{2}} 
+\]     
+By the definition of Guassian r.v., \(U  = \frac{X - \mu }{\sigma } \sim N(0,1)\).  
+\\ \hspace{\textwidth}\(\square\) \\
+\(-X\) case is easy with \(T(u) = -u\).   
+\subsection*{Q4}
+\textbf{Sol.}\\ 
+   This is an exercise of multi-variable integral. Do it yourself. 
+\begin{itemize}
+    \item The joint p.d.f. of \((X,Y,Z)\) \\
+    You may assume that they distribute uniformly. 
+    \item \(P(X^{2}  > YZ)\)
+    \[
+      \int_0^1 (x^2 - x^2\ln{x^2}) dx =  \frac{1}{3} + \frac{2}{9} = \frac{5}{9}
+    \]
+    \item \(P(X+Y < Z)\)
+    \[
+      \frac{1}{6}
+    \]
+    \item \(P(\max{(X,Y)} > Z)\)   
+    \[
+      \frac{1}{3}
+    \]
+\end{itemize}
+
+\subsection*{Q5}
+\textbf{Sol.}\\ 
+\begin{itemize}
+    \item The p.d.f. of \(Z = \min{(X,Y)}\) 
+    Obviously, the range of \(Z\) is \([0,1]\).
+    We use c.d.f. method here. 
+    \[
+      P(Z \leq z) = P(\min{(X,Y)} \leq z) = 1 - P(X > z \cap Y > z) = 1 - (1-z)^2, z \in [0,1]
+    \]
+    Hence, 
+    \[
+      f_Z(z) = P^\prime(Z \leq z) = 2(1-z), \quad z \in [0,1]
+    \]
+    \hspace{\textwidth} \(\square\) 
+    \item Are \(Z\) and \(Y\) independent?\\ 
+    It is unlikely right? A counterexample to consider is the events \(Z > 0.5\) and \(Y \leq 0.1\).  
+\end{itemize}
+\subsection*{Q6}
+\textbf{Sol.} \\
+Since \(X\) and \(Y\) are indep. , the joint p.d.f. \(f(x,y)\) is 
+\[
+   f(x,y) = f_X(x)f_{Y} (y) = \frac{1}{2\pi } e^{-\frac{x^{2} +y^{2}  }{2}}
+\] 
+\textbf{First way: Polar coordinate \& CoV} \\
+Remember how you will solve a Gaussian integral \href{https://en.wikipedia.org/wiki/Gaussian_integral#By_polar_coordinates}{wiki}, 
+We consider turning \((X,Y)\) to \((r,\theta )\) with \(T(r,\theta ) = (r\cos{\theta },r\sin{\theta} ), r \in \mathbb{R}^+, \theta \in (0,2\pi )\)  
+Then by CoV method we have the new joint p.d.f. as 
+\[
+   h(r,\theta ) = f(T(r,\theta )) \left\vert \frac{\partial (x,y)}{\partial (r,\theta )} \right\vert  = r\frac{1}{2\pi } e^{-\frac{r^{2} }{2}}
+\]
+Then, the marginal p.d.f. of \(r\) is 
+\[
+   h_r(r) = \int_0^{2\pi }h(r,\theta ) d \theta  = r e^{-\frac{r^{2}}{2} }, r \in \mathbb{R}^+
+\]
+We are not done yet! \(r = \sqrt{X^2 + Y^{2} } \) but we want \(X^{2}  + Y^{2} \). Let \(u = r^2\), we can use CoV for single variable to acquire the new p.d.f. of \(u\) as 
+\[
+  f_U(u) = h_r(\sqrt{u}) \left\vert \frac{d r}{du} \right\vert  = \frac{1}{2}e^{-\frac{u}{2}}, \quad u \in \mathbb{R}^+.  
+\]
+In other word, \(U \sim \text{Exp}(\frac{1}{2})\). 
+\\ \hspace{\textwidth}\(\square\)      
+\\
+\textbf{Another way: Using method in p.61}\\
+You can also find the p.d.f. of \(X^2\) and \(Y^2\) first and multiplying to get the joint p.d.f. of \((X^2, Y^2)\). It can work because if \(X,Y\) are indep. then \(g(X), f(Y)\) is also indep.
+Finally, use the method for \(X + Y\) introduced in p.61 . 
+
+
+\subsection*{Q7}
+\textbf{Sol.} \\
+\begin{itemize}
+    \item \(\min{(X,Y)} \sim \text{Exp}(\alpha +\beta )\) \\ 
+    Use the same method of c.d.f. in Q5 but in this case \(P(X > z \cap Y > z)\) is different. 
+    \item \(P(X < Y)\)\\  
+    This is a direct computation. 
+    \[
+      P(X < Y) = \int_0^{\infty} \alpha e^{-\alpha  x}\int_x^{\infty}  \beta  e^{- \beta y} dydx = \frac{\alpha }{\beta + \alpha } 
+    \]
+\end{itemize}
+\subsection*{Q8}
+\textbf{Sol.} \\
+Base case: \(n = 2\)
+\[
+   P(X_1 + X_2 \leq  s) = \int_0^s \int_0^{x_1}  dx_2 dx_1 = \frac{s^2}{2}   
+\] 
+Induction hypothesis: The statement is true up to \(K \in \mathbb{N}\). \\ 
+Induction step: Consider \(n = K +1\)
+\begin{equation*}
+    \begin{aligned}
+        & P((X_1 + \dots X_K) + X_{K+1} \leq s)
+        \\ &= \int_0^s P( (X_1 + \dots X_K) \leq  X_{K+1} ) dx_{K+1} 
+        \\ &= \int_0^s \frac{x_{K+1}^K}{K!} dx_{K+1} 
+        \\ &= \frac{s^{K+1}}{(K+1)!}
+    \end{aligned}
+\end{equation*} 
+Hence, the hypothesis is also true for \(n = K +1\). 
+By mathematical induction, the statement is true for all \(n\in \mathbb{N}\). 
+\\ \hspace{\textwidth}\(\square\)   
+\subsection*{Q9}
+\textbf{Sol.} \\
+\textbf{It will only work for gaussian random variables that covariance equals zero implies independent} (Prop. 13)\\  
+Hence, the goal of this problem is to show that \(X+Y\) and \(X-Y\) are uncorrelated.\\
+For multiple normal r.v. problem, their joint p.d.f. will be a good starting point. 
+Let \(Z = (X,Y)\), the p.d.f of random vector \(Z\) is (p.73 or RC note Theorem 8.1.1) 
+\[
+   h(z) = \frac{1}{(2\pi) (\text{det}(\Sigma) )^{\frac{1}{2}}} e^{-\frac{1}{2} (z)^T \Sigma ^{-1} (z) }
+\]  
+where \(\Sigma  = \begin{bmatrix}
+   1 &  0 \\
+   0 &  1 \\
+\end{bmatrix}\). 
+Next step, finding the transformation matrix \(T\). 
+\[
+   \begin{bmatrix}
+       X+Y \\
+       X-Y \\
+   \end{bmatrix} = \begin{bmatrix}
+      1 &  1 \\
+      1 &  -1 \\
+   \end{bmatrix} \begin{bmatrix}
+       X \\
+       Y \\
+   \end{bmatrix}, 
+\]  
+which means 
+\[
+   \begin{bmatrix}
+       X \\
+       Y \\
+   \end{bmatrix} = \underbrace{\frac{1}{2} \begin{bmatrix}
+      1 &  1 \\
+      1 &  -1 \\
+   \end{bmatrix}}_{T} \begin{bmatrix}
+       X+Y \\
+       X-Y \\
+   \end{bmatrix}, 
+\] 
+Hence, given \(W = [X+Y,X-Y]^{\top} \), we have \(z = Tw\), so 
+\[
+   z^{\top} \Sigma^{-1} z = w^{\top} \underbrace{T^{\top} \Sigma^{-1} T}_{\Sigma_W^{-1}} w
+\]
+where 
+\[
+   \Sigma_{W}  = 4 \begin{bmatrix}
+      1 &  0 \\
+      0 &  1 \\
+   \end{bmatrix}
+\] 
+By Prop. 13, it implies \(X+Y\) and \(X-Y\) are independent with \(\sigma ^{2} = 4 \) \\
+\hspace{\textwidth}\(\square\) \\
+\textbf{Note}\\
+We stopped at \(\Sigma_{W} \), but if you want the p.d.f. of \(W\), using the CoV method you have 
+\begin{equation*}
+    \begin{aligned}
+   h_W(w) &= h_Z(Tw) \left\vert \frac{\partial (X,Y)}{\partial (X+Y,X-Y)} \right\vert  
+         \\ &= h_Z(Tw) |\text{det}(T)|
+         \\ &=   \frac{1}{(2\pi) (\text{det}(\Sigma_W) )^{\frac{1}{2}}} e^{-\frac{1}{2} (w)^T \Sigma_W ^{-1} (z) }
+    \end{aligned}
+\end{equation*}
+with \(\det{\Sigma_W} = 16\) 
+ 
+\subsection*{Q10}
+\textbf{Sol.} \\
+\begin{itemize}
+    \item The joint p.d.f. of \(V = X+Y\) and  \(W = \frac{X}{X+Y}\).
+    \\ Again starting with the joint p.d.f. of \((X,Y)\), which is 
+    \[
+      f(x,y) = f_X(x)f_Y(y) = \lambda ^{2} e^{-\lambda (x+y)}
+    \]  
+    The first equality is due to the independence of \(X,Y\).  
+    \\Since we have \((X,Y) = T(V,W) = (WV, V(1-W))\), the Jacobian is
+    \[
+      J_T = \begin{bmatrix}
+         w &  v \\
+         1-w & -v  \\
+      \end{bmatrix}
+    \] 
+    Hence,  \(|\text{det}(J_T)| = v\).
+    Using CoV method we may write the joint p.d.f. of \(V,W\) as 
+    \[
+      h(v,w) = f(T(v,w))\left\vert \text{det}(J_T) \right\vert = \lambda ^2 v e^{-\lambda (v)} , \quad (v,w) \in [0,\infty) \times [0,1]  
+    \]   
+
+    \item Prove that \(V\) and \(W\) are independent. 
+    \\By the definition of independent for continuous r.v., we will show that \(h(z,w) = f_Z(z)f_W(w)\). 
+    \\ 
+     Therefore, we have to find \(f_Z(z)\) and \(f_W(w)\). \\ 
+     \begin{itemize}
+         \item \(f_Z(z)\):\\
+         From \(h(z,w)\) we can get \(f_Z(z)\) by taking the marginal. 
+         \[
+            f_Z(z) = \int_0^1 h(v,w)dw = \lambda ^2 v e^{-\lambda v}, v\in [0, \infty)
+         \]   
+         \item \(f_W(w)\):\\  
+         Taking the marginal for \(w\) we have \(f_{W}(w) = 1 , w \in [0,1]\). 
+     \end{itemize}  
+     Finally, since \(h(z,w)\) is the product of marignal p.d.f., \(V\) and \(W\) are independent.  
+\end{itemize}
+\subsection*{Q11}
+\textbf{Sol.} \\
+\begin{itemize}
+    \item The joint p.d.f. of \((X^2,Y^2)\). \\ 
+    Here since both \(V\) and \(W\) use the second moment, so it is convienient to 
+    get the distribution of \(X^2\) and \(Y^2\) and use the "Another way" mentioned in Q6. 
+    If \(A \) is an event in \(\mathbb{R}^+\), the probability of \(U = X^2 \in A\) is    
+    \begin{equation*}
+        \begin{aligned}
+            P(U \leq u) &= P(-\sqrt{u} \leq  X\leq \sqrt{u} )
+                     \\ &= 2P(0\leq X \leq \sqrt{u} )
+        \end{aligned}
+    \end{equation*}
+    The last equation does not have a exact form, and we don't need that either. 
+    Taking the derivative against \(u\) 
+    \[
+      f_U(u) = \frac{d}{du} 2 P(0 \leq X \leq \sqrt{u} ) = \frac{1}{\sqrt{2\pi u}} e^{-\frac{u}{2}}
+    \]  
+    On the other hand, since \(X,Y\) are independent \(X^2, Y^2\) are indepent, too.
+   Hence, the joint p.d.f. of \((X^{2} , Y^{2} )\) is 
+   \[
+      f(x,y) = \frac{1}{2\pi \sqrt{xy} } e^{-\frac{1}{2}(x+y)}
+   \]  
+   We can finally return to the original problem. 
+   \item The joint p.d.f. of \((V,W)\)\\ 
+   \[
+      \begin{bmatrix}
+          X^2 \\
+          Y^2 \\
+      \end{bmatrix} = \underbrace{\frac{1}{2} \begin{bmatrix}
+         1 & 1  \\
+         1 & -1  \\
+      \end{bmatrix}}_{T}
+      \begin{bmatrix}
+          V \\
+          W \\
+      \end{bmatrix}
+   \]
+   Here \(|\det{J_T}| = \frac{1}{2}\). 
+   Consequently,  
+   \[
+      f_{V,W}(v,w) = \frac{1}{\pi \sqrt{v^2 - w^2} } e^{-\frac{1}{2}v}
+   \]
+   Becareful about the region, the region should be \( \{(v,w) \in R^+ \times R^+, v \geq w\}\) 
+   \\ 
+   You can check that 
+   \[
+      \int_0^\infty \int_0^v f_{V,W}(v,w)dwdv = 1  
+   \]
+    \item Are \(V\) and \(W\) independent? \\  
+   Given the weird joint p.d.f., it's unlikely right?\\
+   Because the joint p.d.f. is quite complicated for the marginal of \(W\), we can use conditional p.d.f. to check. 
+   \\i.e. Given \(v\) such that \(f_V(v) > 0\), if the conditional p.d.f. \(f_{W}(w | V = v) = \frac{f_{V,W}(v,w)}{f_V(v)}\) is not a function of solely \(w\), then \(V,W\) are  not independent. 
+   \\Since \(f_V(v) = \frac{1}{2}e^{-\frac{v}{2}} > 0\), we have 
+   \[
+      f_W(w| V = v) = \frac{2}{\pi \sqrt{v^{2}-w^2} }, 
+   \] 
+   which is a function of both \(v\) and \(w\). That means \(W\) and \(V\) are not independent.  
+\end{itemize}
+
+
+\end{document}

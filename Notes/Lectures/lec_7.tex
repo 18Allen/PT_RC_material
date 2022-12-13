@@ -54,14 +54,18 @@ The intuition is:
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{./Figures/CoV.png}
-    \caption{Transformation \(T\) stretch the small rectangle, so we need to give a "different unit"  \(|\text{det}J_T|\) or \(\left|\frac{\partial (v,w)}{\partial (x,y)} \right|\) . \href{https://mathinsight.org/image/change_variable_area_transformation}{source}. }
+    \caption{\label{fig:CoV_Jacobian}(TBD draw it yourself) Transformation \(T\) stretch the small rectangle, so we need to give a "different unit"  \(|\text{det}J_T|\) or \(\left|\frac{\partial (u,v)}{\partial (x,y)} \right|\) . \href{https://mathinsight.org/image/change_variable_area_transformation}{source}. }
 \end{figure}
 
-Usually you will be given transformation  \((x,y) = T(v,w) \).\\  
-Then, $dxdy = \left|\frac{\partial (v,w)}{\partial (x,y)} \right| dvdw $. 
-The new p.d.f. \(g(v,w) \) 
+Usually you will be given transformation  \((x,y) = T(u,v) \). For example, if T is polar coordinate representation of (\(x,y\) ) and \((u,v) = (r,\theta )\). Then,  \(T(r,\theta ) = (r\cos(\theta ), r\sin(\theta ))\). 
+
+Once acquiring \(T\), the area correction in \ref{fig:CoV_Jacobian} can be formally put down as
+$$
+dxdy = \left|\frac{\partial (x,y)}{\partial (u,v)} \right| dudv .
+$$ 
+Hence, the new p.d.f. \(g(v,w) \) is
 \[
-    g(v,w) = f(T(w,v)) \left| J_T \right|
+    g(u,v) = f(T(u,v)) \left| J_T \right|
 \]  
 \begin{exercise}
     Exercise 3,6,11
