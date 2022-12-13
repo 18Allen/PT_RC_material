@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%\usepackage[legalpaper, landscape, margin=1in]{geometry}
+\usepackage{geometry}
+\geometry{
+a4paper,
+left=25mm,
+right=25mm,
+top=15mm,
+}
+\usepackage{setspace}
+\setstretch{1.25}
+
+\begin{document}
+\newcommand*{\horzbar}{\rule[.5ex]{2.5ex}{0.5pt}}
+
+\section*{Partial solution to HW 9}
+\subsection*{Q4}
+There is a useful identity for the density function of standard normal distribution: Let $p_X(x)$ be the density for $X\sim N(0,1)$, then $p_X'(x)=xp_X(x)$.
+
+The proof is based on induction. $k=1$ cases are simple and we left them to you. Suppose $\mathbb{E}(X^{2k-1})=0$. Then by integration by part,
+\begin{equation*}
+\begin{aligned}
+E(X^{2k+1})=\int x^{2k+1}p_X(x)dx &= x^{2k}p_X(x)\Big|^\infty_{-\infty}+2k\int x^{2k-1}p_X(x)dx
+\\&
+=0+2kE(X^{2k-1})=0.
+\end{aligned}
+\end{equation*}
+On the other hand, suppose $E(X^{2k})=1\cdot 3\cdot 5\cdots(2k-1)$, then by integration by part again,
+\begin{equation*}
+\begin{aligned}
+E(X^{2(k+1)})=\int x^{2(k+1)}p_X(x)dx &= x^{2k+1}p_X(x)\Big|^\infty_{-\infty}+(2k+1)\int x^{2k}p_X(x)dx
+\\&
+=0+(2k+1)E(X^{2k})=(2k+1)!!.
+\end{aligned}
+\end{equation*}
+The by mathematical induction you can get the desired result.
+$\hspace{\fill}\square$
+
+\subsection*{Q5}
+The point is to see that $\sum_{i=1}^na_iX_i\sim N(0,1)$. Then the result follows from \textbf{Q4}.
+
+Let $\mathbf{a}_1=(a_1,\cdots,a_n)$ be a vector in $\mathbb{R}^n$. In the orthogonal complement subspace $U=\{u\in\mathbb{R}^n:u^T\mathbf{a}_1=0\}$, we find orthonormal basis $u_1,\cdots,u_{n-1}$ for $U$. Then the matrix defined by
+\begin{equation*}
+A=
+\begin{pmatrix}
+\horzbar\;\;\mathbf{a}_1\;\;\horzbar
+\\
+\horzbar\;\;u_1\;\;\horzbar\\
+\vdots \\
+\horzbar\;\; u_n\;\;\horzbar
+\end{pmatrix}
+\end{equation*}
+is orthonormal. Let $Y=AX$, where $X=(X_1,\cdots,X_n)^T$ is the standard normal random vector, then
+\begin{equation*}
+p_Y(y)=\Big(\frac{1}{2\pi}\Big)^\frac{n}{2}e^{\frac{1}{2}y^T(AA^T)^{-1}y}\frac{1}{|A|}=\Big(\frac{1}{2\pi}\Big)^\frac{n}{2}e^{\frac{1}{2}y^Ty}.
+\end{equation*}
+Which is a standard normal density function. Note that the first component of $Y$ is $\mathbf{a}_1^TX=\sum_{i=1}^na_iX_i$. Now by $Y$ is a standard normal r.v., we immediately have $\sum_{i=1}^na_iX_i\sim N(0,1)$. Finally, by \textbf{Q4}, $E\big(\sum_{i=1}^na_iX_i\big)^{2k}=(2k-1)!!$.
+$\hspace{\fill}\square$
+
+\subsection*{Q6}
+If you can find a $2\times 2$ matrix $A$ such that $AA^T=\Sigma$, then $AX\sim N(0,\Sigma)$. You can simply let $A=
+\begin{pmatrix}
+a & b\\
+c & d
+\end{pmatrix}
+$ and solve for $AA^T=
+\begin{pmatrix}
+2 & 1\\
+1 & 1
+\end{pmatrix}
+$. For example, $(a,b,c,d)=(1,1,1,0)$ is one of the solution.
+$\hspace{\fill}\square$
+
+\subsection*{Q7}
+By the property of multivariate Gaussian, one can see that $AA^T=\Sigma$. Moreover, consider $\mathbf{a}=(a_1,\cdots,a_n)^T\in\mathbb{R}^n$, then $\Sigma=[a_ia_j]_{1\leq i,j\leq n}=\mathbf{a}\mathbf{a}^T$. To construct a $n\times n$ matrix $A$ such that $AA^T=\mathbf{a}\mathbf{a}^T$, one can simply put $\mathbf{a}$ as the first column vector of $A$, and then duplicate it to fill up the rest. That is, let $A=\left[\mathbf{a}\cdots\mathbf{a}\right]/\sqrt{n}$. The factor $\sqrt{n}$ is needed so that $AA^T$ and $\Sigma$ are equal element-wise.
+$\hspace{\fill}\square$
+
+
+
+\end{document}
