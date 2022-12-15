@@ -121,7 +121,7 @@ By the definition of Guassian r.v., \(U  = \frac{X - \mu }{\sigma } \sim N(0,1)\
     \]
     \item \(P(\max{(X,Y)} > Z)\)   
     \[
-      \frac{1}{3}
+      \frac{2}{3}
     \]
 \end{itemize}
 
@@ -186,15 +186,15 @@ Finally, use the method for \(X + Y\) introduced in p.61 .
 \textbf{Sol.} \\
 Base case: \(n = 2\)
 \[
-   P(X_1 + X_2 \leq  s) = \int_0^s \int_0^{x_1}  dx_2 dx_1 = \frac{s^2}{2}   
+   P(X_1 + X_2 \leq  s) = \int_0^s \int_0^{s-x_1}  dx_2 dx_1 = \frac{s^2}{2}   
 \] 
 Induction hypothesis: The statement is true up to \(K \in \mathbb{N}\). \\ 
 Induction step: Consider \(n = K +1\)
 \begin{equation*}
     \begin{aligned}
         & P((X_1 + \dots X_K) + X_{K+1} \leq s)
-        \\ &= \int_0^s P( (X_1 + \dots X_K) \leq  X_{K+1} ) dx_{K+1} 
-        \\ &= \int_0^s \frac{x_{K+1}^K}{K!} dx_{K+1} 
+        \\ &= \int_0^s P( (X_1 + \dots X_K) \leq  s- x_{K+1} ) dx_{K+1} 
+        \\ &= \int_0^s \frac{(s-x_{K+1})^K}{K!} dx_{K+1} 
         \\ &= \frac{s^{K+1}}{(K+1)!}
     \end{aligned}
 \end{equation*} 
@@ -203,7 +203,7 @@ By mathematical induction, the statement is true for all \(n\in \mathbb{N}\).
 \\ \hspace{\textwidth}\(\square\)   
 \subsection*{Q9}
 \textbf{Sol.} \\
-\textbf{It will only work for gaussian random variables that covariance equals zero implies independent} (Prop. 13)\\  
+\textbf{It will only work for gaussian random variables that covariance equals zero implies independent} (Prop. 14)\\  
 Hence, the goal of this problem is to show that \(X+Y\) and \(X-Y\) are uncorrelated.\\
 For multiple normal r.v. problem, their joint p.d.f. will be a good starting point. 
 Let \(Z = (X,Y)\), the p.d.f of random vector \(Z\) is (p.73 or RC note Theorem 8.1.1) 
