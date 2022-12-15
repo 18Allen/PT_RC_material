@@ -1,0 +1,52 @@
+\chapter{RC 9}
+\recitation{9}{15 Dec. 18:30}{}
+
+\section{Review}
+\subsection*{Converge in Probability}
+In RC6 we've heard of convergence in probability 
+If we say \textbf{ \(X_n \to X\) in probability}, we means the sequence of random variables \((X_i)_{i=1}^\infty\) will eventually be really close to \(X\) in a way that
+those \(\omega \) that does not map close to \(X\) will eventually has measure zero. 
+\[
+    \lim\limits_{n \to \infty} P(|X_n -X| \geq \epsilon  ) = 0
+\]    
+for every \(\epsilon >0\). 
+\subsection*{Converge in Distribution}
+The sequence of random variables \((X_i)_{i=1}^\infty\) has corresponding c.d.f. \((F_i)_{i=1}\infty  \).  We say that \(X_n\) converge to \(X\) in distribution if     
+\[
+    \lim\limits_{n \to \infty} F_n(x)  = F(x)
+\]    
+\textbf{for every \(x\) where \(F\)  is continuous.}  
+
+\begin{remark}
+ Convergence in probability implies convergence in distribution. The converse is false. 
+\end{remark}
+\begin{eg}
+    Given a standard normal random variable \(X\), we can create a sequence of r.v. define on the same probability space \(X_n = (-1)^n X\). Then, \((X_n)_{n=1}^{\infty} \) converge to \(X\) in distribution but not in probability.  
+\end{eg}
+\section{Central Limit Theorem Primer}
+There's some nice animation on why central limit theorem will make sense (e.g \href{https://youtu.be/YAlJCEDH2uY}{StatQuest}, and \href{https://www.kaggle.com/code/carlmcbrideellis/animated-histogram-of-the-central-limit-theorem/notebook}{Python animation}). The statement of the theorem goes as follows 
+\begin{theorem}[CLT]
+    Let \((X_n)_{n=1}^{\infty} \) be a sequence of i.i.d. random variables with mean \(\mu \) and variance \(\sigma^2 \). 
+    For every \(n\), set \(S_n = \sum_{i=1}^{n} X_i\). Then, as \(n \to \infty\)
+    \[
+        \frac{S_n - n \mu }{\sqrt{n} \sigma }
+    \] 
+    converges in distribution to a standard normal random variable. In particular, for any \(-\infty <a \leq b < \infty \), 
+    \[
+        \lim\limits_{n \to \infty} P(a \leq \frac{S_n -n \mu }{\sqrt{n}\sigma  } \leq  b) = \int_a^b \frac{1}{\sqrt{2\pi } } e^{-\frac{x^2}{2}}dx
+    \]
+\end{theorem}
+There are a whole lot of variation and generalization of the theorem, like CLT for dependent r.v.'s, random vector, random matrix. We should not be worry about that at the moment. 
+
+\begin{eg}
+    HW10-1 
+\end{eg}
+In order to apply CLT, we have to satisfy the form. 
+
+\subsection*{CLT in Statistics}
+The CLT (or it's more general version) tells you that basically no matter what the distribution you are sampling from, as long as there's 'sufficiently large' (Often to be 30 in statistics??) sample, the distribution will approach a normal distribution*. This way, you can apply statistics on normal distribution like 68–95–99.7 rule to gain information. 
+
+\begin{eg}
+HW10-4     
+\end{eg}
+Check out the complementary error function table for numerical result. 
