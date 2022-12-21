@@ -1,0 +1,204 @@
+\documentclass[12pt]{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%\usepackage[legalpaper, landscape, margin=1in]{geometry}
+\usepackage{geometry}
+\usepackage{cancel}
+\geometry{
+a4paper,
+left=25mm,
+right=25mm,
+top=15mm,
+}
+\usepackage{setspace}
+\setstretch{1.25}
+
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+    axis x line=middle,    % put the x axis in the middle
+    axis y line=middle,    % put the y axis in the middle
+    axis line style={<->}, % arrows on the axis
+    xlabel={$x$},          % default put x on x-axis
+    ylabel={$y$},          % default put y on y-axis
+    },
+    cmhplot/.style={color=red,mark=none,line width=1pt,<->},
+    soldot/.style={color=red,only marks,mark=*},
+    holdot/.style={color=red,fill=white,only marks,mark=*},
+}
+
+\tikzset{>=stealth}
+
+\begin{document}
+
+\noindent
+\section*{Quiz 4 Solution}
+\begin{enumerate}
+\item This is a problem about change of variable (CoV) for single variable 
+\begin{itemize}
+    \item[(a)] We may copy the c.d.f. method in HW8. First, observe that the range of \(U\) is \([0,\infty)\) not \(\mathbb{R}\) now.   
+    
+    To use the c.d.f. method, we consider 
+    \[
+        P(U \leq u) = P(X^2 \leq  u) = P(-\sqrt{u} \leq  X \leq \sqrt{u} ) = \int_{-\sqrt{u} }^{\sqrt{u}} \frac{1}{\sqrt{2\pi } }e^{-\frac{x^2}{2}}dx 
+    \]
+    The integral does not have analytical form, but that's fine. We only want its derivative \(f_{U}(u) \). By Leibniz integral rule 
+    \[
+        \frac{d}{du}  \int_{-\sqrt{u} }^{\sqrt{u}} \frac{1}{\sqrt{2\pi } }e^{-\frac{x^2}{2}}dx = \frac{1}{2\sqrt{u}}( \frac{1}{\sqrt{2\pi } }e^{-\frac{u}{2}})  -\frac{-1}{2\sqrt{u}}( \frac{1}{\sqrt{2\pi} }e^{-\frac{u}{2}})  =  \frac{1}{\sqrt{2\pi u } }e^{-\frac{u}{2}}
+    \]
+    \hspace{\textwidth}\(\square \) 
+    \item[(b)] By definition of expectation 
+    \[
+        E[U] = \int_0^\infty u f_U(u)du = \frac{1}{\sqrt{2\pi } }\int_0^{\infty} u^{\frac{1}{2}} e^{-\frac{u}{2}} du \underbrace{=}_{u = 2t^2}\frac{4}{\sqrt{\pi } }\int_0^{\infty} t^2 e^{-t^2} dt   
+    \]
+    At this point you either recognize the integral as \(\Gamma (\frac{1}{2}) = \sqrt{\pi } \), or do integrate by part as follows 
+    \[
+        \int_0^{\infty} t^2e^{-t^2}dt = \cancelto{0}{-\frac{t}{2}e^{-t^2} |_{0}^{\infty}} + \frac{1}{2}\int_0^{\infty} e^{-t^2}dt  = \frac{\pi}{4} 
+    \] 
+    Hence, \(E[U] = 1\). 
+
+    \textbf{Note:} If you notice \(E[U] = E[X^2]\), which is given to be \(1\) since \(1 = Var(X) = E[X^2] = E[X]^2 = E[X^2]\).     
+    \hspace{\textwidth}\(\square \) 
+\end{itemize}
+\item This is a problem that applies c.d.f. method, and that's why the problem is designed this way. 
+\begin{itemize}
+    \item[(a)]
+    First step, we check the joint p.d.f. of \(X\) and \(Y\). Since they are independent, the joint p.d.f. is the product of their respective p.d.f., i.e. 
+    \[
+        f(x,Y) = \lambda ^{2} e^{-\lambda (x+y)}
+    \] 
+    Then, we compute the c.d.f. of \(Z\).  
+    \begin{equation*}
+        \begin{aligned}
+        P(Z \leq z ) &= P(X \leq zY) = \int_{0}^{\infty} \int_0^{zy}\lambda^{2} e^{-\lambda (x+y)}dxdy   
+                \\ &= \int_0^{\infty} \lambda e^{- \lambda  y} (1-e^{-\lambda zy})dy 
+                \\ &= 1  - \frac{1}{z+1}
+        \end{aligned}
+    \end{equation*}
+    \hspace{\textwidth}\(\square \) 
+    \item[(b)] 
+    Getting p.d.f. from (a) is just a derivative away. Still, you have to be careful about the range of \(Z\). 
+    In this case \(Z\) takes value in \([0,\infty )\) (or \(\mathbb{R}^+\) ).     
+    \[
+        f_Z(z) = P^\prime (Z \leq z) = \frac{1}{(z+1)^{2} }
+    \]
+    \hspace{\textwidth}\(\square \) 
+\end{itemize}
+\item 
+\begin{itemize}
+    \item[(a)] 
+    This is a classic multi-variate change of variable problem. We will start with (if possible) finding \(T\) such that \((X,Y) = T(V,W)\). 
+    \[
+        \begin{bmatrix}
+             X \\
+             Y \\
+        \end{bmatrix} = \underbrace{\frac{1}{2} \begin{bmatrix}
+            1 &  1 \\
+            1 &  -1 \\
+        \end{bmatrix}}_{A}\begin{bmatrix}
+             V \\
+             W \\
+        \end{bmatrix}
+    \]
+     In this case we have $T$ as a transformation matrix \(A\). (b.t.w. it means \(\left\vert \frac{\partial (x,y)}{\partial (v,w)} \right\vert  = \frac{1}{2}\) ) 
+    
+    Then, since \(X,Y\) are i.i.d. standard normal, the joint p.d.f. is   
+    \[
+        f_(x,y)  = \frac{1}{2\pi }e^{-\frac{x^{2}+y^2 }{2}}
+    \]
+
+    Finally, by multi-variate CoV (Please refer to HW8\_sol), the joint p.d.f. of \((V,W)\), \(g\) is  
+       \[
+        g(v,w) = f(T(v,w))\left\vert \frac{\partial (x,y)}{\partial (v,w)} \right\vert 
+       \]
+    Which is 
+    \[
+        g(v,w) = \frac{1}{4 \pi }e^{-\frac{(\frac{v+w}{2})^2 + (\frac{v-w}{2})^2}{2}}  
+            = \frac{1}{4 \pi }e^{-\frac{v^2 +w^2}{4}} 
+    \]
+    \hspace{\textwidth}\(\square \) 
+    \item[(b)]
+    If both variables have p.d.f. and they also have joint p.d.f. (which is the case we have here), then \(V\) \(W\) are independent if \(g(v,w) = f_Z(z)f_{W}(w)\). 
+    \[
+        g(v,w)  = \frac{1}{4 \pi }e^{-\frac{v^2 +w^2}{4}}  = \underbrace{\frac{1}{2\pi \sqrt{2} }e^{-\frac{v^2}{2\cdot 2}}}_{f_Z(z)} \cdot \underbrace{\frac{1}{2\pi \sqrt{2} }e^{-\frac{w^2}{2\cdot 2}}}_{f_W(w)}
+    \]  
+    Hence, \(V,W\) are independent. 
+    \hspace{\textwidth}\(\square \) 
+    \item[(c)]
+    The problem is equivalent to asking the marginal p.d.f. of \(Z\). 
+    Due to the independence of \(V,W\) (as shown in (b)), this is just \(f_Z(z)\).     
+    
+    \textbf{Note:} Since \(X,Y\) are independent normal variables, we may also use the \textbf{stability of normal r.v.} to get \(X+Y \sim N(0,1+1)\) directly.   
+\end{itemize}
+\item 
+This problem indents to find the transformation of \(X\), \(A\) , such that the new \textbf{covariance matrix} is \(\Sigma \).  
+Since 
+\[
+    \Sigma  = AA^{\top}  
+\]
+is a semi-defninate matrix. It is good to start from eigenvalue decomposition. 
+\[
+    \Sigma = \begin{bmatrix}
+        1 &  1 \\
+        1 &  -1 \\
+    \end{bmatrix}\begin{bmatrix}
+        2 &  0 \\
+        0 &  3 \\
+    \end{bmatrix} \begin{bmatrix}
+        1 &  1 \\
+        1 &  -1 \\
+    \end{bmatrix} = \begin{bmatrix}
+        1 &  1 \\
+        1 &  -1 \\
+    \end{bmatrix}\begin{bmatrix}
+        \sqrt{2}  &  0 \\
+        0 &  \sqrt{3}  \\
+    \end{bmatrix} 
+    \begin{bmatrix}
+        \sqrt{2}  &  0 \\
+        0 &  \sqrt{3}  \\
+    \end{bmatrix} 
+    \begin{bmatrix}
+        1 &  1 \\
+        1 &  -1 \\
+    \end{bmatrix}
+\]
+Hence, we may set \(A = \begin{bmatrix}
+        1 &  1 \\
+        1 &  -1 \\
+    \end{bmatrix}\begin{bmatrix}
+        \sqrt{2}  &  0 \\
+        0 &  \sqrt{3}  \\
+    \end{bmatrix} 
+\) 
+\\
+\hspace{\linewidth}\(\square \) 
+\item 
+This is a rather weird question.  Observe that we have 
+\begin{enumerate}
+    \item \(f_X(x) = 1, x \in [0,1]\)
+    \item \(P(X \leq  x) = x, x\in [0,1]\) 
+    \item \(f_Y(y) = e^{-y} , y \in \mathbb{R}^+\) 
+    \item \(P(Y \leq y) = 1 - e^{-y} , y \in \mathbb{R}^+\) 
+\end{enumerate} 
+Can we use c.d.f. method on this one? Let's try 
+\[
+    1 - e^{-y} = P(Y \leq y) = P(g(X) \leq y) = P(X \leq g^{-1}(y)) = g^{-1}(y)
+\]
+(About the existance of inverse function, you may first assume it and check that $g^{-1}$ increase with $y$ continuously, or you can first observe that \(P(X \leq g^{-1}(y)) \) )
+
+Anyway, $x = g^{-1}(y) = 1 - e^{-y}$ gives us 
+\[
+    y = g(x) = -\ln{(1-x)} 
+\] 
+\hspace{\textwidth}\(\square \) 
+\end{enumerate}
+\end{document} 
