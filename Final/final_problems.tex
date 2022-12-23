@@ -1,0 +1,70 @@
+\documentclass[14pt]{extarticle}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%\usepackage[legalpaper, landscape, margin=1in]{geometry}
+\usepackage{geometry}
+\geometry{
+a4paper,
+left=17mm,
+right=17mm,
+top=15mm,
+}
+\usepackage{setspace}
+\setstretch{1.25}
+
+\usepackage[T1]{fontenc}
+\usepackage{tgtermes}
+
+\begin{document}
+
+\section*{Final Exam}
+\begin{enumerate}
+    \item Let $U\sim\text{Unif}([0,1])$. Find the p.d.f. of the following random variables:\\
+    (a) $X=U^2$\\
+    (b) $Y=e^U$\\
+    (c) $Z=\sqrt{U}$\\
+    (5 points for each problems)
+    
+    \item Let $\{X_i\}_{i=1}^\infty$ be independent random variables having the exponential distribution with parameters $\lambda$.\\
+    (a) (5 points) Find the density function of $X_1+X_2$.\\
+    (b) (10 points) Let $S_n=X_1+\cdots+X_n$. Prove that the density of $S_n$ is
+    \begin{equation*}
+    f_{S_n}(s)=\frac{\lambda^n}{(n-1)!}s^{n-1}e^{-\lambda s},\,s>0.
+    \end{equation*}\\
+    (c) (5 points) Consider the same $S_n$, and let $\overline{X}_n=S_n/n$. Calculate $E(\overline{X}_n)$ and $\text{Var}(\overline{X}_n)$.\\
+    (d) (5 points) Prove the weak law of large numbers for $\overline{X}_n$. That is, show that for any $\epsilon>0$,
+    \begin{equation*}    
+    P(|\overline{X}_n-E(\overline{X}_n)|\geq\epsilon)\rightarrow 0\text{ as }n\rightarrow\infty.
+    \end{equation*}
+    
+    \item Let $X$, $Y$ have the normal distribution with unit variance and zero mean, and their covariance $\rho\neq 0$.\\
+    (a) (5 points) Write down the joint density function of $(X,Y)$.\\
+    (b) (10 points) Let $U_\theta=X\cos\theta+Y\sin\theta$ and $V_\theta=-X\sin\theta+Y\cos\theta$, $\theta\in[0,\pi)$. Find all the possible $\theta$ such that $U_\theta$ and $V_\theta$ are independent.
+    
+    \item Find the value $C$ for the following probability density functions.\\
+    (a) (5 points) $f(x)=C(1+x^2)^{-1},\,x\in\mathbb{R}$. \\
+    (b) (5 points) $f(x)=C\exp(-x-e^{-x}),\,x\in\mathbb{R}$.
+
+    \item Let $X$ and $Y$ be independent random variables with the same c.d.f $F$ and p.d.f. $f$.\\
+    (a) (5 points) What is the c.d.f. of $V=\max\{X,Y\}$?\\
+    (b) (5 points) Write down the p.d.f. of $V$.\\
+    (c) (10 points) Write down the p.d.f. of $Z=\min\{X,Y\}$.
+    
+    \item Roll a die $n$ times and let $S_n$ be the number of times you roll $6$ by time $n$. Assume that each rolls are independent. Let $\overline{X}_n=S_n/n$.\\
+    (a) (5 points) Compute $E(S_n)$ and $\text{Var}(S_n)$.\\
+    (b) (10 points) Consider $\overline{X}_n=S_n/n$. We want to estimate $P(|\overline{X}_n-E(\overline{X}_n)|<\epsilon)$ for some small $\epsilon>0$. Let $\Phi(x)=P(Z\leq x)$ be the c.d.f. of $Z\sim N(0,1)$. Use central limit theorem to write down an approximation of $P(|\overline{X}_n-E(\overline{X}_n)|<\epsilon)$. (Use $\Phi$ and $n$ to express your answer)
+
+
+\end{enumerate}
+
+
+\end{document} 
