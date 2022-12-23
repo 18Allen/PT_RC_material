@@ -1,0 +1,217 @@
+\chapter{Last Review}
+\section*{Small topics}
+\subsection*{The method of indication}
+(\cite{Und_Chatterjee} p.33)" The method of indicators is a technique for evaluating the expected value/variance of a random variable by finding a way to write it as a sum of indicator function."
+The \textbf{indicator} of \(A\) is a random variable, denoted by \(1_A\), (you can understand it as taking \(A\) or not), defined as follows  
+\[
+    1_A(\omega) = \begin{cases} 1, \quad \text{if } \omega \in A \\ 0,\quad \text{if } \omega \notin A \end{cases}
+\]
+
+If \(X\) can be represented as \(X = \sum_{i=1}^{n} 1_{A_i}\), we can use \textbf{linearity of expectation} to write 
+\[
+    E[X] = \sum_{i=1}^{n} E[1_{A_i}]
+\]  
+(Remember here we don't have to worry about independence of \(1_{A_i}\) .)
+\subsection*{Expectation and Variance}. 
+The expectation of a continuous random variable \(X\) with p.d.f. \(f\) is defined as 
+\[
+    E[X] = \int_{-\infty }^{\infty } x f(x)dx
+\] 
+Providing that \(xf(x)\) is absolutely integrable. (The reason is that we will sometimes change the order of integration). 
+
+Given the condition that  \(x^2 f(x)\) is absolutely integrable, we may define the \textbf{variance} of \(X\) as 
+\[
+    \text{Var}(X) = E[X^{2} ] - E[X]^2 
+\]
+
+\section{Weak Law of Large Number}
+\subsection*{Converge in Probability}
+If we say \textbf{ \(X_n \to X\) in probability}, we means the sequence of random variables \((X_i)_{i=1}^\infty\) will eventually be really close to \(X\) in a way that
+those \(\omega \) that does not map close to \(X\) will eventually has measure zero. 
+\[
+    \lim\limits_{n \to \infty} P(|X_n -X| \geq \epsilon  ) = 0
+\]    
+for every \(\epsilon >0\). 
+\subsection*{Converge in Distribution}
+The sequence of random variables \((X_i)_{i=1}^\infty\) has corresponding c.d.f. \((F_i)_{i=1}\infty  \).  We say that \(X_n\) converge to \(X\) in distribution if     
+\[
+    \lim\limits_{n \to \infty} F_n(x)  = F(x)
+\]    
+\textbf{for every \(x\) where \(F\)  is continuous.}  
+
+\begin{remark}
+ Convergence in probability implies convergence in distribution. The converse is false. 
+\end{remark}
+\subsubsection*{Chebyshev inequality}
+\begin{note}[Chebyshev inequality]
+   Let X be \textbf{any} r.v. Then for \textbf{any} \(t > 0\),
+   \[
+    P(|X - E[X]| \geq t) \leq \frac{\text{Var} (X)}{t^2}
+   \]  
+\end{note}
+It is a direct application of Markov inequality as \( P(|X - E[X]| \geq t) = P(|X - E[X]|^2 \geq t^2) \), and \(E[(X - E[X])^2] = Var(X)\) 
+\subsection*{The weak law of large number (WLLN)}
+\begin{theorem}[Weak Law of Large Numbers] 
+    (Thm. 4 in \cite{Und_Chatterjee})\\
+    Let \(X_1,X_2, \dots\) be an \textbf{i.i.d.} sequence of random variables with expected value \(\mu \) and finite variance. For each n, let 
+    \[
+        \bar{X_n} \coloneqq \frac{1}{n} \sum_{i=1}^{n} X_{i} 
+    \]   
+    be the average of the first \(n\) of these variables. Then as \(n \to \infty \), \(\bar{X_n} \to  \mu \) \textbf{in probability}.    
+\end{theorem}
+\subsection*{Usual Procedure}
+If WLLN can not apply directly (like in Quiz 3), you can still use Chebyshev. 
+\begin{enumerate}
+    \item Guess where the sequence converges to in probability . 
+    \item Put it in the form of Chebyshev inequality. 
+    \item Calculate the variance of random variable
+    \item Check if the variance approach 0 as \(n \to  \infty \).  
+\end{enumerate}
+
+\section{Central limit Theorem}
+\begin{theorem}[CLT]
+    Let \((X_n)_{n=1}^{\infty} \) be a sequence of i.i.d. random variables with mean \(\mu \) and variance \(\sigma^2 \). 
+    For every \(n\), set \(S_n = \sum_{i=1}^{n} X_i\). Then, as \(n \to \infty\)
+    \[
+        \frac{S_n - n \mu }{\sqrt{n} \sigma }
+    \] 
+    converges in distribution to a standard normal random variable. In particular, for any \(-\infty <a \leq b < \infty \), 
+    \[
+        \lim\limits_{n \to \infty} P(a \leq \frac{S_n -n \mu }{\sqrt{n}\sigma  } \leq  b) = \int_a^b \frac{1}{\sqrt{2\pi } } e^{-\frac{x^2}{2}}dx
+    \]
+\end{theorem}
+\subsection*{CLT in Statistics}
+The CLT (or it's more general version) tells you that basically no matter what the distribution you are sampling from, as long as there's 'sufficiently large' (Often to be 30 in statistics??) sample, the distribution will approach a normal distribution*. This way, you can apply statistics on normal distribution like 68–95–99.7 rule to gain information. 
+
+\subsection*{Z-table}
+Since CLT is useful and the c.d.f. of Gaussian normal is hard to analyze, we have table to refer to. 
+\href{https://www.z-table.com/}{Z-table}
+
+This is even better than the error-function we introduced in RC9, since z-table is already for standard normal. 
+\begin{exercise}
+    There are 250 dogs at a dog show who weigh an average of 12 pounds, with a standard deviation of 8 pounds. If 9 dogs are chosen at random, what is the probability they have an average weight of less than 17 pounds?
+\end{exercise}
+\section{Continuous random variable}
+\subsection*{Some Continuous Random Variables}
+These are some continuous r.v. that you should keep in mind.  
+\begin{itemize}
+    \item \textbf{Uniform r.v. \(X \sim \text{Unif}([a,b])\) }:\\
+        \[
+            f(x) = \begin{cases}
+                \frac{1}{b-a}, &\text{ if } x \in [a,b] ;\\
+                0, &\text{ otherwise }  .
+            \end{cases}
+        \]
+    \item \textbf{Exponential r.v. \(X \sim \text{Exp}(\lambda )  \)}: \\
+    \[
+        f(x) = \begin{cases}
+            \lambda e^{-\lambda x}, &\text{ if } x\geq 0 ;\\
+            0 , &\text{ otherwise }  .
+        \end{cases}
+    \]
+    \item \textbf{Normal(Gaussian) r.v. \(X \sim N(\mu ,\sigma^2) \) }: \\   
+    \[
+        f(x) = \frac{1}{\sqrt{2 \pi \sigma^2 }} e^{\frac{-(x-\mu )^2}{2 \sigma^2}}
+    \]
+    The \(N(0,1)\) distribution is called \textbf{standard normal distribution}.   
+\end{itemize}
+\subsection*{Probability Density Function}
+We may ignore some intricate definition of "niceness" of p.d.f. for now. Just remember that if a \textbf{non-negative} function \(f\) is given as p.d.f of random variable \(X\), 
+the probability of \(X\) taking value in \(A\) is 
+\[
+    P(X \in A) = P(A) = \int_A f(x)dx
+\] 
+
+This means that we care about the value \textbf{"after" integration}, not density per se. .
+\begin{itemize}
+    \item \textbf{p.d.f. can take on value larger than 1} \\ 
+            For example: \(f(x) = 2 1_{|X| \leq  \frac{1}{2}} \). \(f(0) = 2\) but \(\int_{-1 /2 }^{1 /2} f(x)dx  = 1\).   
+    \item \textbf{P(\(\mathbb{R} \) )}\\ 
+            By the definition above, \(P(\mathbb{R} ) = \int_{-\infty }^{\infty} f(x)dx = 1 \)   
+\end{itemize}
+
+\subsection*{Joint p.d.f.}
+\cite{Und_Chatterjee}
+Suppose that \(X_1, \dots, X_n\) are continuous r.v. defined on the same probability space. The n-tuple (means order things of length n) \(X = (X_1, \dots, X_n)\) is called a \textbf{random vector}. Note that 
+\begin{itemize}
+    \item \(X : \Omega \to  \mathbb{R}^n\)
+    \item non-negative \(f: \mathbb{R}^n \to  \mathbb{R}\)  is the \textbf{joint p.d.f.} of \(X_1, \dots,X_n\) is such that for any "good" (i.e. measurable) set \(A \subseteq \mathbb{R}^n\), we measure the probability of \(X\in A\) by   
+\[
+    P(X \in A) = \int_A f(x_1, \dots, x_n)dx_1 \dots dx_n
+\]
+\end{itemize}
+
+\subsection*{Independence}
+\begin{remark}
+    \(X_{1},\dots, X_n \)  are independent if 
+    \[
+         f(x_1, \dots, x_n) = \prod_{i=1}^n f_i(x_i)
+    \]
+\end{remark} 
+\subsection*{Mean Vector and Covariance matrix}
+(\cite*{Und_Chatterjee})
+Let \(X = (X_1, \dots, X_n)\) be an n-dimensional random vector (discrete or continuous). 
+\begin{itemize}
+    \item \textbf{Mean vector} \(E[X]\)\\
+    The \textbf{mean vector} of  \(X\), denoted by \(E[X]\) is the  
+    \item \textbf{Covariance matrix} Cov(\(X\))\\
+    The \textbf{covariance matrix} of \(X\), denoted by Cov(\(X\)) is the nxn matrix \(\Sigma\) with 
+    \[
+        (\Sigma )_{ij} = \sigma_{ij} = \text{Cov} (X_i,X_j)
+    \]   
+
+    \begin{remark}
+        The covaraince matrix \(\Sigma \) has some properies  
+        \begin{itemize}
+            \item Symmetric
+            \item Positive semi definite
+        \end{itemize}
+    \end{remark}
+    \item Linear transformation \(Y = AX\)\\ 
+    \(E[Y]\) 
+    \[
+        E[Y]  = E[AX] = AE[X]
+    \]
+    \(\Sigma \) 
+    \[
+        \sigma_{ij} =  \text{Cov} ((AX)_i, (AX)_{j} ) = \sum_{1\leq p,q \leq n}^{n} a_{ip}a_{jq} \text{Cov}(X_{p} ,X_{q} ) 
+    \]
+    Rearrange it you get 
+    \[
+        \Sigma_Y = A \Sigma_X A^T
+    \] 
+\end{itemize}
+\begin{theorem}
+    Given a standard normal random vector \(X\), and let \(Z = \mu  + AX\), where \(\mu \in \mathbb{R}^n\) and \(A\) is invertible. 
+    \\Then, the joint p.d.f. of \(Z\) is 
+    \[
+        h(z) = \frac{1}{(2\pi)^{\frac{n}{2}} (\text{det}(\Sigma) )^{\frac{1}{2}}} e^{-\frac{1}{2} (z-\mu )^T \Sigma ^{-1} (z-\mu ) }
+    \]     
+    where \(\Sigma  = A A^T\) is \(\Sigma_{AX} \). 
+\end{theorem}
+
+
+\subsection*{Change of Variable}
+\begin{itemize}
+   \item Change of Variable formula (CoV) \\
+   (p.55~56 for single variable, p.60~61 for multi-variable) 
+   This method is mention also in RC7 as well. Just remember that you need to put a measure-correction term $\left\vert \frac{\partial x}{\partial y} \right\vert $ (for single variable case) or \(\left\vert J_T \right\vert \) (for multivariable case) \\
+   For single variable case, changing from $x$ to $y$ with transformation $T(y)$  
+   \[
+    g(y) = f(T(y)) \left\vert \frac{\partial x}{\partial y} \right\vert 
+   \]  
+    
+   For 2 variable case (multi-variable is similar), changing a coordinate $(x,y)$ to \((u,v)\) with transformation $(x,y) = T(u,v)$, we can get the new p.d.f. $g(u,v)$ by the original p.d.f $f(x,y)$  by 
+   \[
+    g(u,v) = f(T(u,v)) \left| J_T \right|
+   \]
+   \item Cumulative distribution function (c.d.f.) 
+   (p.54~55, \textbf{only for single variable case})
+   As we know that for cont. r.v., the way to 'measure' the probability of an event is to integrate the p.d.f of that event. 
+   Hence, you can think of this method as a version that you \textbf{integrate first, then derivate} to get new p.d.f. 
+   \begin{itemize}
+       \item Determine the range of new r.v. (say \(Z\) )
+       \item Represent the c.d.f. of \(Z\)  as the old r.v. (say \(X\) ) . Then you will have a function of \(z\). 
+       \item Differentiate the function w.r.t. \(z\).  
+   \end{itemize}
+\end{itemize}

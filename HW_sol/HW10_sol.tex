@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%\usepackage[legalpaper, landscape, margin=1in]{geometry}
+\usepackage{geometry}
+\geometry{
+a4paper,
+left=25mm,
+right=25mm,
+top=15mm,
+}
+\usepackage{setspace}
+\setstretch{1.25}
+
+\begin{document}
+\newcommand*{\horzbar}{\rule[.5ex]{2.5ex}{0.5pt}}
+
+\section*{Partial solution to HW 10}
+\subsection*{Heads up}
+Q1 to Q4 will be in the range of the finals. Q5 to Q7 are optional (If you want to know what is Lyapunov CLT) 
+
+For notation convenience, in the following content we assume \(g \sim N(0,1)\) and \(P(g < t) = \Phi(t) = \int_{-\infty }^{t} \frac{1}{\sqrt{2 \pi }} e^{- \frac{t^2}{2}} dt \).  
+Also, since the p.d.f. of \(g\) is an even function, we have \(\Phi(-t) = 1-\Phi(t)\).  
+\subsection*{Q1}
+Since we have i.i.d. \(X_n \sim \text{Ber}(p) \) for all \(n\), \(E[X_n] =p\) and \(\text{Var} (X_{n} ) = p(1-p)\) less than infinity, so we can use CLT. 
+The thing to find is  
+\[
+    \lim\limits_{n \to \infty} P(\left\vert \frac{S_{n}}{n} -p \right\vert > t_{n}) 
+\] 
+with the condition that \(\lim\limits_{n \to \infty} \sqrt{n} t_{n} \to t \in [0,\infty )\). 
+To apply CLT, we should put the problem in a CLT form. That is, 
+\[
+    P(\left\vert \frac{S_{n}}{n} -p \right\vert > t_{n}) = P(\left\vert \frac{S_{n} - np}{\sqrt{n} } \right\vert > \sqrt{n} t_{n}) 
+\]
+It will not hurt a lot if we just assume \(\sqrt{n} t_{n}\) is \(t\). In that case, we can apply CLT to get 
+\[
+    \lim\limits_{n \to \infty} P(\left\vert \frac{S_{n} - np}{\sqrt{n} } \right\vert > t) \underbrace{=}_{CLT} P(g<-t) + P(g > t) = \Phi(-t) + (1-\Phi(t)) = 2\Phi(-t) 
+\]
+\hspace{\textwidth}\(\square\) 
+
+\textbf{Note:} For those interested, the following are the procedure to follow if you don't cut corner.  
+
+To deal with the changing number \(\sqrt{n} t_{n} \), we may use limsup and liminf to show the limit exists. 
+Since  
+\[
+    \lim\limits_{n \to \infty} P(\left\vert \frac{S_{n}}{n} -p \right\vert > t_{n}) 
+\]
+For an arbitrary \(\epsilon >0\), there exist \(N_{\epsilon }\in \mathbb{N}\) such that \(\left\vert \sqrt{n} t_{n} -t \right\vert < \epsilon \). Hence, for \(n > N\)  
+\[
+ \underbrace{P(\left\vert \frac{S_{n} - np}{\sqrt{n} } \right\vert > t + \epsilon )}_{T_{t+\epsilon }} \leq \underbrace{ P(\left\vert \frac{S_{n} - np}{\sqrt{n} } \right\vert > \sqrt{n} t_{n}) }_{T_n} \leq \underbrace{P(\left\vert \frac{S_{n} - np}{\sqrt{n} } \right\vert > t-\epsilon )}_{T_{t-\epsilon }} 
+\]
+Hence, we will have  
+\[
+   2\Phi(-t -\epsilon )     \underbrace{=}_{CLT} \lim\limits_{n \to \infty} T_{t + \epsilon} \leq  \liminf\limits_{n\rightarrow \infty } T_{n}   \leq \limsup\limits_{n\rightarrow \infty } T_{n}  \leq \lim\limits_{n \to \infty} T_{t-\epsilon} \underbrace{=}_{\text{CLT}} 2\Phi(-t + \epsilon )  
+\]
+Since \(\epsilon\) is arbitrary, we may take \(\epsilon \to 0+\). 
+Then, limsup and liminf are the same, which means the limit of \(T_n\) exists and equals \(2\Phi(-t)\) 
+
+\begin{equation*}
+    \begin{aligned}
+        a
+    \end{aligned}
+\end{equation*} 
+\subsection*{Q2}
+Recall that the stability of Poission r.v. said that for two independent \(X_1 \sim \text{Pois} (\lambda_1)\) and \(X_2 \sim \text{Pois} (\lambda_2)\), then \(X_1 + X_2 \sim \text{Pois}(\lambda_1 + \lambda_2) \). 
+Another thing, we'll take it as a fact that \(E[X_1] = \text{Var}(X_1) = \lambda_1  \) 
+\\
+In our case, we want to make a summation term so it looks like what we have for CLT. Due to stability of Poission we may view \(X\) as the sum of i.i.d. Poisson r.v. 
+,i.e. \(X = \sum_{i=1}^{n} X_i\), where \(X_i \sim \text{Pois}(\frac{\lambda}{n}) \) 
+\\Then, we can reorganize the given term as 
+\[
+    P(\left\vert X - \lambda  \right\vert \geq a \sqrt{\lambda }  ) = P(\frac{\left\vert X - n(\frac{\lambda}{n}) \right\vert}{\sqrt{n}\sqrt{\frac{\lambda}{n}}  }  \geq a)
+\]
+Hence, by CLT we have the limit being
+\[
+    \lim\limits_{n \to \infty}  P(\left\vert X - \lambda  \right\vert \geq a \sqrt{\lambda }  ) \underbrace{=}_{CLT} P(g \leq  -a) + P(g \geq a) = \Phi(-a) + (1-\Phi(a)) = 2\Phi(-a), a > 0 
+\]
+\hspace{\textwidth}\(\square\) 
+\subsection*{Q3}
+First step, turn the words into useful things. We may answer the problem by estimating how likely will this situation happen. 
+Here we assume that \(96\) people is a lot ($=\_=$). 
+\\ 
+What's next? How do we know the standard deviation? \\
+To answer this, we have to make assumption about the selection process. In this case it is reasonable to assume that for each selection \(X_i\), it's either from minority group with probability \(p = 0.24\) or not with probability \(1-p\). 
+Then, the sum \(S_n = \sum_{i=1}^{96}X_i \) will be the number of people from minority groups. Note that \(E[X_i] = p\), \(E[S_{96} ] \approx 23\),  and \(\text{Var}(X_i) = p(1-p) \approx 0.182\).  Hence, we are calculating 
+\[
+   P(S_{96} \leq 13) = P(\frac{S_{96} - 23}{\sqrt{96 \cdot 0.18} } \leq \frac{-10}{\sqrt{96 \cdot 0.18} }) \underbrace{\approx}_{CLT} \Phi(-2.41) 
+\]   
+Checking the value at \href{https://www.z-table.com/}{z-table}, it's around \(0.8\%\), so really unlikely. 
+For more about jury selection process, check out \href{https://youtu.be/cPRK_ABldIk}{Vox video}.  
+\subsection*{Q4}
+
+\end{document}
