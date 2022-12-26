@@ -1,0 +1,103 @@
+\documentclass[14pt]{extarticle}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%\usepackage[legalpaper, landscape, margin=1in]{geometry}
+\usepackage{geometry}
+\geometry{
+a4paper,
+left=17mm,
+right=17mm,
+top=15mm,
+}
+\usepackage{setspace}
+\setstretch{1.25}
+
+\usepackage[T1]{fontenc}
+\usepackage{tgtermes}
+
+\begin{document}
+
+\section*{Final Exam}
+\subsection*{Part 1 (55 points)}
+\begin{enumerate}
+    \item Let $U\sim\text{Unif}([0,1])$. Find the p.d.f. of the following random variables:\\
+    (a) $X=U^2$\\
+    (b) $Y=e^U$\\
+    (c) $Z=\sqrt{U}$\\
+    (5 points for each problems)
+
+    \item Let $\{X_i\}_{i=1}^\infty$ be independent random variables having the exponential distribution with parameters $\lambda$.
+    Let $S_n=X_1+\cdots+X_n$.\\
+    (a) (5 points) Now let $\overline{X}_n=S_n/n$. Calculate $E(\overline{X}_n)$ and $\text{Var}(\overline{X}_n)$.\\
+    (b) (5 points) Prove the weak law of large numbers for $\overline{X}_n$. That is, show that for any $\epsilon>0$,
+    \begin{equation*}
+    P(|\overline{X}_n-E(\overline{X}_n)|\geq\epsilon)\rightarrow 0\text{ as }n\rightarrow\infty.
+    \end{equation*}
+    (c) (10 points) Find the density function of $X_1+X_2$.\\
+    (d) (5 points) Prove that the density of $S_n$ is
+    \begin{equation*}
+    f_{S_n}(s)=\frac{\lambda^n}{(n-1)!}s^{n-1}e^{-\lambda s},\,s>0.
+    \end{equation*}\\
+
+    \item Roll a die $n$ times and let $S_n$ be the number of times you roll $6$ by time $n$. Assume that each rolls are independent. Let $\overline{X}_n=S_n/n$.\\
+    (a) (5 points) Compute $E(S_n)$ and $\text{Var}(S_n)$.\\
+    (b) (10 points) Consider $\overline{X}_n=S_n/n$. We want to estimate $P(|\overline{X}_n-E(\overline{X}_n)|<\epsilon)$ for some small $\epsilon>0$. Let $\Phi(x)=P(Z\leq x)$ be the c.d.f. of $Z\sim N(0,1)$. Use central limit theorem to write down an approximation of $P(|\overline{X}_n-E(\overline{X}_n)|<\epsilon)$. (Use $\Phi$ and $n$ to express your answer)
+
+\end{enumerate}
+
+
+\subsection*{Part 2 (45 points. Choose 3 of 6 problems below to answer.)}
+\begin{enumerate}
+\setcounter{enumi}{3}
+
+	\item (Gaussian distribution and integration by parts) Assume $X\sim N(0,1)$.\\
+	(a) (10 points) Show that $E(X^{2k})=(2k-1)!!=1\cdot 3\cdot 5\cdots (2k-1)$.\\
+	(b) (5 points) Suppose $f$ is continuously differentiable, prove that
+	\begin{equation*}
+	E(Xf(X))=E(f'(X)),
+	\end{equation*}
+	provided that both sides are well-defined.
+
+    \item Let $X$, $Y$ have the normal distribution with unit variance and zero mean, and their covariance $\rho\neq 0$.\\
+    (a) (10 points) Write down the joint density function of $(X,Y)$.\\
+    (b) (5 points) Let $U_\theta=X\cos\theta+Y\sin\theta$ and $V_\theta=-X\sin\theta+Y\cos\theta$, $\theta\in[0,\pi)$. Find all the possible $\theta$ such that $U_\theta$ and $V_\theta$ are independent.
+
+    \item Let $X$ and $Y$ be independent random variables with the same c.d.f $F$ and p.d.f. $f$.\\
+    (a) (10 points) What is the c.d.f. of $V=\max\{X,Y\}$?\\
+    (b) (5 points) Derive the p.d.f. of $Z=\min\{X,Y\}$.
+
+    \item Suppose that $(X,Y,Z)$ is a random point inside a unit cube $\{(x,y,z):0\leq x,y,z\leq 1\}$.\\
+    (a) (5 points) What is the joint p.d.f. of $(X,Y,Z)$?\\
+    (b) (10 points) Compute $P(X^2>YZ)$.\\
+
+    \item Find the value $C$ for the following probability density functions.\\
+    (a) (5 points) $f(x)=C(\gamma^2+x^2)^{-1},\,x\in\mathbb{R}$.\\
+    (b) (10 points) $f(x)=\frac{Ce^{-x}}{(1+e^{-x})^2}$, $x\in\mathbb{R}$.\\
+    %(c) (5 points) $\frac{C}{x}\exp(-\frac{1}{2}(\log(x)-\mu)^2)$, $x\in\mathbb{R}$. $\mu$ is a fixed real number.
+    
+    \item (Buffon's needle problem) Suppose the $\mathbb{R}^2$ plane was separated by infinitely many parallel lines $\{y=na\}_{n\in\mathbb{Z}}$ for some constant $a>0$. You drop a needle of length $0<r<a$ uniformly on the plane. We're going to estimate the probability that the needle crosses a line.\\
+    (a) (10 points) Given that the needle's orientation has an angle $\theta$ to the $x$-axis, where $\theta\in[0,\pi)$. What is the probability of crossing a line?\\
+    (b) (5 points) Using the result of (a), derive the probability of line crossing.
+
+\end{enumerate}
+
+
+\end{document}
+
+
+% neglect this part
+%Fix any $\mu>0$, $\lim_{n\rightarrow\infty}P(|S_n-n\mu|\geq a\sqrt{n\mu})=\lim_{\lambda\rightarrow\infty}P(|X-\lambda|\geq a\sqrt{\lambda})$.\\
+%Where $S_n=\sum_{i=1}^nX_i$, $X_i\sim\text{Pois}(\mu)$.\\ \\
+%For any $\{\mu_k\}_{k=1}^\infty$ with $\mu_k>0$ and $\sum_{k=1}^\infty\mu_k=\infty$.\\
+%Set $\lambda_n=\mu_1+\cdots+\mu_n$, then $\lambda_n\rightarrow\infty$ as $n\rightarrow\infty$.\\
+%Set $S_n=X_1+\cdots+X_n$ where $X_i\sim\text{Pois}(\mu_i)$. Then $S_n\sim\text{Pois}(\lambda_n)$.\\
+%$\lim_{\lambda\rightarrow\infty}P(|X-\lambda|\geq a\sqrt{\lambda})=\lim_{n\rightarrow\infty}P(|S_n-\lambda_n|\geq a\sqrt{\lambda_n})$. 
